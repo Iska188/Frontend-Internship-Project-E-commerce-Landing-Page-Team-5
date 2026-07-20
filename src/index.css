@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #3bb77e;
+  --color-brand-dark: #2f9c68;
+  --color-ink: #253d4e;
+  --color-muted: #7e7e7e;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+}
