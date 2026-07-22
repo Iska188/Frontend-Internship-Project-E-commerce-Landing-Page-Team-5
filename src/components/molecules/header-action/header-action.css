@@ -1,0 +1,38 @@
+.m-header-action {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.m-header-action__icon {
+  position: relative;
+  display: flex;
+}
+
+.svg-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.m-header-action__badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #3bb77e;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-header-action__label {
+  font-size: 15px;
+  color: #7e7e7e;
+}

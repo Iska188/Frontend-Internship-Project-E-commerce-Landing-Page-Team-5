@@ -1,0 +1,12 @@
+.a-input {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: #253D4E;
+  background: transparent;
+}
+.a-input::placeholder {
+  color: #838383;
+}

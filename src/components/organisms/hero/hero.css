@@ -1,0 +1,87 @@
+.o-hero {
+  width: 100%;
+  padding: 30px 0;
+  background-color: #ffffff;
+}
+
+.o-hero__container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.o-hero__main-banner {
+  background: linear-gradient(90deg, #f4f6f8 0%, #e9ecef 100%);
+  border-radius: 20px;
+  padding: 60px 80px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  width: 100%;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-arrow--left {
+  left: 20px;
+}
+
+.carousel-arrow--right {
+  right: 20px;
+}
+
+.o-hero__content {
+  max-width: 550px;
+  width: 100%;
+}
+
+.a-text--hero-title {
+  font-size: 65px;
+  font-weight: 600;
+  color: #253D4E;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.a-text--hero-subtitle {
+  font-size: 25px;
+  color: #7e7e7e;
+  margin-bottom: 30px;
+  display: block;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid #3bb77e;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background-color: #3bb77e;
+  transform: scale(1.2);
+}

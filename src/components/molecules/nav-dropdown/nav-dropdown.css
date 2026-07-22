@@ -1,0 +1,131 @@
+.m-nav-dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.m-nav-dropdown__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s ease;
+}
+
+.m-nav-dropdown__label:hover,
+.m-nav-dropdown__label.active {
+  color: #3bb77e;
+}
+
+.arrow {
+  font-size: 10px;
+}
+
+.m-nav-dropdown__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  border: 1px solid #ececec;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  min-width: 160px;
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.m-nav-dropdown:hover .m-nav-dropdown__menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.m-nav-dropdown__item {
+  padding: 8px 20px;
+  color: #253D4E;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.m-nav-dropdown__item:hover {
+  background-color: #f8f9fa;
+  color: #3bb77e;
+}
+
+.m-nav-dropdown--categories {
+  background-color: #3bb77e;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.m-nav-dropdown--categories:hover {
+  background-color: #29a56c;
+}
+
+.m-nav-dropdown--categories .m-nav-dropdown__label {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.m-nav-dropdown--categories .svg-icon-small {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 2px;
+  margin-right: 5px;
+}
+
+.m-nav-dropdown--categories .arrow {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.m-nav-dropdown--categories .m-nav-dropdown__menu {
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  min-width: 240px;
+  background-color: #ffffff;
+  border: 1px solid #bce3c9;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 10px 0;
+  position: absolute;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  display: block; 
+}
+
+.m-nav-dropdown--categories:hover .m-nav-dropdown__menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.m-nav-dropdown--categories .m-nav-dropdown__item {
+  color: #253D4E;
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+.m-nav-dropdown--categories .m-nav-dropdown__item:hover {
+  background-color: #f4f6f8;
+  color: #3bb77e;
+}
