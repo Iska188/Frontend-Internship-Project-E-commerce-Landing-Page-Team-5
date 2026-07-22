@@ -4,8 +4,9 @@ import './text.css';
 
 interface TextProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  variant: 'sec-title' | 'prod-title' | 'category' | 'price-current' | 'price-old' | 'hero-title' | 'hero-subtitle';
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span';
+  variant: 'sec-title' | 'prod-title' | 'category' | 'price-current' | 'price-old' | 'hero-title' | 'hero-subtitle' | 'footer-title' | 'footer-link';
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'a';
+  href?: string;
 }
 
 export const Text: React.FC<TextProps> = ({ 
