@@ -31,6 +31,11 @@
   text-decoration: none;
 }
 
+.m-footer-apps__store-link img {
+  border-radius: 10px;
+}
+
+
 .m-footer-apps__store-placeholder {
   display: flex;
   align-items: center;
@@ -43,11 +48,14 @@
   border-radius: 4px;
 }
 
-/* Payment Gateway Placeholders */
 .m-footer-apps__payments {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.m-footer-apps__payments img {
+  border-radius: 10px;
 }
 
 .m-footer-apps__payment-placeholder {
