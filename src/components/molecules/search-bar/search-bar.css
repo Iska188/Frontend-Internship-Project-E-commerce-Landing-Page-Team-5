@@ -1,9 +1,9 @@
 .m-search-bar {
   display: flex;
   width: 100%;
-  max-width: 700px; 
-  border: 2px solid #bce3c9;
-  border-radius: 5px;
+  max-width: 43.75rem; 
+  border: 0.125rem solid #bce3c9;
+  border-radius: 0.3125rem;
   background-color: #ffffff;
   overflow: hidden;
   align-items: stretch;
@@ -11,23 +11,23 @@
 
 .m-search-bar__input-override {
   flex-grow: 1;
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #253D4E;
   background: transparent;
 }
 
 .m-search-bar__button-override {
-  border-radius: 5px; 
-  padding: 0 25px;
+  border-radius: 0.3125rem; 
+  padding: 0 1.5625rem;
   height: 90%;
   margin: 0;
-  margin-top: 2px;
-  margin-right: 2px;
+  margin-top: 0.125rem;
+  margin-right: 0.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 0.875rem;
 }

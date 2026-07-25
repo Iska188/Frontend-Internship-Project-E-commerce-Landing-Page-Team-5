@@ -1,26 +1,26 @@
 .o-hero {
   width: 100%;
-  padding: 30px 0;
+  padding: 1.875rem 0;
   background-color: #ffffff;
 }
 
 .o-hero__container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 100rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .o-hero__main-banner {
   background: linear-gradient(90deg, #f4f6f8 0%, #e9ecef 100%);
-  border-radius: 20px;
-  padding: 60px 80px;
+  border-radius: 1.25rem;
+  padding: 3.75rem 5rem;
   display: flex;
   align-items: center;
   position: relative;
   background-size: cover;
   background-position: center;
-  min-height: 500px;
+  min-height: 31.25rem;
   width: 100%;
 }
 
@@ -32,50 +32,50 @@
 }
 
 .carousel-arrow--left {
-  left: 20px;
+  left: 1.25rem;
 }
 
 .carousel-arrow--right {
-  right: 20px;
+  right: 1.25rem;
 }
 
 .o-hero__content {
-  max-width: 550px;
+  max-width: 34.375rem;
   width: 100%;
 }
 
 .a-text--hero-title {
-  font-size: 65px;
+  font-size: 4.0625rem;
   font-weight: 600;
   color: #253D4E;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
   display: block;
 }
 
 .a-text--hero-subtitle {
-  font-size: 25px;
+  font-size: 1.5625rem;
   color: #7e7e7e;
-  margin-bottom: 30px;
+  margin-bottom: 1.875rem;
   display: block;
 }
 
 .carousel-dots {
   position: absolute;
-  bottom: 25px;
+  bottom: 1.5625rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   z-index: 10;
 }
 
 .carousel-dot {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   background-color: transparent;
-  border: 2px solid #3bb77e;
+  border: 0.125rem solid #3bb77e;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   padding: 0;

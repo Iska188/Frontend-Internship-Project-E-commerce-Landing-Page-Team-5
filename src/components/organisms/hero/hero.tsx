@@ -1,23 +1,28 @@
 import { useState } from 'react';
+// @ts-ignore
 import { Text } from '../../atoms/text/text';
+//@ts-ignore
 import { Button } from '../../atoms/button/button';
+// @ts-ignore
 import { NewsletterForm } from '../../molecules/newsletter-form/newsletter-form';
+// @ts-ignore
 import './hero.css';
 
-interface Slide {
-  title: string;
-  subtitle: string;
-  bgImage: string;
-}
-
-interface HeroProps {
-  slides: Slide[];
-}
-
-export const Hero = ({ slides }: HeroProps) => {
+export const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const isCarousel = slides.length > 1;
+  const slides = [
+    {
+      title: "Fresh Vegetables Big discount",
+      subtitle: "Save up to 50% off on your first order",
+      bgImage: "src/assets/header/hero1.png",
+    },
+    {
+      title: "Don’t miss our daily fresh products",
+      subtitle: "Sign up for the daily newsletter",
+      bgImage: "src/assets/header/hero2.png",
+    },
+  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
@@ -34,9 +39,7 @@ export const Hero = ({ slides }: HeroProps) => {
           className="o-hero__main-banner"
           style={{ backgroundImage: `url(${slides[currentSlide].bgImage})` }}
         >
-          {isCarousel && (
-            <Button variant="carousel" className="carousel-arrow carousel-arrow--left" onClick={prevSlide}>❮</Button>
-          )}
+         <Button variant="carousel" className="carousel-arrow carousel-arrow--left" onClick={prevSlide}>❮</Button>
           
           <div className="o-hero__content">
             <Text variant="hero-title" as="h1">
@@ -49,21 +52,17 @@ export const Hero = ({ slides }: HeroProps) => {
             <NewsletterForm />
           </div>
 
-          {isCarousel && (
-            <Button variant="carousel" className="carousel-arrow carousel-arrow--right" onClick={nextSlide}>❯</Button>
-          )}
+          <Button variant="carousel" className="carousel-arrow carousel-arrow--right" onClick={nextSlide}>❯</Button>
 
-          {isCarousel && (
-            <div className="carousel-dots">
-              {slides.map((_: Slide, index: number) => (
-                <button
-                  key={index}
-                  className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
-                  onClick={() => setCurrentSlide(index)}
-                />
-              ))}
-            </div>
-          )}
+          <div className="carousel-dots">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

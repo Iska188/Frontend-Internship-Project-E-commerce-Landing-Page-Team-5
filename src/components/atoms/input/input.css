@@ -1,12 +1,13 @@
 .a-input {
   width: 100%;
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   border: none;
   outline: none;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #253D4E;
   background: transparent;
 }
+
 .a-input::placeholder {
   color: #838383;
 }

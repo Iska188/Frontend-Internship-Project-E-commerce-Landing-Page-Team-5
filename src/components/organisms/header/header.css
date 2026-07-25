@@ -7,25 +7,25 @@
 
 .o-header__container {
   width: 100%;
-  max-width: 1600px;
+  max-width: 100rem;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
 .o-header__top {
-  border-bottom: 1px solid #ececec;
-  font-size: 13px;
+  border-bottom: 0.0625rem solid #ececec;
+  font-size: 0.8125rem;
   color: #7e7e7e;
-  padding: 12px 0;
+  padding: 0.75rem 0;
 }
 
 .o-header__top-left span,
 .o-header__top-right span {
   cursor: pointer;
-  margin: 0 10px;
+  margin: 0 0.625rem;
 }
 
 .text-green {
@@ -34,12 +34,12 @@
 }
 
 .o-header__middle {
-  border-bottom: 1px solid #ececec;
-  padding: 30px 0;
+  border-bottom: 0.0625rem solid #ececec;
+  padding: 1.875rem 0;
 }
 
 .o-header__logo-img {
-  height: 55px; 
+  height: 3.4375rem; 
   cursor: pointer;
 }
 
@@ -47,53 +47,53 @@
   flex-grow: 1;
   display: flex;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 2.5rem;
 }
 
 .o-header__actions {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 1.875rem;
 }
 
 .o-header__icons {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .o-header__bottom {
-  padding: 15px 0;
-  border-bottom: 1px solid #ececec;
+  padding: 0.9375rem 0;
+  border-bottom: 0.0625rem solid #ececec;
 }
 
 .o-header__categories button {
   background-color: #3bb77e;
   color: white;
   border: none;
-  padding: 12px 25px;
-  border-radius: 5px;
+  padding: 0.75rem 1.5625rem;
+  border-radius: 0.3125rem;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 0.9375rem;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .o-header__nav {
   display: flex;
   align-items: center;
-  gap: 35px; 
+  gap: 2.1875rem; 
   font-weight: 700;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .nav-item {
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.3125rem;
   transition: 0.2s;
 }
 
@@ -104,11 +104,11 @@
 .o-header__support {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 0.9375rem;
 }
 
 .support-icon {
-  font-size: 32px;
+  font-size: 2rem;
 }
 
 .support-text {
@@ -119,12 +119,12 @@
 
 .support-text strong {
   color: #3bb77e;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .support-text span {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #7e7e7e;
-  margin-top: 4px;
+  margin-top: 0.25rem;
 }
