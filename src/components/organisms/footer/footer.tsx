@@ -63,10 +63,8 @@ export const Footer: React.FC = () => {
 
           <FooterApps />
         </div>
-
-        <FooterBottom />
-
       </div>
+      <FooterBottom />
     </footer>
   );
 };
