@@ -1,0 +1,20 @@
+.o-promo-banners {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: #ffffff;
+}
+
+.o-promo-banners__container {
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+  .o-promo-banners__container {
+    flex-direction: column;
+  }
+}
