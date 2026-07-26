@@ -8,7 +8,7 @@ import { SaleNotification } from './components/molecules/sale-notification/sale-
 import { PromoBanners } from './components/organisms/promo-banners/promo-banners'; 
 import { BottomBanner } from './components/organisms/bottom-banner/bottom-banner';
 import { Footer } from './components/organisms/footer/footer'; 
-
+import { DealsSection } from './components/organisms/deals-section/DealsSection';
 
 function App(){
 
@@ -21,6 +21,7 @@ function App(){
         <FeaturedCategories />
         <SaleNotification />
         <PromoBanners />
+        <DealsSection / >
         <BottomBanner />
         <Footer />
       </main>

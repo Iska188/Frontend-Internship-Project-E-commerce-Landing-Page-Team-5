@@ -1,0 +1,27 @@
+.o-deals {
+  padding: 2.5rem 1.25rem; 
+}
+
+.dealcontainer {
+  max-width: 97rem; 
+  margin: 0 auto; 
+}
+
+.dealcontainer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 64rem) {
+  .dealcontainer__grid {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 37.5rem) {
+  .dealcontainer__grid {
+    grid-template-columns: 1fr; 
+  }
+}

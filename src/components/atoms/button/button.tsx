@@ -1,6 +1,7 @@
 import React from 'react';
 //@ts-ignore
 import './button.css';
+import cartIcon from '../../../assets/header/cart.svg';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -18,8 +19,8 @@ export const Button: React.FC<ButtonProps> = ({
       className={`a-btn a-btn--${variant} ${className || ''}`} 
       {...props}
     >
-      {(variant === 'add-short' || variant === 'add-long') && <span className="a-btn__icon">🛒</span>}
-      <span className="a-btn__text">{children}</span>
+      {(variant === 'add-short' || variant === 'add-long') && (
+  <img src={cartIcon} alt="Cart" className="a-btn__icon" />)}<span className="a-btn__text">{children}</span>
     </button>
   );
 };
