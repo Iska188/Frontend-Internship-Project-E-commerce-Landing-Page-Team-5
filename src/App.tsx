@@ -9,6 +9,8 @@ import { PromoBanners } from './components/organisms/promo-banners/promo-banners
 import { BottomBanner } from './components/organisms/bottom-banner/bottom-banner';
 import { Footer } from './components/organisms/footer/footer'; 
 import { DealsSection } from './components/organisms/deals-section/DealsSection';
+import { FeatureSection } from './components/organisms/feature-section/feature-section';
+
 
 function App(){
 
@@ -23,6 +25,7 @@ function App(){
         <PromoBanners />
         <DealsSection / >
         <BottomBanner />
+        <FeatureSection />
         <Footer />
       </main>
     </div>
