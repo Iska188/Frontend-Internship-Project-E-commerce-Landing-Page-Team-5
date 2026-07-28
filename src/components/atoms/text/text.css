@@ -1,5 +1,4 @@
 .a-text {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -57,4 +56,21 @@
   display: block;
   margin-top: 15px;
   margin-bottom: 30px;
+}
+
+.a-text--footer-title {
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.a-text--footer-link {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.a-text--footer-link:hover {
+  color: #10b981; 
 }
