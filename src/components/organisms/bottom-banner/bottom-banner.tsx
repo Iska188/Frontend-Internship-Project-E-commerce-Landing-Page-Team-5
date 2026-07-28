@@ -3,37 +3,29 @@ import React from 'react';
 import { Text } from '../../atoms/text/text';
 // @ts-ignore
 import { NewsletterForm } from '../../molecules/newsletter-form/newsletter-form';
+import { TRANSLATIONS } from '../../../constants/translations';
 // @ts-ignore
 import './bottom-banner.css';
 
 export const BottomBanner = () => {
-  const bannerData = {
-    title: (
-      <>
-        Stay home &amp; get your daily <br /> needs from our shop
-      </>
-    ),
-    subtitle: (
-      <>
-        Start Your Daily Shopping with <span className="o-bottom-banner__highlight">Nest Mart</span>
-      </>
-    ),
-    bgImage: "src/assets/footer/hero-second.png",
-  };
+  const bannerBgImage = "src/assets/footer/hero-second.png";
 
   return (
     <section className="o-bottom-banner">
       <div className="o-bottom-banner__container">
         <div 
           className="o-bottom-banner__main-banner"
-          style={{ backgroundImage: `url(${bannerData.bgImage})` }}
+          style={{ backgroundImage: `url(${bannerBgImage})` }}
         >
           <div className="o-bottom-banner__content">
             <Text variant="hero-title" as="h1">
-              {bannerData.title}
+              {TRANSLATIONS.bottomBanner.title}
             </Text>
             <Text variant="hero-subtitle" as="p">
-              {bannerData.subtitle}
+              {TRANSLATIONS.bottomBanner.subtitlePrefix}{' '}
+              <span className="o-bottom-banner__highlight">
+                {TRANSLATIONS.bottomBanner.subtitleHighlight}
+              </span>
             </Text>
             
             <NewsletterForm />

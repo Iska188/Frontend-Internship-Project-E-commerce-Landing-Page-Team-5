@@ -3,63 +3,61 @@ import { FooterColumn } from '../../molecules/footer-column/footer-column';
 import { FooterApps } from '../../molecules/footer-apps/footer-apps';
 import { FooterContact } from '../../molecules/footer-contact/footer-contact';
 import { FooterBottom } from '../../molecules/footer-bottom/footer-bottom';
+import { TRANSLATIONS } from '../../../constants/translations';
 
 import './footer.css';
 
-
-const companyLinks = [
-  { label: 'About Us', href: '/about' },
-  { label: 'Delivery Information', href: '/delivery' },
-  { label: 'Privacy Policy', href: '/privacy' },
-  { label: 'Terms & Conditions', href: '/terms' },
-  { label: 'Contact Us', href: '/contact' },
-  { label: 'Support Center', href: '/support' },
-  { label: 'Careers', href: '/careers' },
-];
-
-const accountLinks = [
-  { label: 'Sign In', href: '/login' },
-  { label: 'View Cart', href: '/cart' },
-  { label: 'My Wishlist', href: '/wishlist' },
-  { label: 'Track My Order', href: '/track' },
-  { label: 'Help Ticket', href: '/help' },
-  { label: 'Shipping Details', href: '/shipping' },
-  { label: 'Compare products', href: '/compare' },
-];
-
-const corporateLinks = [
-  { label: 'Become a Vendor', href: '/vendor' },
-  { label: 'Affiliate Program', href: '/affiliate' },
-  { label: 'Farm Business', href: '/farm' },
-  { label: 'Farm Careers', href: '/careers' },
-  { label: 'Our Suppliers', href: '/suppliers' },
-  { label: 'Accessibility', href: '/accessibility' },
-  { label: 'Promotions', href: '/promotions' },
-];
-
-const popularLinks = [
-  { label: 'Milk & Flavoured Milk', href: '/milk' },
-  { label: 'Butter and Margarine', href: '/butter' },
-  { label: 'Eggs Substitutes', href: '/eggs' },
-  { label: 'Marmalades', href: '/marmalades' },
-  { label: 'Sour Cream and Dips', href: '/dips' },
-  { label: 'Tea & Kombucha', href: '/tea' },
-  { label: 'Cheese', href: '/cheese' },
-];
-
 export const Footer: React.FC = () => {
+  const companyLinks = [
+    { label: TRANSLATIONS.footer.companyLinks.about, href: '/about' },
+    { label: TRANSLATIONS.footer.companyLinks.delivery, href: '/delivery' },
+    { label: TRANSLATIONS.footer.companyLinks.privacy, href: '/privacy' },
+    { label: TRANSLATIONS.footer.companyLinks.terms, href: '/terms' },
+    { label: TRANSLATIONS.footer.companyLinks.contact, href: '/contact' },
+    { label: TRANSLATIONS.footer.companyLinks.support, href: '/support' },
+    { label: TRANSLATIONS.footer.companyLinks.careers, href: '/careers' },
+  ];
+
+  const accountLinks = [
+    { label: TRANSLATIONS.footer.accountLinks.signIn, href: '/login' },
+    { label: TRANSLATIONS.footer.accountLinks.viewCart, href: '/cart' },
+    { label: TRANSLATIONS.footer.accountLinks.myWishlist, href: '/wishlist' },
+    { label: TRANSLATIONS.footer.accountLinks.trackOrder, href: '/track' },
+    { label: TRANSLATIONS.footer.accountLinks.helpTicket, href: '/help' },
+    { label: TRANSLATIONS.footer.accountLinks.shippingDetails, href: '/shipping' },
+    { label: TRANSLATIONS.footer.accountLinks.compareProducts, href: '/compare' },
+  ];
+
+  const corporateLinks = [
+    { label: TRANSLATIONS.footer.corporateLinks.vendor, href: '/vendor' },
+    { label: TRANSLATIONS.footer.corporateLinks.affiliate, href: '/affiliate' },
+    { label: TRANSLATIONS.footer.corporateLinks.farmBusiness, href: '/farm' },
+    { label: TRANSLATIONS.footer.corporateLinks.farmCareers, href: '/careers' },
+    { label: TRANSLATIONS.footer.corporateLinks.suppliers, href: '/suppliers' },
+    { label: TRANSLATIONS.footer.corporateLinks.accessibility, href: '/accessibility' },
+    { label: TRANSLATIONS.footer.corporateLinks.promotions, href: '/promotions' },
+  ];
+
+  const popularLinks = [
+    { label: TRANSLATIONS.footer.popularLinks.milk, href: '/milk' },
+    { label: TRANSLATIONS.footer.popularLinks.butter, href: '/butter' },
+    { label: TRANSLATIONS.footer.popularLinks.eggs, href: '/eggs' },
+    { label: TRANSLATIONS.footer.popularLinks.marmalades, href: '/marmalades' },
+    { label: TRANSLATIONS.footer.popularLinks.sourCream, href: '/dips' },
+    { label: TRANSLATIONS.footer.popularLinks.tea, href: '/tea' },
+    { label: TRANSLATIONS.footer.popularLinks.cheese, href: '/cheese' },
+  ];
+
   return (
     <footer className="o-footer">
       <div className="o-footer__container">
-        
         <div className="o-footer__top">
-
           <FooterContact />
 
-          <FooterColumn title="Company" links={companyLinks} />
-          <FooterColumn title="Account" links={accountLinks} />
-          <FooterColumn title="Corporate" links={corporateLinks} />
-          <FooterColumn title="Popular" links={popularLinks} />
+          <FooterColumn title={TRANSLATIONS.footer.titles.company} links={companyLinks} />
+          <FooterColumn title={TRANSLATIONS.footer.titles.account} links={accountLinks} />
+          <FooterColumn title={TRANSLATIONS.footer.titles.corporate} links={corporateLinks} />
+          <FooterColumn title={TRANSLATIONS.footer.titles.popular} links={popularLinks} />
 
           <FooterApps />
         </div>

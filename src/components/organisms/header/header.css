@@ -1,13 +1,13 @@
 .o-header {
   width: 100%;
-  background-color: #ffffff;
+  background-color: var(--color-white);
   font-family: 'Quicksand', sans-serif;
-  color: #253D4E;
+  color: var(--color-text-main);
 }
 
 .o-header__container {
   width: 100%;
-  max-width: 100rem;
+  max-width: var(--max-width-container, 100rem);
   margin: 0 auto;
   padding: 0 1.25rem;
   display: flex;
@@ -16,9 +16,9 @@
 }
 
 .o-header__top {
-  border-bottom: 0.0625rem solid #ececec;
-  font-size: 0.8125rem;
-  color: #7e7e7e;
+  border-bottom: 0.0625rem solid var(--color-border);
+  font-size: var(--font-size-subsm);
+  color: var(--color-text-muted);
   padding: 0.75rem 0;
 }
 
@@ -29,12 +29,12 @@
 }
 
 .text-green {
-  color: #3bb77e;
+  color: var(--color-primary);
   font-weight: 600;
 }
 
 .o-header__middle {
-  border-bottom: 0.0625rem solid #ececec;
+  border-bottom: 0.0625rem solid var(--color-border);
   padding: 1.875rem 0;
 }
 
@@ -64,17 +64,17 @@
 
 .o-header__bottom {
   padding: 0.9375rem 0;
-  border-bottom: 0.0625rem solid #ececec;
+  border-bottom: 0.0625rem solid var(--color-border);
 }
 
 .o-header__categories button {
-  background-color: #3bb77e;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   border: none;
   padding: 0.75rem 1.5625rem;
   border-radius: 0.3125rem;
   font-weight: bold;
-  font-size: 0.9375rem;
+  font-size: var(--font-size-submd);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@
   align-items: center;
   gap: 2.1875rem; 
   font-weight: 700;
-  font-size: 1rem;
+  font-size: var(--font-size-md);
 }
 
 .nav-item {
@@ -98,7 +98,7 @@
 }
 
 .nav-item:hover, .nav-item.active {
-  color: #3bb77e;
+  color: var(--color-primary);
 }
 
 .o-header__support {
@@ -108,7 +108,7 @@
 }
 
 .support-icon {
-  font-size: 2rem;
+  font-size: var(--font-size-xxxl);
 }
 
 .support-text {
@@ -118,13 +118,13 @@
 }
 
 .support-text strong {
-  color: #3bb77e;
-  font-size: 1.5rem;
+  color: var(--color-primary);
+  font-size: var(--font-size-xl);
   line-height: 1;
 }
 
 .support-text span {
-  font-size: 0.8125rem;
-  color: #7e7e7e;
+  font-size: var(--font-size-subsm);
+  color: var(--color-text-muted);
   margin-top: 0.25rem;
 }

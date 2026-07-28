@@ -1,7 +1,7 @@
 .m-newsletter-form {
   display: flex;
   align-items: center;
-  background: #ffffff;
+  background: var(--color-white);
   border-radius: 1.875rem;
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.04);
   max-width: 27.5rem;
@@ -13,18 +13,18 @@
   border: none;
   outline: none;
   padding: 0 1.25rem;
-  font-size: 1rem;
-  color: #253D4E;
+  font-size: var(--font-size-md);
+  color: var(--color-text-main);
   background: transparent;
 }
 
 .m-newsletter-form__input::placeholder {
-  color: #B6B6B6;
+  color: var(--color-text-placeholder-light);
 }
 
 .m-newsletter-form__btn {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   border-radius: 1.875rem;
   padding: 1.375rem 1.5625rem;
   font-weight: 400;
@@ -34,5 +34,5 @@
 }
 
 .m-newsletter-form__btn:hover {
-  background-color: #29a56c;
+  background-color: var(--color-primary-hover);
 }

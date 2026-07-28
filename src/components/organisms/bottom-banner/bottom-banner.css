@@ -1,18 +1,18 @@
 .o-bottom-banner {
   width: 100%;
   padding: 1.875rem 0;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .o-bottom-banner__container {
   width: 100%;
-  max-width: 100rem;
+  max-width: var(--max-width-container, 100rem);
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
 .o-bottom-banner__main-banner {
-  background-color: #def9ec;
+  background-color: var(--color-primary-light);
   border-radius: 1.25rem;
   padding: 3.75rem 5rem;
   display: flex;
@@ -30,21 +30,21 @@
 }
 
 .o-bottom-banner__content h1 {
-  font-size: 4.375rem;
+  font-size: var(--font-size-display);
   font-weight: 700;
-  color: #253d4e;
+  color: var(--color-text-main);
   line-height: 1.15;
   margin-bottom: 1.25rem;
 }
 
 .o-bottom-banner__content p {
-  font-size: 1.25rem;
-  color: #7e7e7e;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
   margin-bottom: 2.1875rem;
   font-weight: 400;
 }
 
 .o-bottom-banner__highlight {
-  color: #3bb77e;
+  color: var(--color-primary);
   font-weight: 600;
 }

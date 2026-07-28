@@ -14,8 +14,8 @@
 }
 
 .m-footer-contact__description {
-  font-size: 0.875rem;
-  color: #4b5563;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
   margin-top: 0;
   margin-bottom: 2rem;
   line-height: 1.5;
@@ -34,19 +34,19 @@
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  font-size: 0.875rem;
-  color: #4b5563;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
   line-height: 1.5;
 }
 
 .m-footer-contact__icon {
-  color: #3bb77e;
-  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-size: var(--font-size-lg);
   margin-top: -0.1rem; 
 }
 
 .m-footer-contact__link {
-  color: #3bb77e; 
+  color: var(--color-primary); 
   text-decoration: none;
   transition: color 0.2s ease-in-out;
 }

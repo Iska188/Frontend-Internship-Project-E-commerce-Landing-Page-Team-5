@@ -16,7 +16,6 @@ export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
     <div className="m-header-action">
       <div className="m-header-action__icon-wrapper">
         <span className="m-header-action__icon">{icon}</span>
-        {/* Folosim noul atom Badge de tip 'count' */}
         <Badge type="count" label={count.toString()} />
       </div>
       <Text variant="prod-title" as="span">{label}</Text>

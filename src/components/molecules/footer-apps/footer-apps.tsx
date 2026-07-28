@@ -1,21 +1,18 @@
 import React from 'react';
 import { Text } from '../../atoms/text/text';
+import { googlePlay, appStore, payment } from '../../../assets';
+import { TRANSLATIONS } from '../../../constants/translations';
 import './footer-apps.css';
-import googlePlay from '../../../assets/footer/google-play.png'; 
-import appStore from '../../../assets/footer/app-store.png'; 
-import payment from '../../../assets/footer/payment.png'; 
 
 export const FooterApps: React.FC = () => {
   return (
     <div className="m-footer-apps">
-      {/* Title */}
       <Text as="h4" variant="footer-title" className="m-footer-apps__title">
-        Install App
+        {TRANSLATIONS.footer.installApp}
       </Text>
       
-      {/* App Stores Section */}
       <p className="m-footer-apps__subtitle">
-        From App Store or Google Play
+        {TRANSLATIONS.footer.appStoreSubtitle}
       </p>
       
       <div className="m-footer-apps__stores">
@@ -27,9 +24,8 @@ export const FooterApps: React.FC = () => {
         </a>
       </div>
       
-      {/* Payment Gateways Section */}
       <p className="m-footer-apps__subtitle m-footer-apps__subtitle--spaced">
-        Secured Payment Gateways
+        {TRANSLATIONS.footer.securedPayment}
       </p>
       
       <div className="m-footer-apps__payments">

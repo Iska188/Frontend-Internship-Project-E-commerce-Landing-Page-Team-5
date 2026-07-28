@@ -2,6 +2,7 @@
 import { Input } from '../../atoms/input/input';
 // @ts-ignore
 import { Button } from '../../atoms/button/button';
+import { TRANSLATIONS } from '../../../constants/translations';
 // @ts-ignore
 import './search-bar.css';
 
@@ -10,11 +11,11 @@ export const SearchBar = () => {
     <div className="m-search-bar">
       <Input 
         type="text" 
-        placeholder="Search for products..."  
+        placeholder={TRANSLATIONS.searchBar.placeholder}  
         className="m-search-bar__input-override" 
       />
       <Button variant="primary" className="m-search-bar__button-override">
-        Search
+        {TRANSLATIONS.searchBar.buttonText}
       </Button>
     </div>
   );

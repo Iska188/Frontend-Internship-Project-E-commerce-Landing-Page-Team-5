@@ -13,7 +13,7 @@
 
 .m-nav-dropdown__label:hover,
 .m-nav-dropdown__label.active {
-  color: #3bb77e;
+  color: var(--color-primary);
 }
 
 .arrow {
@@ -24,8 +24,8 @@
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
-  border: 0.0625rem solid #ececec;
+  background-color: var(--color-white);
+  border: 0.0625rem solid var(--color-border);
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05);
   border-radius: 0.3125rem;
   min-width: 10rem;
@@ -47,18 +47,18 @@
 
 .m-nav-dropdown__item {
   padding: 0.5rem 1.25rem;
-  color: #253D4E;
-  font-size: 0.875rem;
+  color: var(--color-text-main);
+  font-size: var(--font-size-base);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .m-nav-dropdown__item:hover {
-  background-color: #f8f9fa;
-  color: #3bb77e;
+  background-color: var(--color-bg-subtle);
+  color: var(--color-primary);
 }
 
 .m-nav-dropdown--categories {
-  background-color: #3bb77e;
+  background-color: var(--color-primary);
   padding: 0.75rem 1.25rem;
   border-radius: 0.3125rem;
   cursor: pointer;
@@ -68,13 +68,13 @@
 }
 
 .m-nav-dropdown--categories:hover {
-  background-color: #29a56c;
+  background-color: var(--color-primary-hover);
 }
 
 .m-nav-dropdown--categories .m-nav-dropdown__label {
-  color: #ffffff;
+  color: var(--color-white);
   font-weight: 700;
-  font-size: 0.9375rem;
+  font-size: var(--font-size-submd);
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -90,8 +90,8 @@
 }
 
 .m-nav-dropdown--categories .arrow {
-  color: #ffffff;
-  font-size: 0.75rem;
+  color: var(--color-white);
+  font-size: var(--font-size-sm);
   margin-left: 0.3125rem;
 }
 
@@ -100,8 +100,8 @@
   left: 0;
   margin-top: 0.5rem;
   min-width: 15rem;
-  background-color: #ffffff;
-  border: 0.0625rem solid #bce3c9;
+  background-color: var(--color-white);
+  border: 0.0625rem solid var(--color-border-green);
   box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.08);
   border-radius: 0.3125rem;
   padding: 0.625rem 0;
@@ -120,12 +120,12 @@
 }
 
 .m-nav-dropdown--categories .m-nav-dropdown__item {
-  color: #253D4E;
-  font-size: 0.875rem;
+  color: var(--color-text-main);
+  font-size: var(--font-size-base);
   padding: 0.625rem 1.25rem;
 }
 
 .m-nav-dropdown--categories .m-nav-dropdown__item:hover {
-  background-color: #f4f6f8;
-  color: #3bb77e;
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
 }

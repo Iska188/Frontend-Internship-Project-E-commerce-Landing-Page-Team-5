@@ -1,10 +1,9 @@
-
 .o-footer {
   width: 100%;
   padding-top: 4rem;
   padding-bottom: 2rem;
-  background-color: #ffffff;
-  border-top: 1px solid #e5e7eb;
+  background-color: var(--color-white);
+  border-top: 0.0625rem solid var(--color-border-subtle);
 }
 
 .o-footer__container {
@@ -20,13 +19,13 @@
   margin-bottom: 3rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .o-footer__top {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .o-footer__top {
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.5fr; 
   }

@@ -1,18 +1,18 @@
 .o-hero {
   width: 100%;
   padding: 1.875rem 0;
-  background-color: #ffffff;
+  background-color: var(--color-white);
 }
 
 .o-hero__container {
   width: 100%;
-  max-width: 100rem;
+  max-width: var(--max-width-container, 100rem);
   margin: 0 auto;
   padding: 0 1.25rem;
 }
 
 .o-hero__main-banner {
-  background: linear-gradient(90deg, #f4f6f8 0%, #e9ecef 100%);
+  background: linear-gradient(90deg, var(--color-bg-light) 0%, var(--color-bg-alt) 100%);
   border-radius: 1.25rem;
   padding: 3.75rem 5rem;
   display: flex;
@@ -44,18 +44,18 @@
   width: 100%;
 }
 
-.a-text--hero-title {
-  font-size: 4.0625rem;
-  font-weight: 600;
-  color: #253D4E;
+.o-hero__content h1 {
+  font-size: var(--font-size-xxl, 4.0625rem);
+  font-weight: 700;
+  color: var(--color-text-main);
   line-height: 1.2;
   margin-bottom: 1.25rem;
   display: block;
 }
 
-.a-text--hero-subtitle {
-  font-size: 1.5625rem;
-  color: #7e7e7e;
+.o-hero__content p {
+  font-size: var(--font-size-subtitle, 1.5625rem);
+  color: var(--color-text-muted);
   margin-bottom: 1.875rem;
   display: block;
 }
@@ -75,13 +75,13 @@
   height: 0.625rem;
   border-radius: 50%;
   background-color: transparent;
-  border: 0.125rem solid #3bb77e;
+  border: 0.125rem solid var(--color-primary);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
   padding: 0;
 }
 
 .carousel-dot.active {
-  background-color: #3bb77e;
+  background-color: var(--color-primary);
   transform: scale(1.2);
 }

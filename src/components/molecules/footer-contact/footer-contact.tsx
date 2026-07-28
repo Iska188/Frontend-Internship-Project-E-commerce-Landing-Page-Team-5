@@ -1,11 +1,7 @@
 import React from 'react';
+import { logo, WaypointLogo, Headset, Mail, Clock } from '../../../assets';
+import { TRANSLATIONS } from '../../../constants/translations';
 import './footer-contact.css';
-import logo from '../../../assets/logo.png';
-import WaypointLogo from '../../../assets/footer/waypoint.svg'; 
-import Headset from '../../../assets/footer/support.svg'; 
-import Mail from '../../../assets/footer/mail.svg'; 
-import Clock from '../../../assets/footer/clock.svg'; 
-
 
 export const FooterContact: React.FC = () => {
   return (
@@ -15,7 +11,7 @@ export const FooterContact: React.FC = () => {
       </a>
       
       <p className="m-footer-contact__description">
-        Awesome grocery store website template
+        {TRANSLATIONS.footer.contactDescription}
       </p>
       
       <ul className="m-footer-contact__list">
@@ -23,14 +19,14 @@ export const FooterContact: React.FC = () => {
         <li className="m-footer-contact__item">
           <img src={WaypointLogo} alt="waypoint" className="m-footer-contact__logo" />
           <div className="m-footer-contact__text">
-            <strong>Address: </strong> 5171 W Campbell Ave undefined Kent, Utah 53127 United States
+            <strong>{TRANSLATIONS.footer.addressLabel} </strong> {TRANSLATIONS.footer.addressValue}
           </div>
         </li>
         
         <li className="m-footer-contact__item">
           <img src={Headset} alt="support" className="m-footer-contact__logo" />
           <div className="m-footer-contact__text">
-            <strong>Call Us: </strong> 
+            <strong>{TRANSLATIONS.footer.callUsLabel} </strong> 
             <a href="tel:+91540025124553" className="m-footer-contact__link">
               (+91)-540-025-124553
             </a>
@@ -40,7 +36,7 @@ export const FooterContact: React.FC = () => {
         <li className="m-footer-contact__item">
           <img src={Mail} alt="mail" className="m-footer-contact__logo" />
           <div className="m-footer-contact__text">
-            <strong>Email: </strong> 
+            <strong>{TRANSLATIONS.footer.emailLabel} </strong> 
             <a href="mailto:sale@Nest.com" className="m-footer-contact__link">
               sale@Nest.com
             </a>
@@ -50,7 +46,7 @@ export const FooterContact: React.FC = () => {
         <li className="m-footer-contact__item">
           <img src={Clock} alt="clock" className="m-footer-contact__logo" />
           <div className="m-footer-contact__text">
-            <strong>Hours: </strong> 10:00 - 18:00, Mon - Sat
+            <strong>{TRANSLATIONS.footer.hoursLabel} </strong> {TRANSLATIONS.footer.hoursValue}
           </div>
         </li>
         

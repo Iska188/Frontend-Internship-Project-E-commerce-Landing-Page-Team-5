@@ -20,9 +20,9 @@
   position: absolute;
   top: -0.5rem;
   right: -0.625rem;
-  background-color: #3bb77e;
-  color: white;
-  font-size: 0.6875rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
   font-weight: bold;
   width: 1.25rem;
   height: 1.25rem;
@@ -33,6 +33,6 @@
 }
 
 .m-header-action__label {
-  font-size: 0.9375rem;
-  color: #7e7e7e;
+  font-size: var(--font-size-submd);
+  color: var(--color-text-muted);
 }
