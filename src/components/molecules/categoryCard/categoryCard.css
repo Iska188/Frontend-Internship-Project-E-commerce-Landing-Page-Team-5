@@ -1,0 +1,34 @@
+.m-category-card {
+  border-radius: 0.625rem;
+  padding: 1.25rem 0.625rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  min-width: 8.5rem;
+}
+
+.m-category-card:hover {
+  transform: translateY(-0.3125rem);
+  box-shadow: var(--shadow-hero-dropdown);
+}
+
+.m-category-card__img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  margin-bottom: 0.75rem;
+}
+
+.m-category-card__title {
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.m-category-card__count {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-subsm);
+}
