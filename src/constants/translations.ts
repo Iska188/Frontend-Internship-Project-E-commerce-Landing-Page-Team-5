@@ -56,7 +56,7 @@ export const TRANSLATIONS = {
     installApp: "Install App",
     appStoreSubtitle: "From App Store or Google Play",
     securedPayment: "Secured Payment Gateways",
-    copyright: "© 2026, Nest - WordPress Ecommerce Template. All rights reserved.",
+    copyright: "© 2022, Nest - WordPress Ecommerce Template. All rights reserved.",
     workingHours: "Working 8:00 - 22:00",
     supportCenter: "24/7 Support Center",
     followUs: "Follow Us",

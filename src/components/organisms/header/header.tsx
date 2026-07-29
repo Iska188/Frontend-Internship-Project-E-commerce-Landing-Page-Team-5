@@ -1,19 +1,15 @@
-import React from 'react';
-// @ts-ignore
-import { SearchBar } from '../../molecules/search-bar/search-bar';
-// @ts-ignore
-import { HeaderAction } from '../../molecules/header-action/header-action';
-// @ts-ignore
-import { Button } from '../../atoms/button/button';
-// @ts-ignore
-import { NavDropdown } from '../../molecules/nav-dropdown/nav-dropdown';
+import { useState } from 'react';
+import { Button } from '../../atoms';
+import { SearchBar, HeaderAction, NavDropdown } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
-// @ts-ignore
 import './header.css';
 
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="o-header">
+      {/* Top bar */}
       <div className="o-header__top">
         <div className="o-header__container">
           <div className="o-header__top-left">
@@ -30,8 +26,19 @@ export const Header = () => {
         </div>
       </div>
 
+      {/* Middle bar */}
       <div className="o-header__middle">
-        <div className="o-header__container">
+        <div className="o-header__container o-header__middle-container">
+          <button 
+            className={`o-header__burger-btn ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <div className="o-header__logo">
             <img src="src/assets/logo.png" alt="Nest Logo" className="o-header__logo-img" />
           </div>
@@ -41,18 +48,44 @@ export const Header = () => {
           </div>
 
           <div className="o-header__actions">
-            <Button variant="outline">{TRANSLATIONS.header.becomeVendor}</Button>
+            <div className="o-header__desktop-vendor">
+              <Button variant="outline">{TRANSLATIONS.header.becomeVendor}</Button>
+            </div>
             
             <div className="o-header__icons">
-              <HeaderAction icon={<img src="src/assets/header/compare.svg" alt="Compare" className="svg-icon" />} label={TRANSLATIONS.header.actions.compare} count={0} />
+              <div className="desktop-only-action">
+                <HeaderAction icon={<img src="src/assets/header/compare.svg" alt="Compare" className="svg-icon" />} label={TRANSLATIONS.header.actions.compare} count={0} />
+              </div>
               <HeaderAction icon={<img src="src/assets/header/wishlist.svg" alt="Wishlist" className="svg-icon" />} label={TRANSLATIONS.header.actions.wishlist} count={2} />
               <HeaderAction icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />} label={TRANSLATIONS.header.actions.cart} count={5} />
-              <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon" />} label={TRANSLATIONS.header.actions.account} count={0} />
+              <div className="desktop-only-action">
+                <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon" />} label={TRANSLATIONS.header.actions.account} count={0} />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Mobile Drawer Menu */}
+      <div className={`o-header__mobile-menu ${isMobileMenuOpen ? 'is-open' : ''}`}>
+        <div className="o-header__mobile-menu-content">
+          <nav className="o-header__mobile-nav">
+            <span className="nav-item">
+              <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
+            </span>
+            <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
+            <span className="nav-item">{TRANSLATIONS.header.nav.about}</span>
+            <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={['Fruits', 'Vegetables', 'Meat']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.blog} options={['Blog Category', 'Single Post']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.pages} options={['About Us', 'Contact', '404 Page']} />
+            <span className="nav-item">{TRANSLATIONS.header.nav.contact}</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Bottom bar - Desktop */}
       <div className="o-header__bottom">
         <div className="o-header__container">
           <div className="o-header__categories">

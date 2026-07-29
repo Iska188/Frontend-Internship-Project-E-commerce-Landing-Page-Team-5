@@ -1,8 +1,5 @@
 import React from 'react';
-import { FooterColumn } from '../../molecules/footer-column/footer-column';
-import { FooterApps } from '../../molecules/footer-apps/footer-apps';
-import { FooterContact } from '../../molecules/footer-contact/footer-contact';
-import { FooterBottom } from '../../molecules/footer-bottom/footer-bottom';
+import { FooterColumn, FooterApps, FooterContact, FooterBottom } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
 
 import './footer.css';

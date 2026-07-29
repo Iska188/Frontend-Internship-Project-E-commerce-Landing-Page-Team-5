@@ -1,5 +1,4 @@
 import React from 'react';
-//@ts-ignore
 import './nav-dropdown.css';
 
 interface NavDropdownProps {

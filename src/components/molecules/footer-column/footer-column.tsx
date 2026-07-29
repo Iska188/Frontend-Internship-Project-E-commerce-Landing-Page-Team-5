@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '../../atoms/text/text';
+import { Text } from '../../atoms';
 import './footer-column.css'; 
 
 interface FooterLink {

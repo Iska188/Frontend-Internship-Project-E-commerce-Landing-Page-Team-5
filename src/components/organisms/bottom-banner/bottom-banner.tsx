@@ -1,10 +1,6 @@
-import React from 'react';
-// @ts-ignore
-import { Text } from '../../atoms/text/text';
-// @ts-ignore
-import { NewsletterForm } from '../../molecules/newsletter-form/newsletter-form';
+import { Text } from '../../atoms';
+import { NewsletterForm } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
-// @ts-ignore
 import './bottom-banner.css';
 
 export const BottomBanner = () => {
@@ -27,7 +23,6 @@ export const BottomBanner = () => {
                 {TRANSLATIONS.bottomBanner.subtitleHighlight}
               </span>
             </Text>
-            
             <NewsletterForm />
           </div>
         </div>

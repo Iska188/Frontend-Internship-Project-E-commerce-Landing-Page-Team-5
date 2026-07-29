@@ -1,8 +1,4 @@
-// @ts-ignore
-import { Badge } from '../../atoms/badge/badge';
-// @ts-ignore
-import { Text } from '../../atoms/text/text';
-// @ts-ignore
+import { Text, Badge } from '../../atoms';
 import './header-action.css';
 
 interface HeaderActionProps {
@@ -18,7 +14,7 @@ export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
         <span className="m-header-action__icon">{icon}</span>
         <Badge type="count" label={count.toString()} />
       </div>
-      <Text variant="prod-title" as="span">{label}</Text>
+      <Text variant="prod-title" as="span" className="m-header-action__label">{label}</Text>
     </div>
   );
 };

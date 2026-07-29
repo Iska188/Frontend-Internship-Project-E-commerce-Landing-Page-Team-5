@@ -1,9 +1,5 @@
-// @ts-ignore
-import { Input } from '../../atoms/input/input';
-// @ts-ignore
-import { Button } from '../../atoms/button/button';
+import { Input, Button } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
-// @ts-ignore
 import './search-bar.css';
 
 export const SearchBar = () => {

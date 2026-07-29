@@ -27,7 +27,7 @@ export const COLORS = {
   borderLight: '#ececec',
   borderGreen: '#bce3c9',
   bgAlt: '#e9ecef',
-  
+  bottombannerColor: '#d8f1e5',
 } as const;
 
 export const FONT_SIZES = {
@@ -55,4 +55,12 @@ export const BREAKPOINTS = {
   desktop: '75rem',      
   maxContainer: '100rem',
 
+} as const;
+
+export const SHADOWS = {
+  shadow1: '0 0.25rem 0.625rem rgba(0, 0, 0, 0.1)',
+  shadow2: '0 0.125rem 0.3125rem rgba(0, 0, 0, 0.02)',
+  shadow3: '0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.04)',
+  shadow4: '0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05)',
+  shadow5: '0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.08)'
 } as const;

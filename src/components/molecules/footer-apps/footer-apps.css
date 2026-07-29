@@ -18,7 +18,6 @@
   margin-top: 2rem;
 }
 
-/* App Store Placeholders */
 .m-footer-apps__stores {
   display: flex;
   gap: 0.5rem;
@@ -67,4 +66,42 @@
   font-size: var(--font-size-xs);
   font-weight: bold;
   border-radius: 0.25rem;
+}
+
+
+
+@media (max-width: 62rem) {
+  .m-footer-apps__subtitle--spaced {
+    margin-top: 1.5rem;
+  }
+}
+
+
+@media (max-width: 40rem) {
+  .m-footer-apps {
+    margin-top: 0rem;
+  }
+
+  .m-footer-apps__title {
+    margin-bottom: 0.75rem;
+  }
+
+  .m-footer-apps__stores,
+  .m-footer-apps__payments {
+    gap: 0.625rem;
+  }
+
+  .m-footer-apps__payments,
+  .m-footer-apps__payment-placeholder {
+    display: none;
+  }
+
+  .m-footer-apps__store-link img {
+    width: 6.5rem;
+    height: auto;
+  }
+
+  .m-footer-apps__subtitle {
+    display:none;
+  }
 }

@@ -1,12 +1,7 @@
 import { useState } from 'react';
-// @ts-ignore
-import { Text } from '../../atoms/text/text';
-//@ts-ignore
-import { Button } from '../../atoms/button/button';
-// @ts-ignore
-import { NewsletterForm } from '../../molecules/newsletter-form/newsletter-form';
+import { Text, Button } from '../../atoms';
+import { NewsletterForm } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
-// @ts-ignore
 import './hero.css';
 
 export const Hero = () => {
@@ -50,7 +45,9 @@ export const Hero = () => {
               {slides[currentSlide].subtitle}
             </Text>
             
-            <NewsletterForm />
+            <div className="o-hero__newsletter">
+              <NewsletterForm />
+            </div>
           </div>
 
           <Button variant="carousel" className="carousel-arrow carousel-arrow--right" onClick={nextSlide}>❯</Button>

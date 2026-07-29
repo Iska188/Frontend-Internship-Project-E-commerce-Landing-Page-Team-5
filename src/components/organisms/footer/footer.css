@@ -4,29 +4,107 @@
   padding-bottom: 2rem;
   background-color: var(--color-white);
   border-top: 0.0625rem solid var(--color-border-subtle);
+  font-family: 'Quicksand', sans-serif;
+  color: var(--color-text-main);
 }
 
 .o-footer__container {
-  max-width: 75rem;
+  max-width: var(--max-width-container, 75rem);
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .o-footer__top {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.5fr;
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
-@media (min-width: 48rem) {
+.o-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.0625rem solid var(--color-border-subtle);
+  padding-top: 1.875rem;
+}
+
+.o-footer__copy {
+  font-size: var(--font-size-subsm);
+  color: var(--color-text-muted);
+}
+
+.o-footer__copy span {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.o-footer__social-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.o-footer__socials {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+
+
+@media (max-width: 62rem) {
+  .o-footer {
+    padding-top: 3rem;
+  }
+
   .o-footer__top {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 
-@media (min-width: 64rem) {
+
+@media (max-width: 40rem) {
+  .o-footer {
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .o-footer__container {
+    padding: 0 0.75rem;
+  }
+
   .o-footer__top {
-    grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1.5fr; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .o-footer__title,
+  .m-footer-column__title,
+  .m-footer-apps__title {
+    font-size: var(--font-size-subsm);
+    margin-bottom: 0.4rem;
+  }
+
+  .o-footer__list li a,
+  .m-footer-column__list li a,
+  .m-footer-contact__item,
+  .m-footer-apps__subtitle,
+  .o-footer__desc {
+    font-size: var(--font-size-xs);
+  }
+
+  .o-footer__bottom {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+
+  .o-footer__social-wrapper {
+    align-items: center;
   }
 }
