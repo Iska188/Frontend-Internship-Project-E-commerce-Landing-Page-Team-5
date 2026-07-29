@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '../../atoms/text/text';
+import { Text } from '../../atoms';
 import './footer-column.css'; 
 
 interface FooterLink {
@@ -20,8 +20,8 @@ export const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
       </Text>
       
       <ul className="m-footer-column__list">
-        {links.map((link, index) => (
-          <li key={index} className="m-footer-column__item">
+        {links.map((link) => (
+          <li key={link.label} className="m-footer-column__item">
             <Text 
               as="a" 
               variant="footer-link" 

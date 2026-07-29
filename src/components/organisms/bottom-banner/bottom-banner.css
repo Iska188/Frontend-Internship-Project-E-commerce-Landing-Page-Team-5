@@ -1,0 +1,111 @@
+.o-bottom-banner {
+  width: 100%;
+  padding: 1.875rem 0;
+  background-color: var(--color-white);
+}
+
+.o-bottom-banner__container {
+  width: 100%;
+  max-width: var(--max-width-container, 100rem);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.o-bottom-banner__main-banner {
+  background-color: var(--color-bottombannercolor);
+  border-radius: 1.25rem;
+  padding: 3.75rem 5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center right;
+  min-height: 26.25rem;
+  width: 100%;
+}
+
+.o-bottom-banner__content {
+  max-width: 62.5rem;
+  width: 100%;
+}
+
+.o-bottom-banner__content h1 {
+  font-size: var(--font-size-display);
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.o-bottom-banner__content p {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  margin-bottom: 2.1875rem;
+  font-weight: 400;
+}
+
+.o-bottom-banner__highlight {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 62rem) {
+  .o-bottom-banner__main-banner {
+    padding: 2.5rem 3rem;
+    min-height: 20rem;
+  }
+
+  .o-bottom-banner__content h1 {
+    font-size: var(--font-size-hero);
+    margin-bottom: 1rem;
+  }
+
+  .o-bottom-banner__content p {
+    font-size: var(--font-size-sublg);
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .o-bottom-banner {
+    padding: 1rem 0;
+  }
+
+  .o-bottom-banner__container {
+    padding: 0 0.75rem;
+  }
+
+  .o-bottom-banner__main-banner {
+    padding: 2rem 1.25rem;
+    min-height: 10rem;
+    border-radius: 0.75rem;
+    background-position: center;
+  }
+
+  .o-bottom-banner__content h1 {
+    font-size: var(--font-size-lg);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    margin-left: 1.5rem;
+  }
+
+  .o-bottom-banner__content p {
+    font-size: var(--font-size-xs);
+    margin-bottom: 1.25rem;
+    margin-left: 1.5rem;
+  }
+
+  .o-bottom-banner__content > *:last-child {
+    max-width: 14rem;
+    margin-left: 1.5rem;
+  }
+
+  .o-bottom-banner__content button {
+    position: relative;
+    left: -3rem;
+  }
+
+  .o-bottom-banner__content input {
+    font-size: var(--font-size-sm);
+  }
+}

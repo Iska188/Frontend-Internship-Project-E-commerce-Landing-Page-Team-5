@@ -1,33 +1,66 @@
 .m-search-bar {
   display: flex;
   width: 100%;
-  max-width: 700px; 
-  border: 2px solid #bce3c9;
-  border-radius: 5px;
-  background-color: #ffffff;
+  max-width: 43.75rem; 
+  border: 0.125rem solid var(--color-border-green);
+  border-radius: 0.3125rem;
+  background-color: var(--color-white);
   overflow: hidden;
   align-items: stretch;
 }
 
 .m-search-bar__input-override {
   flex-grow: 1;
-  padding: 15px 20px;
+  padding: 0.9375rem 1.25rem;
   border: none;
   outline: none;
-  font-size: 14px;
-  color: #253D4E;
+  font-size: var(--font-size-base);
+  color: var(--color-text-main);
   background: transparent;
 }
 
 .m-search-bar__button-override {
-  border-radius: 5px; 
-  padding: 0 25px;
+  border-radius: 0.3125rem; 
+  padding: 0 1.5625rem;
   height: 90%;
   margin: 0;
-  margin-top: 2px;
-  margin-right: 2px;
+  margin-top: 0.125rem;
+  margin-right: 0.125rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: var(--font-size-base);
+}
+
+
+
+@media (max-width: 62rem) {
+  .m-search-bar {
+    max-width: 100%;
+  }
+
+  .m-search-bar__input-override {
+    padding: 0.75rem 1rem;
+  }
+
+  .m-search-bar__button-override {
+    padding: 0 1.25rem;
+  }
+}
+
+
+@media (max-width: 40rem) {
+  .m-search-bar {
+    max-width: 100%;
+  }
+
+  .m-search-bar__input-override {
+    padding: 0.625rem 0.75rem;
+    font-size: var(--font-size-sm);
+  }
+
+  .m-search-bar__button-override {
+    padding: 0 0.875rem;
+    font-size: var(--font-size-sm);
+  }
 }

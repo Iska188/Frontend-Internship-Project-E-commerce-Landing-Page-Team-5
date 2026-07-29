@@ -1,5 +1,5 @@
-// @ts-ignore
-import { Button } from '../../atoms/button/button';
+import { Button } from '../../atoms';
+import { TRANSLATIONS } from '../../../constants/translations';
 import './newsletter-form.css';
 
 export const NewsletterForm = () => {
@@ -7,11 +7,11 @@ export const NewsletterForm = () => {
     <div className="m-newsletter-form">
       <input 
         type="email" 
-        placeholder="Your email address" 
+        placeholder={TRANSLATIONS.newsletter.emailPlaceholder} 
         className="m-newsletter-form__input" 
       />
       <Button variant="primary" className="m-newsletter-form__btn">
-        Subscribe
+        {TRANSLATIONS.newsletter.subscribeBtn}
       </Button>
     </div>
   );
