@@ -1,5 +1,5 @@
 import React from 'react';
-import './nav-dropdown.css';
+import './navDropdown.css';
 
 interface NavDropdownProps {
   label: React.ReactNode;

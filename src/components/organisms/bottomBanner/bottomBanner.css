@@ -12,7 +12,7 @@
 }
 
 .o-bottom-banner__main-banner {
-  background-color: var(--color-bottombannercolor);
+  background-color: var(--color-bottom-banner-color);
   border-radius: 1.25rem;
   padding: 3.75rem 5rem;
   display: flex;

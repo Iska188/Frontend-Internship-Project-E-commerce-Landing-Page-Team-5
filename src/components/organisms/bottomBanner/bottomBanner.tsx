@@ -1,7 +1,7 @@
 import { Text } from '../../atoms';
 import { NewsletterForm } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './bottom-banner.css';
+import './bottomBanner.css';
 
 export const BottomBanner = () => {
   const bannerBgImage = "src/assets/footer/hero-second.png";

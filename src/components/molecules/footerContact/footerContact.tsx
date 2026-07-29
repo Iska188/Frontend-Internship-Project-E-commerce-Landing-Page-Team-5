@@ -1,7 +1,7 @@
 import React from 'react';
 import { logo, WaypointLogo, Headset, Mail, Clock } from '../../../assets';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './footer-contact.css';
+import './footerContact.css';
 
 export const FooterContact: React.FC = () => {
   return (

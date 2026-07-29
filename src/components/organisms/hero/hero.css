@@ -168,7 +168,7 @@
     padding: 0;
     width: 100%;
     max-width: 14rem;
-    box-shadow: var(--shadow4);
+    box-shadow: var(--shadow-from-hero-dropdown);
   }
 
   .o-hero__newsletter input {

@@ -1,6 +1,6 @@
 import { Input, Button } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './search-bar.css';
+import './searchBar.css';
 
 export const SearchBar = () => {
   return (

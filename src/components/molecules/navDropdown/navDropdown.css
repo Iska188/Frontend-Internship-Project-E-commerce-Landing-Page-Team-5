@@ -26,7 +26,7 @@
   left: 0;
   background-color: var(--color-white);
   border: 0.0625rem solid var(--color-border);
-  box-shadow: var(--shadow4);
+  box-shadow: var(--shadow-from-hero-dropdown);
   border-radius: 0.3125rem;
   min-width: 10rem;
   padding: 0.625rem 0;
@@ -102,7 +102,7 @@
   min-width: 15rem;
   background-color: var(--color-white);
   border: 0.0625rem solid var(--color-border-green);
-  box-shadow: var(--shadow5);
+  box-shadow: var(--shadow-from-dropdown);
   border-radius: 0.3125rem;
   padding: 0.625rem 0;
   position: absolute;

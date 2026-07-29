@@ -3,7 +3,7 @@
   align-items: center;
   background: var(--color-white);
   border-radius: 1.875rem;
-  box-shadow: var(--shadow3);
+  box-shadow: var(--shadow-from-newsletter);
   max-width: 27.5rem;
   width: 100%;
 }

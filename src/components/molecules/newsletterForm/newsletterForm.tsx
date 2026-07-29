@@ -1,6 +1,6 @@
 import { Button } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './newsletter-form.css';
+import './newsletterForm.css';
 
 export const NewsletterForm = () => {
   return (

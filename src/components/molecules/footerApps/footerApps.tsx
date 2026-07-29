@@ -2,7 +2,7 @@ import React from 'react';
 import { Text } from '../../atoms';
 import { googlePlay, appStore, payment } from '../../../assets';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './footer-apps.css';
+import './footerApps.css';
 
 export const FooterApps: React.FC = () => {
   return (

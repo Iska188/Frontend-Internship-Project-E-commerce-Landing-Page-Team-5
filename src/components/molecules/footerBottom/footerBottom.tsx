@@ -1,7 +1,7 @@
 import React from 'react';
 import { facebook, twitter, skype, instagram, phone } from '../../../assets';
 import { TRANSLATIONS } from '../../../constants/translations';
-import './footer-bottom.css';
+import './footerBottom.css';
 
 export const FooterBottom: React.FC = () => {
   return (

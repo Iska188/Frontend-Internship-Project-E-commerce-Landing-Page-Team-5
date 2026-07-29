@@ -59,7 +59,7 @@
   padding: 0.5rem 0.9375rem;
   border-radius: 0.25rem;
   font-weight: 600;
-  box-shadow: var(--shadow2);
+  box-shadow: var(--shadow-from-button2);
   transition: all 0.3s ease;
 }
 
@@ -78,7 +78,7 @@
   font-size: var(--font-size-sublg);
   color: var(--color-text-main);
   cursor: pointer;
-  box-shadow: var(--shadow1);
+  box-shadow: var(--shadow-from-button1);
   display: flex;
   align-items: center;
   justify-content: center;

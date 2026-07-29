@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text } from '../../atoms';
-import './footer-column.css'; 
+import './footerColumn.css'; 
 
 interface FooterLink {
   label: string;
