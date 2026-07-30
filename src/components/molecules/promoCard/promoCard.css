@@ -54,3 +54,15 @@
 .m-promo-card__btn svg {
   display: none;
 }
+
+.m-promo-card--cream {
+  background-color: var(--color-promo-banner-cream);
+}
+
+.m-promo-card--pink {
+  background-color: var(--color-promo-banner-pink);
+}
+
+.m-promo-card--grey {
+  background-color: var(--color-promo-banner-grey);
+}

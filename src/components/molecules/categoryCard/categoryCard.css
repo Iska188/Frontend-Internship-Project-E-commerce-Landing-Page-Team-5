@@ -32,3 +32,27 @@
   color: var(--color-text-muted);
   font-size: var(--font-size-subsm);
 }
+
+.m-category-card--lightgreen {
+  background-color: var(--color-feat-categ-lightgreen);
+}
+
+.m-category-card--lightyellow {
+  background-color: var(--color-feat-categ-lightyellow);
+}
+
+.m-category-card--lightlime {
+  background-color: var(--color-feat-categ-lightlime);
+}
+
+.m-category-card--lightred {
+  background-color: var(--color-feat-categ-lightred);
+}
+
+.m-category-card--lightpink {
+  background-color: var(--color-feat-categ-lightpink);
+}
+
+.m-category-card--lightpurple {
+  background-color: var(--color-feat-categ-lightpurple);
+}

@@ -40,8 +40,7 @@
   transition: color 0.2s ease;
 }
 
-.o-featured-categories__tabs li:hover,
-.o-featured-categories__tabs li.active {
+.o-featured-categories__tabs li:hover {
   color: var(--color-primary);
 }
 

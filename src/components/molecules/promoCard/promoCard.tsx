@@ -7,17 +7,17 @@ interface PromoCardProps {
   title: string;
   buttonText?: string;
   imageSrc: string;
-  bgColor: string;
+  variant?: string;
 }
 
 export const PromoCard: React.FC<PromoCardProps> = ({
   title,
   buttonText = TRANSLATIONS.button.shopNow,
   imageSrc,
-  bgColor,
+  variant = 'cream',
 }) => {
   return (
-    <div className="m-promo-card" style={{ backgroundColor: bgColor }}>
+    <div className={`m-promo-card m-promo-card--${variant}`}>
       <div className="m-promo-card__content">
         <h3 className="m-promo-card__title">{title}</h3>
         <Button variant="add-short" className="m-promo-card__btn">

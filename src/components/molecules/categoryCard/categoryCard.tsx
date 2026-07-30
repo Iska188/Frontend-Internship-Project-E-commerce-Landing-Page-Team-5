@@ -6,17 +6,17 @@ interface CategoryCardProps {
   title: string;
   itemsCount: number;
   imageSrc: string;
-  bgColor: string;
+  variant?: string;
 }
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
   title,
   itemsCount,
   imageSrc,
-  bgColor,
+  variant = 'green',
 }) => {
   return (
-    <div className="m-category-card" style={{ backgroundColor: bgColor }}>
+    <div className={`m-category-card m-category-card--${variant}`}>
       <img src={imageSrc} alt={title} className="m-category-card__img" />
       <Text variant="prod-title" as="h4" className="m-category-card__title">
         {title}

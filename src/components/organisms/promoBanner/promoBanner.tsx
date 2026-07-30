@@ -5,17 +5,17 @@ import './promoBanner.css';
 const BANNERS_DATA = [
   {
     title: TRANSLATIONS.promoBanners.banner1,
-    bgColor: '#F0E8D5',
+    variant: 'cream',
     imageSrc: 'src/assets/body/promobanner/big1.png',
   },
   {
     title: TRANSLATIONS.promoBanners.banner2,
-    bgColor: '#F3E8E8',
+    variant: 'pink',
     imageSrc: 'src/assets/body/promobanner/big2.png',
   },
   {
     title: TRANSLATIONS.promoBanners.banner3,
-    bgColor: '#E7EAF3',
+    variant: 'grey',
     imageSrc: 'src/assets/body/promobanner/big3.png',
   },
 ];

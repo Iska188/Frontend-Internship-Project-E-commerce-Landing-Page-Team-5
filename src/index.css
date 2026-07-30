@@ -48,6 +48,15 @@ body, html {
   --color-border-subtle: #e5e7eb;
   --color-bg-alt: #e9ecef;
   --color-bottom-banner-color: #d8f1e5;
+  --color-promo-banner-cream:#F0E8D5;
+  --color-promo-banner-pink: #F3E8E8;
+  --color-promo-banner-grey: #E7EAF3;
+  --color-feat-categ-lightgreen: #F2FCE4;
+  --color-feat-categ-lightyellow: #FFFCEB;
+  --color-feat-categ-lightlime: #ECFFEC;
+  --color-feat-categ-lightred: #FEEFEA;
+  --color-feat-categ-lightpink: #FFF3EB;
+  --color-feat-categ-lightpurple: #FFF3FF;
 
 
   --font-size-xxs: 0.5rem;
