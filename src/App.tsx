@@ -1,4 +1,4 @@
-import { Header, Hero, BottomBanner, Footer } from './components/organisms';
+import { Header, Hero, FeaturedCategories, SaleNotification, PromoBanners, DealsSection, BottomBanner, Footer } from './components/organisms';
 
 function App(){
 

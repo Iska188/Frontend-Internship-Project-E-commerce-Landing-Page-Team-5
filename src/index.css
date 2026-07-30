@@ -40,7 +40,7 @@ body, html {
   --color-border-dark: #d1d5db;
   --color-text-dark: #374151;
   --color-border-light-green: #bbf7d0;
-  --color-text-secondary: #4b5563;
+  --color-text-secondary: #516d96;
   --color-bg-subtle: #f8f9fa;
   --color-bg-light: #f4f6f8;
   --color-border-green: #bce3c9;
@@ -48,7 +48,16 @@ body, html {
   --color-border-subtle: #e5e7eb;
   --color-bg-alt: #e9ecef;
   --color-bottom-banner-color: #d8f1e5;
-
+  --color-featcat-cake:#F2FCE4;
+  --color-featcat-organic:#FFFCEB;
+  --color-featcat-peach:#ECFFEC;
+  --color-featcat-redA:#FEEFEA;
+  --color-featcat-snacks:#FFF3EB;
+  --color-featcat-vegetables:#FFF3FF;
+  --color-featcat-strawberry:#F2FCE4;
+  --color-featcat-custardA:#ECFFEC;
+  --color-featcat-blackP:#FEEFEA;
+  --color-featcat-coffee:#FFF3EB;
 
   --font-size-xs: 0.6875rem;
   --font-size-sm: 0.75rem;
