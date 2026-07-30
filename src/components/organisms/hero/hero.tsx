@@ -1,11 +1,7 @@
 import { useState } from 'react';
-// @ts-ignore
-import { Text } from '../../atoms/text/text';
-//@ts-ignore
-import { Button } from '../../atoms/button/button';
-// @ts-ignore
-import { NewsletterForm } from '../../molecules/newsletter-form/newsletter-form';
-// @ts-ignore
+import { Text, Button } from '../../atoms';
+import { NewsletterForm } from '../../molecules';
+import { TRANSLATIONS } from '../../../constants/translations';
 import './hero.css';
 
 export const Hero = () => {
@@ -13,13 +9,13 @@ export const Hero = () => {
 
   const slides = [
     {
-      title: "Fresh Vegetables Big discount",
-      subtitle: "Save up to 50% off on your first order",
+      title: TRANSLATIONS.hero.title1,
+      subtitle: TRANSLATIONS.hero.subtitle1,
       bgImage: "src/assets/header/hero1.png",
     },
     {
-      title: "Don’t miss our daily fresh products",
-      subtitle: "Sign up for the daily newsletter",
+      title: TRANSLATIONS.hero.title2,
+      subtitle: TRANSLATIONS.hero.subtitle2,
       bgImage: "src/assets/header/hero2.png",
     },
   ];
@@ -39,7 +35,7 @@ export const Hero = () => {
           className="o-hero__main-banner"
           style={{ backgroundImage: `url(${slides[currentSlide].bgImage})` }}
         >
-         <Button variant="carousel" className="carousel-arrow carousel-arrow--left" onClick={prevSlide}>❮</Button>
+          <Button variant="carousel" className="carousel-arrow carousel-arrow--left" onClick={prevSlide}>❮</Button>
           
           <div className="o-hero__content">
             <Text variant="hero-title" as="h1">
@@ -49,15 +45,17 @@ export const Hero = () => {
               {slides[currentSlide].subtitle}
             </Text>
             
-            <NewsletterForm />
+            <div className="o-hero__newsletter">
+              <NewsletterForm />
+            </div>
           </div>
 
           <Button variant="carousel" className="carousel-arrow carousel-arrow--right" onClick={nextSlide}>❯</Button>
 
           <div className="carousel-dots">
-            {slides.map((_, index) => (
+            {slides.map((slide, index) => (
               <button
-                key={index}
+                key={slide.title}
                 className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
                 onClick={() => setCurrentSlide(index)}
               />

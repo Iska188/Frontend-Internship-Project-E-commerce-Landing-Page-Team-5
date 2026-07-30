@@ -18,3 +18,57 @@ body, html {
   padding: 0;
   text-align: left;
 }
+
+:root {
+  --color-primary: #3bb77e;
+  --color-primary-hover: #29a56c;
+  --color-primary-light: #def9ec;
+  --color-text-main: #253d4e;
+  --color-text-muted: #7e7e7e;
+  --color-border: #ececec;
+  --color-white: #ffffff;
+  --color-badge-sale: #f74b81;
+  --color-badge-hot: #f59e0b;
+  --color-badge-new: #3b82f6;
+  --color-primary-hover: #2da06a;
+  --color-text-placeholder: #838383;
+  --color-footer-title: #1f2937;
+  --color-footer-link: #6b7280;
+  --color-footer-link-hover: #10b981;
+  --color-black: #000000;
+  --color-bg-gray: #f3f4f6;
+  --color-border-dark: #d1d5db;
+  --color-text-dark: #374151;
+  --color-border-light-green: #bbf7d0;
+  --color-text-secondary: #4b5563;
+  --color-bg-subtle: #f8f9fa;
+  --color-bg-light: #f4f6f8;
+  --color-border-green: #bce3c9;
+  --color-text-placeholder-light: #b6b6b6;
+  --color-border-subtle: #e5e7eb;
+  --color-bg-alt: #e9ecef;
+  --color-bottom-banner-color: #d8f1e5;
+
+
+  --font-size-xs: 0.6875rem;
+  --font-size-sm: 0.75rem;
+  --font-size-base: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-sublg: 1.125rem;
+  --font-size-hero: 3rem; 
+  --font-size-xl-title: 1.875rem;
+  --font-size-submd: 0.9375rem;
+  --font-size-display: 4.375rem;
+  --font-size-subsm: 0.8125rem;
+  --font-size-xxxl: 2rem;       
+  --font-size-subtitle: 1.5625rem;
+  --max-width-container: 100rem;
+
+  --shadow1: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+  --shadow2: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.02);
+  --shadow3: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.04);
+  --shadow4: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.05);
+  --shadow5: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.08);
+}

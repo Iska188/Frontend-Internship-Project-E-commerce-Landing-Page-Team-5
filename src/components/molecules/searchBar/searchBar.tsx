@@ -1,20 +1,17 @@
-// @ts-ignore
-import { Input } from '../../atoms/input/input';
-// @ts-ignore
-import { Button } from '../../atoms/button/button';
-// @ts-ignore
-import './search-bar.css';
+import { Input, Button } from '../../atoms';
+import { TRANSLATIONS } from '../../../constants/translations';
+import './searchBar.css';
 
 export const SearchBar = () => {
   return (
     <div className="m-search-bar">
       <Input 
         type="text" 
-        placeholder="Search for products..."  
+        placeholder={TRANSLATIONS.searchBar.placeholder}  
         className="m-search-bar__input-override" 
       />
       <Button variant="primary" className="m-search-bar__button-override">
-        Search
+        {TRANSLATIONS.searchBar.buttonText}
       </Button>
     </div>
   );

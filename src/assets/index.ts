@@ -1,0 +1,13 @@
+export { default as googlePlay } from './footer/google-play.png';
+export { default as appStore } from './footer/app-store.png';
+export { default as payment } from './footer/payment.png';
+export { default as facebook } from './footer/facebook.svg';
+export { default as twitter } from './footer/twitter.svg';
+export { default as skype } from './footer/skype.svg';
+export { default as instagram } from './footer/instagram.svg';
+export { default as phone } from './footer/phone.svg';
+export { default as logo } from './logo.png';
+export { default as WaypointLogo } from './footer/waypoint.svg';
+export { default as Headset } from './footer/support.svg';
+export { default as Mail } from './footer/mail.svg';
+export { default as Clock } from './footer/clock.svg';

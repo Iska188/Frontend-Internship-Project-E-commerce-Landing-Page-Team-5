@@ -1,5 +1,4 @@
 import React from 'react';
-//@ts-ignore
 import './button.css';
 import cartIcon from '../../../assets/header/cart.svg';
 

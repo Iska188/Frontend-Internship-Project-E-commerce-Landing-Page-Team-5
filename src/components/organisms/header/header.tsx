@@ -1,35 +1,44 @@
-// @ts-ignore
-import { SearchBar } from '../../molecules/search-bar/search-bar';
-// @ts-ignore
-import { HeaderAction } from '../../molecules/header-action/header-action';
-// @ts-ignore
-import { Button } from '../../atoms/button/button';
-// @ts-ignore
-import { NavDropdown } from '../../molecules/nav-dropdown/nav-dropdown';
-// @ts-ignore
+import { useState } from 'react';
+import { Button } from '../../atoms';
+import { SearchBar, HeaderAction, NavDropdown } from '../../molecules';
+import { TRANSLATIONS } from '../../../constants/translations';
 import './header.css';
 
 export const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="o-header">
+      {/* Top bar */}
       <div className="o-header__top">
         <div className="o-header__container">
           <div className="o-header__top-left">
-            <span>About Us</span> | <span>My Account</span> | <span>Wishlist</span> | <span>Order Tracking</span>
+            <span>{TRANSLATIONS.header.aboutUs}</span> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
           </div>
           <div className="o-header__top-center">
-            <span className="text-green">100% Secure delivery without contacting the courier</span>
+            <span className="text-green">{TRANSLATIONS.header.secureDelivery}</span>
           </div>
           <div className="o-header__top-right">
-            <span>Need help? Call Us: <strong className="text-green">+1800900122</strong></span> | 
+            <span>{TRANSLATIONS.header.needHelp} <strong className="text-green">+1800900122</strong></span> | 
             <NavDropdown label="English" options={['English', 'Română', 'Français']} /> | 
             <NavDropdown label="USD" options={['USD', 'EUR', 'RON']} />
           </div>
         </div>
       </div>
 
+      {/* Middle bar */}
       <div className="o-header__middle">
-        <div className="o-header__container">
+        <div className="o-header__container o-header__middle-container">
+          <button 
+            className={`o-header__burger-btn ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
           <div className="o-header__logo">
             <img src="src/assets/logo.png" alt="Nest Logo" className="o-header__logo-img" />
           </div>
@@ -39,18 +48,44 @@ export const Header = () => {
           </div>
 
           <div className="o-header__actions">
-            <Button variant="outline">Become Vendor ➔</Button>
+            <div className="o-header__desktop-vendor">
+              <Button variant="outline">{TRANSLATIONS.header.becomeVendor}</Button>
+            </div>
             
             <div className="o-header__icons">
-              <HeaderAction icon={<img src="src/assets/header/compare.svg" alt="Compare" className="svg-icon" />} label="Compare" count={0} />
-              <HeaderAction icon={<img src="src/assets/header/wishlist.svg" alt="Wishlist" className="svg-icon" />} label="Wishlist" count={2} />
-              <HeaderAction icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />} label="Cart" count={5} />
-              <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon" />} label="Account" count={0} />
+              <div className="desktop-only-action">
+                <HeaderAction icon={<img src="src/assets/header/compare.svg" alt="Compare" className="svg-icon" />} label={TRANSLATIONS.header.actions.compare} count={0} />
+              </div>
+              <HeaderAction icon={<img src="src/assets/header/wishlist.svg" alt="Wishlist" className="svg-icon" />} label={TRANSLATIONS.header.actions.wishlist} count={2} />
+              <HeaderAction icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />} label={TRANSLATIONS.header.actions.cart} count={5} />
+              <div className="desktop-only-action">
+                <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon" />} label={TRANSLATIONS.header.actions.account} count={0} />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Mobile Drawer Menu */}
+      <div className={`o-header__mobile-menu ${isMobileMenuOpen ? 'is-open' : ''}`}>
+        <div className="o-header__mobile-menu-content">
+          <nav className="o-header__mobile-nav">
+            <span className="nav-item">
+              <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
+            </span>
+            <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
+            <span className="nav-item">{TRANSLATIONS.header.nav.about}</span>
+            <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={['Fruits', 'Vegetables', 'Meat']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.blog} options={['Blog Category', 'Single Post']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.pages} options={['About Us', 'Contact', '404 Page']} />
+            <span className="nav-item">{TRANSLATIONS.header.nav.contact}</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Bottom bar - Desktop */}
       <div className="o-header__bottom">
         <div className="o-header__container">
           <div className="o-header__categories">
@@ -60,29 +95,35 @@ export const Header = () => {
               label={
                 <span className="categories-btn-content">
                   <img src="src/assets/header/grid.svg" alt="Categories" className="svg-icon-small" /> 
-                  Browse All Categories
+                  {TRANSLATIONS.header.browseCategories}
                 </span>
               } 
-              options={['Milks & Dairies', 'Clothing & Beauty', 'Pet Foods', 'Baking Material', 'Fresh Fruit']} 
+              options={[
+                TRANSLATIONS.header.categories.milk,
+                TRANSLATIONS.header.categories.clothing,
+                TRANSLATIONS.header.categories.pet,
+                TRANSLATIONS.header.categories.baking,
+                TRANSLATIONS.header.categories.fruit
+              ]} 
             />
           </div>
           
           <nav className="o-header__nav">
             <span className="nav-item">
-              <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> Hot Deals
+              <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
             </span>
             
-            <NavDropdown label="Home" options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
+            <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
             
-            <span className="nav-item">About</span>
+            <span className="nav-item">{TRANSLATIONS.header.nav.about}</span>
             
-            <NavDropdown label="Shop" options={['Shop Grid', 'Shop List', 'Single Product']} />
-            <NavDropdown label="Vendors" options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
-            <NavDropdown label="Mega Menu" options={['Fruits', 'Vegetables', 'Meat']} />
-            <NavDropdown label="Blog" options={['Blog Category', 'Single Post']} />
-            <NavDropdown label="Pages" options={['About Us', 'Contact', '404 Page']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={['Fruits', 'Vegetables', 'Meat']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.blog} options={['Blog Category', 'Single Post']} />
+            <NavDropdown label={TRANSLATIONS.header.nav.pages} options={['About Us', 'Contact', '404 Page']} />
             
-            <span className="nav-item">Contact</span>
+            <span className="nav-item">{TRANSLATIONS.header.nav.contact}</span>
           </nav>
 
           <div className="o-header__support">
@@ -91,7 +132,7 @@ export const Header = () => {
             </div>
             <div className="support-text">
               <strong>1900888123</strong>
-              <span>24/7 Support Center</span>
+              <span>{TRANSLATIONS.footer.supportCenter}</span>
             </div>
           </div>
         </div>

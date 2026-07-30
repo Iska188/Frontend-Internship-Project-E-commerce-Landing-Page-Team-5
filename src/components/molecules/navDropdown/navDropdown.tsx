@@ -1,6 +1,5 @@
 import React from 'react';
-//@ts-ignore
-import './nav-dropdown.css';
+import './navDropdown.css';
 
 interface NavDropdownProps {
   label: React.ReactNode;
@@ -17,8 +16,8 @@ export const NavDropdown = ({ label, options, isActive, variant = 'default' }: N
       </span>
 
       <ul className="m-nav-dropdown__menu">
-        {options.map((option, index) => (
-          <li key={index} className="m-nav-dropdown__item">
+        {options.map((option) => (
+          <li key={option} className="m-nav-dropdown__item">
             {option}
           </li>
         ))}

@@ -1,9 +1,5 @@
-// @ts-ignore
-import { Badge } from '../../atoms/badge/badge';
-// @ts-ignore
-import { Text } from '../../atoms/text/text';
-// @ts-ignore
-import './header-action.css';
+import { Text, Badge } from '../../atoms';
+import './headerAction.css';
 
 interface HeaderActionProps {
   icon: React.ReactNode;    
@@ -16,10 +12,9 @@ export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
     <div className="m-header-action">
       <div className="m-header-action__icon-wrapper">
         <span className="m-header-action__icon">{icon}</span>
-        {/* Folosim noul atom Badge de tip 'count' */}
         <Badge type="count" label={count.toString()} />
       </div>
-      <Text variant="prod-title" as="span">{label}</Text>
+      <Text variant="prod-title" as="span" className="m-header-action__label">{label}</Text>
     </div>
   );
 };
