@@ -18,14 +18,14 @@
 .m-promo-card__title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #253d4e;
+  color:var(--color-text-main);
   line-height: 1.25;
   margin-bottom: 1.5rem;
 }
 
 .m-promo-card__btn {
-  background-color: #3bb77e;
-  color: #ffffff;
+  background-color:var(--color-primary);
+  color:var(--color-white);
   padding: 0.5rem 1rem;
   font-size: 0.75rem;
   border-radius: 0.25rem;

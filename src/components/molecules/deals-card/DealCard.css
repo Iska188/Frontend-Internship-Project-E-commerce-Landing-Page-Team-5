@@ -29,7 +29,7 @@
 }
 
 .countdown-box {
-  background: white;
+  background: var(--color-white);
   border-radius: 6px;
   padding: 0.375rem 0.625rem;
   display: flex;
@@ -39,19 +39,19 @@
 }
 
 .countdown-value {
-  color: #3bb77e;
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.1rem;
 }
 
 .countdown-unit {
-  color: #7e7e7e;
+  color: var(--color-text-muted);
   font-size: 0.75rem;
   text-transform: capitalize;
 }
 
 .m-deal-card__content {
-  background: white;
+  background: var(--color-white);
   border-radius: 12px;
   padding: 1.25rem;
   margin: -2.5rem 0.9375rem 0 0.9375rem; 
@@ -65,7 +65,7 @@
 }
 
 .vendor-name {
-  color: #3bb77e;
+  color: var(--color-primary);
 }
 
 .m-deal-card__footer {
@@ -76,14 +76,8 @@
 }
 
 .price-current {
-  color: #3bb77e;
+  color:var(--color-primary);
   font-weight: bold;
   font-size: 1.2rem;
   margin-right: 0.5rem;
-}
-
-.price-original {
-  color: #adadad;
-  text-decoration: line-through;
-  font-size: 0.9rem;
 }

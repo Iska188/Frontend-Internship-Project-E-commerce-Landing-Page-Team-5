@@ -35,14 +35,14 @@
 .o-featured-categories__tabs li {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #253d4e;
+  color: var(--color-text-main);
   cursor: pointer;
   transition: color 0.2s ease;
 }
 
 .o-featured-categories__tabs li:hover,
 .o-featured-categories__tabs li.active {
-  color: #3bb77e;
+  color: var(--color-primary-hover);
 }
 
 .o-featured-categories__arrows {
