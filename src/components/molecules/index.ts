@@ -6,3 +6,6 @@ export * from './footerContact/footerContact';
 export * from './navDropdown/navDropdown'
 export * from './searchBar/searchBar';
 export * from './newsletterForm/newsletterForm';
+export * from './saleNotification/saleNotification';
+export * from './promoCard/promoCard';
+export * from './categoryCard/categoryCard';

@@ -3,6 +3,8 @@
   align-items: center;
   gap: 0.5rem;
   cursor: pointer;
+  overflow: visible;
+  position: relative;
 }
 
 .m-header-action__icon {
@@ -16,10 +18,15 @@
   display: block;
 }
 
+.m-header-action__icon-wrapper {
+  position: relative; 
+  display: inline-flex;    
+  align-items: center;
+  justify-content: center;
+}
+
 .m-header-action__badge {
-  position: absolute;
-  top: -0.5rem;
-  right: -0.625rem;
+  position: absolute;       
   background-color: var(--color-primary);
   color: var(--color-white);
   font-size: var(--font-size-xs);

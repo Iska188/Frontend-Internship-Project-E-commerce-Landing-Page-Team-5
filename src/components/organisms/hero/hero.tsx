@@ -53,13 +53,16 @@ export const Hero = () => {
           <Button variant="carousel" className="carousel-arrow carousel-arrow--right" onClick={nextSlide}>❯</Button>
 
           <div className="carousel-dots">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.title}
-                className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
-                onClick={() => setCurrentSlide(index)}
-              />
-            ))}
+            {slides.map((slide, index) => {
+              const uniqueKey = `${slide.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${index}`;
+              return (
+                <button
+                  key={uniqueKey}
+                  className={`carousel-dot ${currentSlide === index ? 'active' : ''}`}
+                  onClick={() => setCurrentSlide(index)}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

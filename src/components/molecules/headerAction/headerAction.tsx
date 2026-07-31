@@ -4,7 +4,7 @@ import './headerAction.css';
 interface HeaderActionProps {
   icon: React.ReactNode;    
   label: string;   
-  count: number; 
+  count: number;
 }
 
 export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
@@ -12,7 +12,9 @@ export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
     <div className="m-header-action">
       <div className="m-header-action__icon-wrapper">
         <span className="m-header-action__icon">{icon}</span>
-        <Badge type="count" label={count.toString()} />
+        {count !== undefined && count > -1 && (
+          <Badge type="count" label={count.toString()} />
+        )}
       </div>
       <Text variant="prod-title" as="span" className="m-header-action__label">{label}</Text>
     </div>

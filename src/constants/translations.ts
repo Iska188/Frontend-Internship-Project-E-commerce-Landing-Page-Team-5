@@ -52,6 +52,33 @@ export const TRANSLATIONS = {
     placeholder: "Search for products...",
     buttonText: "Search",
   },
+  featuredCategories: {
+    title: "Featured Categories",
+    tabs: {
+      cakeAndMilk: "Cake & Milk",
+      coffeesAndTeas: "Coffees & Teas",
+      petFoods: "Pet Foods",
+      vegetables: "Vegetables",
+    },
+    categories: {
+      cakeAndMilk: "Cake & Milk",
+      organicKiwi: "Organic Kiwi",
+      peach: "Peach",
+      redApple: "Red Apple",
+      snacks: "Snacks",
+      vegetables: "Vegetables",
+      strawberry: "Strawberry",
+      blackPlum: "Black plum",
+      custardApple: "Custard apple",
+      coffeeAndTea: "Coffee & Tea",
+    },
+  },
+  saleNotification: {
+    productName: "Encore Seafoods Stuffed Alaskan",
+    subtitle: "Hurry up!",
+    statusText: "is on-sale.",
+    ariaClose: "Close notification",
+  },
   footer: {
     installApp: "Install App",
     appStoreSubtitle: "From App Store or Google Play",
@@ -110,5 +137,13 @@ export const TRANSLATIONS = {
       tea: "Tea & Kombucha",
       cheese: "Cheese",
     },
+  },
+  button: {
+    shopNow: "Shop Now",
+  },
+  promoBanners: {
+    banner1: "Everyday Fresh & Clean with Our Products",
+    banner2: "Make your Breakfast Healthy and Easy",
+    banner3: "The best Organic Products Online",
   },
 };

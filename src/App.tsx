@@ -1,4 +1,5 @@
-import { Header, Hero, BottomBanner, Footer } from './components/organisms';
+import { SaleNotification } from './components/molecules';
+import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners } from './components/organisms';
 
 function App(){
 
@@ -8,8 +9,17 @@ function App(){
 
       <main>
         <Hero/> 
+
+        <FeaturedCategories />
+
+        <PromoBanners />
+
         <BottomBanner />
+
+        <SaleNotification />
+
         <Footer />
+
       </main>
     </div>
   );
