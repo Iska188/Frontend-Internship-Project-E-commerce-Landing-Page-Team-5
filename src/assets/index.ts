@@ -11,3 +11,4 @@ export { default as WaypointLogo } from './footer/waypoint.svg';
 export { default as Headset } from './footer/support.svg';
 export { default as Mail } from './footer/mail.svg';
 export { default as Clock } from './footer/clock.svg';
+export { default as Add } from './addicon.svg';

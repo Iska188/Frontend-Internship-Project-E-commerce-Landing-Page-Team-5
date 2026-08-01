@@ -20,6 +20,9 @@ export const TRANSLATIONS = {
       pet: "Pet Foods",
       baking: "Baking Material",
       fruit: "Fresh Fruit",
+      all: "All",
+      meat: "Meats",
+      title: "Popular Products",
     },
     nav: {
       hotDeals: "Hot Deals",
@@ -140,6 +143,9 @@ export const TRANSLATIONS = {
   },
   button: {
     shopNow: "Shop Now",
+    by: "By",
+    add: "Add",
+    addtoCart: "Add to Cart",
   },
   promoBanners: {
     banner1: "Everyday Fresh & Clean with Our Products",

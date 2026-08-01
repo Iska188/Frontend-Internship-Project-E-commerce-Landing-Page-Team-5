@@ -4,3 +4,4 @@ export * from './bottomBanner/bottomBanner';
 export * from './footer/footer';
 export * from './featureCategories/featureCategories';
 export * from './promoBanner/promoBanner';
+export * from './popularProducts/popularProducts';

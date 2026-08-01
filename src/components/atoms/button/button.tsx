@@ -1,4 +1,5 @@
 import React from 'react';
+import { Add }  from '../../../assets';
 import './button.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -17,7 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={`a-btn a-btn--${variant} ${className || ''}`} 
       {...props}
     >
-      {(variant === 'add-short' || variant === 'add-long') && <span className="a-btn__icon">🛒</span>}
+      {(variant === 'add-short' || variant === 'add-long') && <span className="a-btn__icon"><img src={Add} alt="Add" /></span>}
       <span className="a-btn__text">{children}</span>
     </button>
   );
