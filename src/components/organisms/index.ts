@@ -5,3 +5,4 @@ export * from './footer/footer';
 export * from './featureCategories/featureCategories';
 export * from './promoBanner/promoBanner';
 export * from './popularProducts/popularProducts';
+export * from './dailyBestSells/dailyBestSells';

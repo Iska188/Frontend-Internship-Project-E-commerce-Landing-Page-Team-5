@@ -144,8 +144,9 @@
 }
 
 .m-product-card__progress-container {
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
 }
+
 
 .m-product-card__progress-info {
   display: flex;

@@ -152,4 +152,17 @@ export const TRANSLATIONS = {
     banner2: "Make your Breakfast Healthy and Easy",
     banner3: "The best Organic Products Online",
   },
+
+  productCard: { 
+    product1: "Foster Farms Takeout Crispy Classic",
+    product2: "Organic Cage Grade A Large Eggs",
+    product3: "Haagen Caramel Cone Ice Cream Boxed",
+    product4: "All Natural Style Chicken Meatballs",
+    product5: "Blue Almonds Lightly Salted Vegetables",
+    product6: "Gorton's Beer Battered Fish Fillets",
+    product7: "Seeds of Change Organic Red Rice",
+    product8: "Canada Dry Ginger Ale - 2 L Bottle",
+    product9: "Encore Seafoods Stuffed Alaskan",
+    product10: "Angle's Sweet & Salty Kettle Corn",
+  },
 };

@@ -72,7 +72,8 @@ body, html {
   --font-size-submd: 0.9375rem;
   --font-size-display: 4.375rem;
   --font-size-subsm: 0.8125rem;
-  --font-size-xxxl: 2rem;       
+  --font-size-xxxl: 2rem; 
+  --font-size-xxxxl: 2.25rem;      
   --font-size-subtitle: 1.5625rem;
   --max-width-container: 100rem;
 
