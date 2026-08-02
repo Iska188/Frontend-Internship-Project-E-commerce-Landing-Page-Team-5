@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Text, Button } from '../../atoms';
 import { ProductCard } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
@@ -96,10 +96,106 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldText: 'Sold : 102 / 262',
     soldPercentage: 38.93,
   },
+  {
+    id: 'blue-almonds-vegetables',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
+    discountBadge: '8%',
+    discountBgColor: '#3bb77e',
+    statusBadge: 'Hot',
+    statusBadgeType: 'hot',
+    category: 'Fresh Fruit',
+    title: TRANSLATIONS.productCard.product5,
+    rating: 0,
+    reviewsCount: 0,
+    vendor: 'Country Crock',
+    price: '$23.85',
+    oldPrice: '$25.80',
+    soldText: 'Sold : 102 / 262',
+    soldPercentage: 38.93,
+  },
+  {
+    id: 'blue-almonds-vegetables',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
+    discountBadge: '8%',
+    discountBgColor: '#3bb77e',
+    statusBadge: 'Hot',
+    statusBadgeType: 'hot',
+    category: 'Fresh Fruit',
+    title: TRANSLATIONS.productCard.product5,
+    rating: 0,
+    reviewsCount: 0,
+    vendor: 'Country Crock',
+    price: '$23.85',
+    oldPrice: '$25.80',
+    soldText: 'Sold : 102 / 262',
+    soldPercentage: 38.93,
+  },
+  {
+    id: 'blue-almonds-vegetables',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
+    discountBadge: '8%',
+    discountBgColor: '#3bb77e',
+    statusBadge: 'Hot',
+    statusBadgeType: 'hot',
+    category: 'Fresh Fruit',
+    title: TRANSLATIONS.productCard.product5,
+    rating: 0,
+    reviewsCount: 0,
+    vendor: 'Country Crock',
+    price: '$23.85',
+    oldPrice: '$25.80',
+    soldText: 'Sold : 102 / 262',
+    soldPercentage: 38.93,
+  },
+  {
+    id: 'blue-almonds-vegetables',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
+    discountBadge: '8%',
+    discountBgColor: '#3bb77e',
+    statusBadge: 'Hot',
+    statusBadgeType: 'hot',
+    category: 'Fresh Fruit',
+    title: TRANSLATIONS.productCard.product5,
+    rating: 0,
+    reviewsCount: 0,
+    vendor: 'Country Crock',
+    price: '$23.85',
+    oldPrice: '$25.80',
+    soldText: 'Sold : 102 / 262',
+    soldPercentage: 38.93,
+  },
+  {
+    id: 'blue-almonds-vegetables',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
+    discountBadge: '8%',
+    discountBgColor: '#3bb77e',
+    statusBadge: 'Hot',
+    statusBadgeType: 'hot',
+    category: 'Fresh Fruit',
+    title: TRANSLATIONS.productCard.product5,
+    rating: 0,
+    reviewsCount: 0,
+    vendor: 'Country Crock',
+    price: '$23.85',
+    oldPrice: '$25.80',
+    soldText: 'Sold : 102 / 262',
+    soldPercentage: 38.93,
+  },
 ];
 
 export const DailyBestSells: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>(CATEGORIES_DATA[0]);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (carouselRef.current) {
+      const scrollAmount = 300;
+      carouselRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   return (
     <section className="o-best-sells">
@@ -108,11 +204,12 @@ export const DailyBestSells: React.FC = () => {
           <Text variant="sec-title" as="h2" className="o-best-sells__title">
             Daily Best Sells
           </Text>
-          <div className="o-best-sells__controls">
-            <Button variant="carousel" className="o-best-sells__arrow1" aria-label="Previous">
+          {/* Desktop Controls */}
+          <div className="o-best-sells__controls o-best-sells__controls--desktop">
+            <Button variant="carousel" className="o-best-sells__arrow" aria-label="Previous" onClick={() => scroll('left')}>
               &larr;
             </Button>
-            <Button variant="carousel" className="o-best-sells__arrow2" aria-label="Next">
+            <Button variant="carousel" className="o-best-sells__arrow" aria-label="Next" onClick={() => scroll('right')}>
               &rarr;
             </Button>
           </div>
@@ -146,18 +243,29 @@ export const DailyBestSells: React.FC = () => {
           </div>
         </article>
 
-        <div className="o-best-sells__grid">
-          {PRODUCTS_DATA.map((product) => {
-            const uniqueKey = product.id || product.title.toLowerCase().replace(/[^a-z0-9]/g, '-');
-            return (
-              <ProductCard
-                key={uniqueKey}
-                variant="best-sells"
-                {...product}
-                onAdd={() => console.log(`Added ${product.id} to cart`)}
-              />
-            );
-          })}
+        <div className="o-best-sells__carousel-wrapper">
+          <button className="o-best-sells__mobile-arrow o-best-sells__mobile-arrow--left" onClick={() => scroll('left')} aria-label="Previous">
+             &larr;
+          </button>
+          
+          <div className="o-best-sells__grid" ref={carouselRef}>
+            {PRODUCTS_DATA.map((product) => {
+              const uniqueKey = product.id || product.title.toLowerCase().replace(/[^a-z0-9]/g, '-');
+              return (
+                <div key={uniqueKey} className="o-best-sells__grid-item">
+                  <ProductCard
+                    variant="best-sells"
+                    {...product}
+                    onAdd={() => console.log(`Added ${product.id} to cart`)}
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          <button className="o-best-sells__mobile-arrow o-best-sells__mobile-arrow--right" onClick={() => scroll('right')} aria-label="Next">
+             &rarr;
+          </button>
         </div>
       </div>
     </section>

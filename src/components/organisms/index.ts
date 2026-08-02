@@ -6,4 +6,4 @@ export * from './featureCategories/featureCategories';
 export * from './promoBanner/promoBanner';
 export * from './popularProducts/popularProducts';
 export * from './dailyBestSells/dailyBestSells';
-export * from './deals-section/DealsSection'
+export * from './dealsSection/DealsSection'

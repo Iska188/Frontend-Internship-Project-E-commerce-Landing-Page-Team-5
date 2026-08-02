@@ -81,3 +81,20 @@
   font-size: 1.2rem;
   margin-right: 0.5rem;
 }
+
+@media (max-width: 37.5rem) {
+  .m-deal-card__countdown{
+    gap: 0.4rem;
+  }
+  .countdown-box{
+    padding: 0.175rem 0.425rem;
+  }
+
+  .m-deal-card__footer{
+    gap: 0.3rem;
+  }
+
+  .m-deal-card__footer .a-btn--add-short{
+    padding: 0.375rem 0.075rem;
+  }
+}

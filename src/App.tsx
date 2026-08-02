@@ -10,8 +10,6 @@ function App(){
       <main>
         <Hero/> 
 
-        <DealsSection />
-
         <FeaturedCategories />
 
         <PromoBanners />
@@ -19,6 +17,8 @@ function App(){
         <PopularProducts />
 
         <DailyBestSells />
+
+        <DealsSection />
 
         <BottomBanner />
 

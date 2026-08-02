@@ -16,12 +16,18 @@
 
 @media (max-width: 64rem) {
   .dealcontainer__grid {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 37.5rem) {
-  .dealcontainer__grid {
-    grid-template-columns: 1fr; 
+  .o-deals {
+    padding: 2rem 0.5rem; 
   }
+
+  .dealcontainer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
 }

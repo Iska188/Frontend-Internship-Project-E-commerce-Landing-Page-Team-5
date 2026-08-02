@@ -1,5 +1,5 @@
 import { Text } from '../../atoms/text/text'; 
-import { DealCard } from '../../molecules/deals-card/DealCard';
+import { DealCard } from '../../molecules/dealsCard/DealCard';
 import './DealsSection.css';
 
 const DEALS_DATA = [
