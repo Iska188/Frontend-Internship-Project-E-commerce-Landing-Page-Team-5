@@ -20,6 +20,9 @@ export const TRANSLATIONS = {
       pet: "Pet Foods",
       baking: "Baking Material",
       fruit: "Fresh Fruit",
+      all: "All",
+      meat: "Meats",
+      title: "Popular Products",
     },
     nav: {
       hotDeals: "Hot Deals",
@@ -51,6 +54,33 @@ export const TRANSLATIONS = {
   searchBar: {
     placeholder: "Search for products...",
     buttonText: "Search",
+  },
+  featuredCategories: {
+    title: "Featured Categories",
+    tabs: {
+      cakeAndMilk: "Cake & Milk",
+      coffeesAndTeas: "Coffees & Teas",
+      petFoods: "Pet Foods",
+      vegetables: "Vegetables",
+    },
+    categories: {
+      cakeAndMilk: "Cake & Milk",
+      organicKiwi: "Organic Kiwi",
+      peach: "Peach",
+      redApple: "Red Apple",
+      snacks: "Snacks",
+      vegetables: "Vegetables",
+      strawberry: "Strawberry",
+      blackPlum: "Black plum",
+      custardApple: "Custard apple",
+      coffeeAndTea: "Coffee & Tea",
+    },
+  },
+  saleNotification: {
+    productName: "Encore Seafoods Stuffed Alaskan",
+    subtitle: "Hurry up!",
+    statusText: "is on-sale.",
+    ariaClose: "Close notification",
   },
   footer: {
     installApp: "Install App",
@@ -110,5 +140,29 @@ export const TRANSLATIONS = {
       tea: "Tea & Kombucha",
       cheese: "Cheese",
     },
+  },
+  button: {
+    shopNow: "Shop Now",
+    by: "By",
+    add: "Add",
+    addtoCart: "Add to Cart",
+  },
+  promoBanners: {
+    banner1: "Everyday Fresh & Clean with Our Products",
+    banner2: "Make your Breakfast Healthy and Easy",
+    banner3: "The best Organic Products Online",
+  },
+
+  productCard: { 
+    product1: "Foster Farms Takeout Crispy Classic",
+    product2: "Organic Cage Grade A Large Eggs",
+    product3: "Haagen Caramel Cone Ice Cream Boxed",
+    product4: "All Natural Style Chicken Meatballs",
+    product5: "Blue Almonds Lightly Salted Vegetables",
+    product6: "Gorton's Beer Battered Fish Fillets",
+    product7: "Seeds of Change Organic Red Rice",
+    product8: "Canada Dry Ginger Ale - 2 L Bottle",
+    product9: "Encore Seafoods Stuffed Alaskan",
+    product10: "Angle's Sweet & Salty Kettle Corn",
   },
 };

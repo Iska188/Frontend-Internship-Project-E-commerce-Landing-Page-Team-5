@@ -59,7 +59,7 @@ export const Header = () => {
               <HeaderAction icon={<img src="src/assets/header/wishlist.svg" alt="Wishlist" className="svg-icon" />} label={TRANSLATIONS.header.actions.wishlist} count={2} />
               <HeaderAction icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />} label={TRANSLATIONS.header.actions.cart} count={5} />
               <div className="desktop-only-action">
-                <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon" />} label={TRANSLATIONS.header.actions.account} count={0} />
+                <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon-no-badge" />} label={TRANSLATIONS.header.actions.account} count={-1} />
               </div>
             </div>
           </div>

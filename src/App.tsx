@@ -1,4 +1,5 @@
-import { Header, Hero, FeaturedCategories, SaleNotification, PromoBanners, DealsSection, BottomBanner, Footer } from './components/organisms';
+import { SaleNotification } from './components/molecules';
+import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection } from './components/organisms';
 
 function App(){
 
@@ -8,12 +9,23 @@ function App(){
 
       <main>
         <Hero/> 
+
+        <DealsSection />
+
         <FeaturedCategories />
-        <SaleNotification />
+
         <PromoBanners />
-        <DealsSection / >
+
+        <PopularProducts />
+
+        <DailyBestSells />
+
         <BottomBanner />
+
+        <SaleNotification />
+
         <Footer />
+
       </main>
     </div>
   );

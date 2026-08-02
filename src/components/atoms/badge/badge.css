@@ -4,22 +4,19 @@
   font-size: var(--font-size-xs);
   font-weight: 500;
   color: var(--color-white);
-
   border-top-left-radius: 0.9375rem;
   border-bottom-right-radius: 0.9375rem;
-  
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 2;
 }
 
-.a-badge--discount { background-color: var(--color-primary); }
-.a-badge--sale { background-color: var(--color-badge-sale); }
-.a-badge--hot { background-color: var(--color-badge-hot); }
-.a-badge--new { background-color: var(--color-badge-new); }
+.a-badge--hot { background-color: var(--color-primary-hover); }
+.a-badge--new { background-color: var(--color-primary-hover); }
 
 .a-badge--count {
+  position: absolute;
+  top: -0.375rem;
+  right: -0.5rem;
+  left: auto;
   background-color: var(--color-primary);
   color: var(--color-white);
   min-width: 1.125rem;
@@ -32,7 +29,5 @@
   padding: 0; 
   border-top-left-radius: 50%;
   border-bottom-right-radius: 50%;
-  top: -0.375rem;
-  left: auto;
-  right: -0.5rem;
+  z-index: 3;
 }

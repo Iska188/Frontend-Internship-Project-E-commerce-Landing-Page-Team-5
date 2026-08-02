@@ -1,0 +1,210 @@
+.o-best-sells {
+  width: 100%;
+  max-width: var(--max-width-container, 100rem);
+  margin: 0 auto; 
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.o-best-sells__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.o-best-sells__title-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.o-best-sells__title {
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.o-best-sells__controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.o-best-sells__tabs {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.o-best-sells__tab {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text-main);
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+  outline: none;
+}
+
+.o-best-sells__tab:hover,
+.o-best-sells__tab.is-active {
+  color: var(--color-primary);
+}
+
+.o-best-sells__content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start; 
+}
+
+.o-best-sells__banner {
+  flex: 0 0 calc(20% - 1.2rem); 
+  border-radius: 1.25rem;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: url('src/assets/body/dailybstsells.png');
+  background-size: cover;
+  height: 27.65625rem;
+  width: 33.75rem;
+}
+
+.o-best-sells__banner-title {
+  color: var(--color-text-main);
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+  margin-top: 0;
+}
+
+.o-best-sells__banner-btn {
+  align-self: flex-start;
+  padding: 0.45rem 0.70rem;
+  margin-top: 2.5rem;
+  margin-left: 1.5rem;
+  font-size: var(--font-size-xs);
+}
+
+.o-best-sells__arrow1 {
+    margin-left: 7rem;
+}
+
+.o-best-sells__grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-items: start;
+  height: 26.25rem;
+}
+
+.o-best-sells .m-product-card--best-sells {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.o-best-sells .m-product-card__image {
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 2.5rem;
+}
+
+.o-best-sells .m-product-card__category {
+    margin-top: -2.5rem;
+}
+
+.o-best-sells .m-product-card__title {
+  height: 3rem;
+  margin-bottom: 0.2rem;
+  margin-top: -0.5rem;
+  width: 90%;
+}
+
+.o-best-sells .m-product-card__progress-container {
+  margin-bottom: 0.6rem;
+}
+
+.o-best-sells .m-product-card__rating {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__footer {
+  display: contents;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__category {
+  order: 1;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__title {
+  order: 2;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__rating {
+  order: 3;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__vendor {
+  display: none;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__prices {
+  order: 5;
+  margin-bottom: 0.4rem;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__progress-container {
+  order: 6;
+  margin-bottom: 0.6rem;
+  display: flex;
+  flex-direction: column; 
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__progress-bar {
+  order: 1;
+  margin-bottom: 0.3rem;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__progress-info {
+  order: 2;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__sold-percentage {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.o-best-sells .m-product-card--best-sells .m-product-card__cart-btn {
+  order: 7;
+  width: 90%;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem 0.1rem;
+}
+
+@media (max-width: 40rem) {
+  .o-best-sells__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .o-best-sells__grid {
+    grid-template-columns: 1fr;
+  }
+}

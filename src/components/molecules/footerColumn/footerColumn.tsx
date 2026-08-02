@@ -20,17 +20,20 @@ export const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
       </Text>
       
       <ul className="m-footer-column__list">
-        {links.map((link) => (
-          <li key={link.label} className="m-footer-column__item">
-            <Text 
-              as="a" 
-              variant="footer-link" 
-              href={link.href}
-            >
-              {link.label}
-            </Text>
-          </li>
-        ))}
+        {links.map((link) => {
+          const uniqueKey = link.label.toLowerCase().replace(/[^a-z0-9]/g, '-');
+          return (
+            <li key={uniqueKey} className="m-footer-column__item">
+              <Text 
+                as="a" 
+                variant="footer-link" 
+                href={link.href}
+              >
+                {link.label}
+              </Text>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
