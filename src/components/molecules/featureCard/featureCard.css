@@ -29,3 +29,23 @@
 .m-feature-card__content h3 {
   margin-bottom: 0.25rem;
 }
+
+.m-feature-card--category {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 1.5rem 1rem;
+}
+
+.m-feature-card--category .m-feature-card__icon {
+  width: 4rem; 
+  height: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.m-feature-card--category .m-feature-card__content h3 {
+  margin-bottom: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text-main);
+}

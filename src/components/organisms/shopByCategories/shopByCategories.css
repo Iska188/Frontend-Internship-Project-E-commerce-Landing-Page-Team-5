@@ -1,0 +1,121 @@
+.o-shop-categories {
+  width: 100%;
+  padding: 3rem 0;
+}
+
+.o-shop-categories__container {
+  width: 100%;
+  max-width: var(--max-width-container, 100rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.o-shop-categories__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.o-shop-categories__title-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.o-shop-categories__title {
+  font-size: var(--font-size-xxxxl);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin: 0;
+}
+
+.o-shop-categories__link {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.o-shop-categories__link:hover {
+  color: var(--color-primary);
+}
+
+.o-shop-categories__nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.o-shop-categories__nav-btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-bg-gray);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.o-shop-categories__nav-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.o-shop-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 62rem) {
+  .o-shop-categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 48rem) {
+  .o-shop-categories__title {
+    font-size: var(--font-size-xxxl);
+  }
+  
+  .o-shop-categories__nav {
+    display: none; 
+  }
+
+  .o-shop-categories__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem; 
+    margin: 0 -1rem;
+    padding-inline: 1rem;
+  }
+
+  .o-shop-categories__grid::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .o-shop-categories__item {
+    min-width: 10rem;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 30rem) {
+  .o-shop-categories__title-wrap {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .o-shop-categories__title {
+    font-size: var(--font-size-xl-title);
+  }
+}
