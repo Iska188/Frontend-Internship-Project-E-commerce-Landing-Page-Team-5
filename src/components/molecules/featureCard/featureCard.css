@@ -1,0 +1,31 @@
+.m-feature-card {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-fcard-bg); 
+  padding: 1.25rem; 
+  border-radius: 10px; 
+  gap: 1.125rem; 
+  transition: 100ms;
+}
+.m-feature-card:hover{
+
+  background-color: var(--color-fcard-bg-hover); 
+  
+}
+
+
+.m-feature-card__icon {
+  width: 3.125rem; 
+  height: 3.125rem;
+  object-fit: contain;
+}
+
+.m-feature-card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.m-feature-card__content h3 {
+  margin-bottom: 0.25rem;
+}

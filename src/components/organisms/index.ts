@@ -7,3 +7,4 @@ export * from './promoBanner/promoBanner';
 export * from './popularProducts/popularProducts';
 export * from './dailyBestSells/dailyBestSells';
 export * from './dealsSection/DealsSection'
+export * from './featureSection/featureSection'

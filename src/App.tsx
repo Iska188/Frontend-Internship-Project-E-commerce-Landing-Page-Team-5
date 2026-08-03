@@ -1,5 +1,5 @@
 import { SaleNotification } from './components/molecules';
-import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection } from './components/organisms';
+import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection, FeatureSection } from './components/organisms';
 
 function App(){
 
@@ -23,6 +23,8 @@ function App(){
         <BottomBanner />
 
         <SaleNotification />
+
+        <FeatureSection />
 
         <Footer />
 

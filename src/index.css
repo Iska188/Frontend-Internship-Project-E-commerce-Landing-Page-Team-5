@@ -76,6 +76,9 @@ body, html {
   --color-sale-lightblue:#67BCEE;
   --color-sale-yellow:#BC911A;
   --color-sale-red:#DD3333;
+  
+  --color-fcard-bg:#f4f6fa;
+  --color-fcard-bg-hover:#e8eaef;
 
   --font-size-xxxs: 0.45rem;
   --font-size-xxs: 0.5rem;

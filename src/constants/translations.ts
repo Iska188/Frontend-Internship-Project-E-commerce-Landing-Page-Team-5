@@ -184,5 +184,29 @@ export const TRANSLATIONS = {
       title: 'Dried fruit: apricots, figs, prunes',
       vendor: 'Hambger Hel',
     },
-  }
+  },
+
+  featureSection: {
+    banner1:{
+      title: 'Best prices & offers',
+      subtitle: 'Orders $50 or more',
+    },
+    banner2:{
+      title: 'Free delivery',
+      subtitle: '24/7 amazing services',
+    },
+    banner3:{
+      title: 'Great daily deal',
+      subtitle: 'When you sign up',
+    },
+    banner4:{
+      title: 'Wide assortment',
+      subtitle: 'Mega Discounts',
+    },
+    banner5:{
+      title: 'Easy returns',
+      subtitle: 'Within 30 days',
+    },
+  },
+
 };
