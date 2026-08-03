@@ -70,6 +70,13 @@ body, html {
   --color-feat-categ-lightpink: #FFF3EB;
   --color-feat-categ-lightpurple: #FFF3FF;
 
+  --color-sale-green:#3BB77E;
+  --color-sale-darkgreen:#29A56C;
+  --color-sale-blue:#1774B2;
+  --color-sale-lightblue:#67BCEE;
+  --color-sale-yellow:#BC911A;
+  --color-sale-red:#DD3333;
+
   --font-size-xxxs: 0.45rem;
   --font-size-xxs: 0.5rem;
   --font-size-xs: 0.6875rem;

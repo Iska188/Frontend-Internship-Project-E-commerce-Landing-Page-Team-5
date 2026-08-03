@@ -165,4 +165,24 @@ export const TRANSLATIONS = {
     product9: "Encore Seafoods Stuffed Alaskan",
     product10: "Angle's Sweet & Salty Kettle Corn",
   },
+
+  deals: {
+    bigtitle: 'Deals Of The Day',
+    card1:{
+      title: 'Organic Cage Grade A Large Eggs',
+      vendor: 'Hambger Hel',
+    },
+    card2:{
+      title: 'Naturally Flavored Cinnamon Vanilla',
+      vendor: 'Hambger Hel',
+    },
+    card3:{
+      title: 'Seeds of Change Organic Watermelon',
+      vendor: 'Hambger Hel',
+    },
+    card4:{
+      title: 'Dried fruit: apricots, figs, prunes',
+      vendor: 'Hambger Hel',
+    },
+  }
 };
