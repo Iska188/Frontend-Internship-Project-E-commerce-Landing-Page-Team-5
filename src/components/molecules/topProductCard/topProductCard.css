@@ -1,0 +1,138 @@
+.m-top-product {
+  display: flex;
+  align-items: center;
+  padding: 1.25rem 0;
+  gap: 1.25rem;
+  background-color: transparent;
+  height: 8.5rem;
+}
+
+.m-top-product__img-wrapper {
+  width: 5.5rem;
+  height: 5.5rem;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-subtle);
+  border-radius: 0.5rem;
+}
+
+.m-top-product__img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.m-top-product__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.m-top-product__title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.2;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.4em;
+}
+
+.m-top-product__rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.m-top-product__stars {
+  font-size: var(--font-size-base);
+  letter-spacing: 0.1rem;
+}
+
+.stars-filled {
+  color: var(--color-star-filled);
+}
+
+.stars-empty {
+  color: var(--color-star-empty);
+}
+
+.m-top-product__reviews {
+  font-size: var(--font-size-base);
+  color: var(--color-text-placeholder-light);
+}
+
+.m-top-product__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.price-current {
+  font-size: var(--font-size-sublg);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.price-original {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-placeholder-light);
+  text-decoration: line-through;
+}
+
+@media (max-width: 48rem) {
+  .m-top-product {
+    gap: 0.75rem;
+    padding: 1rem 0;
+    height: 7.5rem;
+  }
+
+  .m-top-product__img-wrapper {
+    width: 4.25rem;
+    height: 4.25rem;
+  }
+
+  .m-top-product__title {
+    font-size: var(--font-size-base);
+    min-height: 2.4em;
+  }
+
+  .m-top-product__rating {
+    gap: 0.25rem;
+  }
+
+  .m-top-product__stars {
+    font-size: var(--font-size-sm);
+    letter-spacing: 0;
+  }
+
+  .price-current {
+    font-size: var(--font-size-md);
+  }
+
+  .price-original {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 30rem) {
+  .m-top-product {
+    gap: 0.5rem;
+    height: 6.5rem;
+  }
+
+  .m-top-product__img-wrapper {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

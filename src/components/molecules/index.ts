@@ -9,3 +9,4 @@ export * from './newsletterForm/newsletterForm';
 export * from './saleNotification/saleNotification';
 export * from './promoCard/promoCard';
 export * from './categoryCard/categoryCard';
+export * from './productCard/productCard';

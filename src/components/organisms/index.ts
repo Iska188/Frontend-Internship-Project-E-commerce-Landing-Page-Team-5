@@ -4,3 +4,9 @@ export * from './bottomBanner/bottomBanner';
 export * from './footer/footer';
 export * from './featureCategories/featureCategories';
 export * from './promoBanner/promoBanner';
+export * from './popularProducts/popularProducts';
+export * from './dailyBestSells/dailyBestSells';
+export * from './dealsSection/DealsSection'
+export * from './featureSection/featureSection'
+export * from './topProducts/topProducts'
+export * from './shopByCategories/shopByCategories'

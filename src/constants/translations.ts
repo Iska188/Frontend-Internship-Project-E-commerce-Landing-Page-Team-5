@@ -20,6 +20,9 @@ export const TRANSLATIONS = {
       pet: "Pet Foods",
       baking: "Baking Material",
       fruit: "Fresh Fruit",
+      all: "All",
+      meat: "Meats",
+      title: "Popular Products",
     },
     nav: {
       hotDeals: "Hot Deals",
@@ -140,10 +143,112 @@ export const TRANSLATIONS = {
   },
   button: {
     shopNow: "Shop Now",
+    by: "By",
+    add: "Add",
+    addtoCart: "Add to Cart",
   },
   promoBanners: {
     banner1: "Everyday Fresh & Clean with Our Products",
     banner2: "Make your Breakfast Healthy and Easy",
     banner3: "The best Organic Products Online",
   },
+
+  productCard: { 
+    product1: "Foster Farms Takeout Crispy Classic",
+    product2: "Organic Cage Grade A Large Eggs",
+    product3: "Haagen Caramel Cone Ice Cream Boxed",
+    product4: "All Natural Style Chicken Meatballs",
+    product5: "Blue Almonds Lightly Salted Vegetables",
+    product6: "Gorton's Beer Battered Fish Fillets",
+    product7: "Seeds of Change Organic Red Rice",
+    product8: "Canada Dry Ginger Ale - 2 L Bottle",
+    product9: "Encore Seafoods Stuffed Alaskan",
+    product10: "Angle's Sweet & Salty Kettle Corn",
+  },
+
+  dailyBestSells:{
+    title: "Daily Best Sells",
+    banner:{
+      row1: "Bring nature",
+      row2: "into your",
+      row3: "home",
+      button: "Shop Now"
+    },
+  },
+
+  deals:{
+    bigtitle: 'Deals Of The Day',
+    card1:{
+      title: 'Organic Cage Grade A Large Eggs',
+      vendor: 'Hambger Hel',
+    },
+    card2:{
+      title: 'Naturally Flavored Cinnamon Vanilla',
+      vendor: 'Hambger Hel',
+    },
+    card3:{
+      title: 'Seeds of Change Organic Watermelon',
+      vendor: 'Hambger Hel',
+    },
+    card4:{
+      title: 'Dried fruit: apricots, figs, prunes',
+      vendor: 'Hambger Hel',
+    },
+  },
+
+  featureSection: {
+    banner1:{
+      title: 'Best prices & offers',
+      subtitle: 'Orders $50 or more',
+    },
+    banner2:{
+      title: 'Free delivery',
+      subtitle: '24/7 amazing services',
+    },
+    banner3:{
+      title: 'Great daily deal',
+      subtitle: 'When you sign up',
+    },
+    banner4:{
+      title: 'Wide assortment',
+      subtitle: 'Mega Discounts',
+    },
+    banner5:{
+      title: 'Easy returns',
+      subtitle: 'Within 30 days',
+    },
+  },
+
+  shopcategories: {
+    title: {
+      banner1: "Milks and Dairies",
+      banner2: "Wines & Alcohol",
+      banner3: "Clothing & Beauty",
+      banner4: "Pet Foods & Toy",
+    },
+    headtitle:'Shop by Categories',
+    subtitle:'All Categories',
+  },
+
+  topproducts: {
+    columns: {
+      topselling: "Top Selling",
+      trending: "Trending Products",
+      recentlyadded: "Recently added",
+      toprated: "Top Rated",
+    },
+    products: {
+      haagen: "Haagen Caramel Cone Ice Cream Boxed",
+      seedsRedRice: "Seeds of Change Organic Red Rice",
+      blueAlmonds: "Blue Almonds Lightly Salted Vegetables",
+      fosterFarms: "Foster Farms Takeout Crispy Classic",
+      gortons: "Gorton’s Beer Battered Fish Fillets",
+      organicEggs: "Organic Cage Grade A Large Eggs",
+      cinnamonVanilla: "Naturally Flavored Cinnamon Vanilla",
+      seedsWatermelon: "Seeds of Change Organic Watermelon",
+      yogurt: "Pre-portioned, low-fat ice cream yogurt",
+      kettleCorn: "Angie’s Sweet & Salty Kettle Corn",
+    }
+  },
+
 };
