@@ -80,6 +80,9 @@ body, html {
   --color-fcard-bg:#f4f6fa;
   --color-fcard-bg-hover:#e8eaef;
 
+  --color-star-filled: #FDC040;
+  --color-star-empty: #D4D4D4;
+
   --font-size-xxxs: 0.45rem;
   --font-size-xxs: 0.5rem;
   --font-size-xs: 0.6875rem;

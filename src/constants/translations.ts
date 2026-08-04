@@ -166,7 +166,17 @@ export const TRANSLATIONS = {
     product10: "Angle's Sweet & Salty Kettle Corn",
   },
 
-  deals: {
+  dailyBestSells:{
+    title: "Daily Best Sells",
+    banner:{
+      row1: "Bring nature",
+      row2: "into your",
+      row3: "home",
+      button: "Shop Now"
+    },
+  },
+
+  deals:{
     bigtitle: 'Deals Of The Day',
     card1:{
       title: 'Organic Cage Grade A Large Eggs',

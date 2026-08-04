@@ -9,7 +9,6 @@ export const Header = () => {
 
   return (
     <header className="o-header">
-      {/* Top bar */}
       <div className="o-header__top">
         <div className="o-header__container">
           <div className="o-header__top-left">
@@ -25,8 +24,6 @@ export const Header = () => {
           </div>
         </div>
       </div>
-
-      {/* Middle bar */}
       <div className="o-header__middle">
         <div className="o-header__container o-header__middle-container">
           <button 
@@ -66,7 +63,7 @@ export const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+
       <div className={`o-header__mobile-menu ${isMobileMenuOpen ? 'is-open' : ''}`}>
         <div className="o-header__mobile-menu-content">
           <nav className="o-header__mobile-nav">
@@ -85,7 +82,6 @@ export const Header = () => {
         </div>
       </div>
 
-      {/* Bottom bar - Desktop */}
       <div className="o-header__bottom">
         <div className="o-header__container">
           <div className="o-header__categories">

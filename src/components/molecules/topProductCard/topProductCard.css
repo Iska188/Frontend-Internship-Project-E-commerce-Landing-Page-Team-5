@@ -58,11 +58,11 @@
 }
 
 .stars-filled {
-  color: #FDC040;
+  color: var(--color-star-filled);
 }
 
 .stars-empty {
-  color: #D4D4D4;
+  color: var(--color-star-empty);
 }
 
 .m-top-product__reviews {
