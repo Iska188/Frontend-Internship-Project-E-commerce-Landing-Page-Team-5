@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Button } from '../../atoms/button/button'; 
 import { Text } from '../../atoms/text/text';
 import './DealCard.css';
@@ -13,6 +14,34 @@ export interface DealCardProps {
   titleColor?: string;
 }
 
+const useCountdown = (initialDays: string, initialHours: string, initialMins: string, initialSecs: string) => {
+  const [timeLeft, setTimeLeft] = useState(() => {
+    return (
+      parseInt(initialDays || '0') * 86400 +
+      parseInt(initialHours || '0') * 3600 +
+      parseInt(initialMins || '0') * 60 +
+      parseInt(initialSecs || '0')
+    );
+  });
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const intervalId = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, [timeLeft]);
+
+  return {
+    days: Math.floor(timeLeft / 86400).toString().padStart(2, '0'),
+    hours: Math.floor((timeLeft % 86400) / 3600).toString().padStart(2, '0'),
+    mins: Math.floor((timeLeft % 3600) / 60).toString().padStart(2, '0'),
+    secs: (timeLeft % 60).toString().padStart(2, '0')
+  };
+};
+
 export const DealCard = ({
   imageSrc = "https://via.placeholder.com/250",
   title = "Placeholder Title",
@@ -23,6 +52,14 @@ export const DealCard = ({
   containerBgColor = "transparent",
   titleColor
 }: DealCardProps) => {
+  
+  const liveCountdown = useCountdown(
+    countdown.days,
+    countdown.hours,
+    countdown.mins,
+    countdown.secs
+  );
+
   return (
     <div 
       className="m-deal-card" 
@@ -32,7 +69,7 @@ export const DealCard = ({
         <img src={imageSrc} alt={title} className="m-deal-card__img" />
         
         <div className="m-deal-card__countdown">
-          {Object.entries(countdown).map(([unit, value]) => (
+          {Object.entries(liveCountdown).map(([unit, value]) => (
             <div key={unit} className="countdown-box">
               <span className="countdown-value">{String(value)}</span>
               <span className="countdown-unit">{unit}</span>
