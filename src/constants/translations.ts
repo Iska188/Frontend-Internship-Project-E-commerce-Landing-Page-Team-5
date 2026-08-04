@@ -225,7 +225,9 @@ export const TRANSLATIONS = {
       banner2: "Wines & Alcohol",
       banner3: "Clothing & Beauty",
       banner4: "Pet Foods & Toy",
-    }
+    },
+    headtitle:'Shop by Categories',
+    subtitle:'All Categories',
   },
 
   topproducts: {

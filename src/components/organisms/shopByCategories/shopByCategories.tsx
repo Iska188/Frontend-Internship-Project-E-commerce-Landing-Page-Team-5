@@ -25,10 +25,10 @@ export const ShopByCategories = () => {
         <div className="o-shop-categories__header">
           <div className="o-shop-categories__title-wrap">
             <Text as="h2" variant="sec-title" className="o-shop-categories__title">
-              Shop by Categories
+             {TRANSLATIONS.shopcategories.headtitle}
             </Text>
             <a href="/categories" className="o-shop-categories__link">
-              All Categories &gt;
+              {TRANSLATIONS.shopcategories.subtitle} &gt;
             </a>
           </div>
           

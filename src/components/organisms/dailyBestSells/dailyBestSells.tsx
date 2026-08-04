@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Text, Button } from '../../atoms';
 import { ProductCard } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
-import { PRODUCTS_DATA } from '../../../mocks/dailyBestSells';
+import { PRODUCTS_DATA } from '../../../mocks/mockedProduct';
 import './dailyBestSells.css';
 
 const CATEGORIES_DATA: string[] = [
