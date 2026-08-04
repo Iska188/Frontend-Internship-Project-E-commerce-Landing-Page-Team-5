@@ -20,15 +20,15 @@ function App(){
 
         <DealsSection />
 
+        <TopProducts />
+
+        <ShopByCategories />
+
         <BottomBanner />
 
         <SaleNotification />
 
-        <TopProducts />
-
         <FeatureSection />
-
-        <ShopByCategories />
 
         <Footer />
 

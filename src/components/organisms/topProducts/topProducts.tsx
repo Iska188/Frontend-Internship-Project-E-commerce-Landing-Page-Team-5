@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from '../../atoms';
 import { TopProductCard } from '../../molecules/topProductCard/topProductCard';
+import { TRANSLATIONS } from '../../../constants/translations'; // Add your import here
 import './topProducts.css';
 
 interface TopProductItem {
@@ -22,12 +23,12 @@ interface TopProductColumn {
 const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
   {
     id: 'top-selling',
-    title: 'Top Selling',
+    title: TRANSLATIONS.topproducts.columns.topselling,
     products: [
       {
         id: 'ts-1',
         imageSrc: 'src/assets/body/popularproducts/product-1.png',
-        title: 'Haagen Caramel Cone Ice Cream Boxed',
+        title: TRANSLATIONS.topproducts.products.haagen,
         rating: 3,
         reviewsCount: 1,
         currentPrice: 22.85,
@@ -36,7 +37,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'ts-2',
         imageSrc: 'src/assets/body/popularproducts/product-2.png',
-        title: 'Seeds of Change Organic Red Rice',
+        title: TRANSLATIONS.topproducts.products.seedsRedRice,
         rating: 5,
         reviewsCount: 2,
         currentPrice: 28.85,
@@ -45,7 +46,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'ts-3',
         imageSrc: 'src/assets/body/popularproducts/product-3.png',
-        title: 'Blue Almonds Lightly Salted Vegetables',
+        title: TRANSLATIONS.topproducts.products.blueAlmonds,
         rating: 0,
         reviewsCount: 0,
         currentPrice: 23.85,
@@ -55,12 +56,12 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
   },
   {
     id: 'trending-products',
-    title: 'Trending Products',
+    title: TRANSLATIONS.topproducts.columns.trending,
     products: [
       {
         id: 'tp-1',
         imageSrc: 'src/assets/body/popularproducts/product-4.png',
-        title: 'Foster Farms Takeout Crispy Classic',
+        title: TRANSLATIONS.topproducts.products.fosterFarms,
         rating: 0,
         reviewsCount: 0,
         currentPrice: 17.85,
@@ -69,7 +70,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'tp-2',
         imageSrc: 'src/assets/body/popularproducts/product-1.png',
-        title: 'Haagen Caramel Cone Ice Cream Boxed',
+        title: TRANSLATIONS.topproducts.products.haagen,
         rating: 3,
         reviewsCount: 1,
         currentPrice: 22.85,
@@ -78,7 +79,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'tp-3',
         imageSrc: 'src/assets/body/popularproducts/product-6.png',
-        title: 'Gorton’s Beer Battered Fish Fillets',
+        title: TRANSLATIONS.topproducts.products.gortons,
         rating: 0,
         reviewsCount: 0,
         currentPrice: 23.85,
@@ -88,12 +89,12 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
   },
   {
     id: 'recently-added',
-    title: 'Recently added',
+    title: TRANSLATIONS.topproducts.columns.recentlyadded,
     products: [
       {
         id: 'ra-1',
         imageSrc: 'src/assets/body/popularproducts/product-2.png',
-        title: 'Organic Cage Grade A Large Eggs',
+        title: TRANSLATIONS.topproducts.products.organicEggs,
         rating: 0,
         reviewsCount: 0,
         currentPrice: 21.00,
@@ -102,7 +103,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'ra-2',
         imageSrc: 'src/assets/body/popularproducts/product-7.png',
-        title: 'Naturally Flavored Cinnamon Vanilla',
+        title: TRANSLATIONS.topproducts.products.cinnamonVanilla,
         rating: 0,
         reviewsCount: 0,
         currentPrice: 51.00,
@@ -111,7 +112,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'ra-3',
         imageSrc: 'src/assets/body/popularproducts/product-8.png',
-        title: 'Seeds of Change Organic Watermelon',
+        title: TRANSLATIONS.topproducts.products.seedsWatermelon,
         rating: 5,
         reviewsCount: 1,
         currentPrice: 61.50,
@@ -121,12 +122,12 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
   },
   {
     id: 'top-rated',
-    title: 'Top Rated',
+    title: TRANSLATIONS.topproducts.columns.toprated,
     products: [
       {
         id: 'tr-1',
         imageSrc: 'src/assets/body/popularproducts/product-9.png',
-        title: 'Pre-portioned, low-fat ice cream yogurt',
+        title: TRANSLATIONS.topproducts.products.yogurt,
         rating: 5,
         reviewsCount: 1,
         currentPrice: 79.00,
@@ -135,7 +136,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'tr-2',
         imageSrc: 'src/assets/body/popularproducts/product-10.png',
-        title: 'Angie’s Sweet & Salty Kettle Corn',
+        title: TRANSLATIONS.topproducts.products.kettleCorn,
         rating: 5,
         reviewsCount: 1,
         currentPrice: 48.85,
@@ -144,7 +145,7 @@ const TOP_PRODUCTS_COLUMNS: TopProductColumn[] = [
       {
         id: 'tr-3',
         imageSrc: 'src/assets/body/popularproducts/product-8.png',
-        title: 'Seeds of Change Organic Watermelon',
+        title: TRANSLATIONS.topproducts.products.seedsWatermelon,
         rating: 5,
         reviewsCount: 1,
         currentPrice: 61.50,

@@ -80,7 +80,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 75,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-1',
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-red)',
@@ -97,7 +97,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 38.93,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-2',
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-red)',
@@ -114,7 +114,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 38.93,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-3',
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-red)',
@@ -131,7 +131,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 38.93,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-4',
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-red)',
@@ -148,7 +148,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 38.93,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-5',
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-green)',
@@ -165,7 +165,7 @@ const PRODUCTS_DATA: ProductItem[] = [
     soldPercentage: 38.93,
   },
   {
-    id: 'blue-almonds-vegetables',
+    id: 'blue-almonds-vegetables-6', 
     imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '8%',
     discountBgColor: 'var(--color-sale-green)',

@@ -209,4 +209,34 @@ export const TRANSLATIONS = {
     },
   },
 
+  shopcategories: {
+    title: {
+      banner1: "Milks and Dairies",
+      banner2: "Wines & Alcohol",
+      banner3: "Clothing & Beauty",
+      banner4: "Pet Foods & Toy",
+    }
+  },
+
+  topproducts: {
+    columns: {
+      topselling: "Top Selling",
+      trending: "Trending Products",
+      recentlyadded: "Recently added",
+      toprated: "Top Rated",
+    },
+    products: {
+      haagen: "Haagen Caramel Cone Ice Cream Boxed",
+      seedsRedRice: "Seeds of Change Organic Red Rice",
+      blueAlmonds: "Blue Almonds Lightly Salted Vegetables",
+      fosterFarms: "Foster Farms Takeout Crispy Classic",
+      gortons: "Gorton’s Beer Battered Fish Fillets",
+      organicEggs: "Organic Cage Grade A Large Eggs",
+      cinnamonVanilla: "Naturally Flavored Cinnamon Vanilla",
+      seedsWatermelon: "Seeds of Change Organic Watermelon",
+      yogurt: "Pre-portioned, low-fat ice cream yogurt",
+      kettleCorn: "Angie’s Sweet & Salty Kettle Corn",
+    }
+  },
+
 };

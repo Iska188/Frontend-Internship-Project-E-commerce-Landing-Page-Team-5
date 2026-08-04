@@ -1,6 +1,8 @@
 import { Text } from '../../atoms/text/text';
 import { FeatureCard } from '../../molecules/featureCard/featureCard';
 import './shopByCategories.css';
+import { TRANSLATIONS } from '../../../constants/translations';
+
 
 interface CategoryItem {
   id: string;
@@ -9,10 +11,10 @@ interface CategoryItem {
 }
 
 const CATEGORIES_DATA: CategoryItem[] = [
-  { id: '1', title: 'Milks and Dairies', iconSrc: 'src/assets/categories/cat-1.png' },
-  { id: '2', title: 'Wines & Alcohol', iconSrc: 'src/assets/categories/cat-2.png' },
-  { id: '3', title: 'Clothing & Beauty', iconSrc: 'src/assets/categories/cat-3.png' },
-  { id: '4', title: 'Pet Foods & Toy', iconSrc: 'src/assets/categories/cat-4.png' },
+  { id: '1', title: TRANSLATIONS.shopcategories.title.banner1, iconSrc: 'src/assets/body/categoriesButtons/milk.svg' },
+  { id: '2', title: TRANSLATIONS.shopcategories.title.banner2, iconSrc: 'src/assets/body/categoriesButtons/wine.svg' },
+  { id: '3', title: TRANSLATIONS.shopcategories.title.banner3, iconSrc: 'src/assets/body/categoriesButtons/clothing.svg' },
+  { id: '4', title: TRANSLATIONS.shopcategories.title.banner4, iconSrc: 'src/assets/body/categoriesButtons/pets.svg' },
 ];
 
 export const ShopByCategories = () => {
@@ -20,7 +22,6 @@ export const ShopByCategories = () => {
     <section className="o-shop-categories">
       <div className="o-shop-categories__container">
         
-        {/* Header Area */}
         <div className="o-shop-categories__header">
           <div className="o-shop-categories__title-wrap">
             <Text as="h2" variant="sec-title" className="o-shop-categories__title">
@@ -41,7 +42,6 @@ export const ShopByCategories = () => {
           </div>
         </div>
 
-        {/* Cards Grid / Scrollable List */}
         <div className="o-shop-categories__grid">
           {CATEGORIES_DATA.map((category) => (
             <div className="o-shop-categories__item" key={category.id}>
