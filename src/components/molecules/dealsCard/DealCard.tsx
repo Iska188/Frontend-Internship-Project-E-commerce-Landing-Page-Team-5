@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../../atoms/button/button'; 
 import { Text } from '../../atoms/text/text';
 import './DealCard.css';

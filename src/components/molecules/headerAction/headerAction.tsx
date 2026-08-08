@@ -13,7 +13,7 @@ export const HeaderAction = ({ icon, label, count }: HeaderActionProps) => {
       <div className="m-header-action__icon-wrapper">
         <span className="m-header-action__icon">{icon}</span>
         {count !== undefined && count > -1 && (
-          <Badge type="count" label={count.toString()} />
+          <Badge type="count" label={count.toString()} className="m-header-action__badge" />
         )}
       </div>
       <Text variant="prod-title" as="span" className="m-header-action__label">{label}</Text>

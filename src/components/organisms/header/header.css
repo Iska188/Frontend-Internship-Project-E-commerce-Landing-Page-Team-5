@@ -38,6 +38,12 @@
   padding: 1.875rem 0;
 }
 
+.o-header__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .o-header__logo-img {
   height: 3.4375rem; 
   cursor: pointer;
@@ -255,5 +261,52 @@
   .o-header__desktop-vendor,
   .desktop-only-action {
     display: none;
+  }
+
+  .o-header--cart-page .o-header__middle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 2.75rem;
+  }
+
+  .o-header--cart-page .o-header__logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .o-header--cart-page .o-header__actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 2;
+  }
+
+  .o-header--cart-page .o-header__icons {
+    gap: 0.75rem;
+    justify-content: flex-end;
+  }
+
+  .o-header--cart-page .o-header__icons .m-header-action {
+    gap: 0;
+  }
+
+  .o-header--cart-page .o-header__search,
+  .o-header--cart-page .o-header__desktop-vendor,
+  .o-header--cart-page .o-header__actions > *:not(.o-header__icons),
+  .o-header--cart-page .desktop-only-action {
+    display: none;
+  }
+
+  .o-header--cart-page .o-header__actions .o-header__icons {
+    display: flex;
   }
 }
