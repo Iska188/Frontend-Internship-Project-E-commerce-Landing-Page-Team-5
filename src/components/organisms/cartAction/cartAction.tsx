@@ -12,11 +12,13 @@ export function CartActionContainer({ cartPage = false }: CartActionContainerPro
 
   return (
     <div className={`header-cart-wrapper${cartPage ? ' header-cart-wrapper--cart-page' : ''}`}>
-      <HeaderAction
-        icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />}
-        label={TRANSLATIONS.header.actions.cart}
-        count={totalItems}
-      />
+      <a href="#/cart" className="header-cart-link" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <HeaderAction
+          icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />}
+          label={TRANSLATIONS.header.actions.cart}
+          count={totalItems}
+        />
+      </a>
 
       {!cartPage && (
         <div className="header-cart-dropdown">
