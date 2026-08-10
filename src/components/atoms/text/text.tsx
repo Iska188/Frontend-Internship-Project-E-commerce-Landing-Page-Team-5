@@ -3,8 +3,7 @@ import './text.css';
 
 interface TextProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  variant: 'sec-title' | 'prod-title' | 'category' | 'price-current' | 'price-old' | 'hero-title' | 'hero-subtitle' | 'footer-title' | 'footer-link';
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'a';
+  variant: 'sec-title' | 'prod-title' | 'category' | 'price-current' | 'price-old' | 'hero-title' | 'hero-subtitle' | 'footer-title' | 'footer-link' | 'welcome-title' | 'welcome-body'| 'about-eyebrow'| 'stat-value' | 'stat-label';  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'a';
   href?: string;
 }
 

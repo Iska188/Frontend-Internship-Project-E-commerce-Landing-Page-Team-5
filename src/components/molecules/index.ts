@@ -10,3 +10,10 @@ export * from './saleNotification/saleNotification';
 export * from './promoCard/promoCard';
 export * from './categoryCard/categoryCard';
 export * from './productCard/productCard';
+export * from './imageCarousel/imageCarousel';
+export * from './provideCard/provideCard';
+export * from './infoColumn/infoColumn';
+export * from './statColumn/statColumn';
+export * from './teamMemberCard/teamMemberCard';
+
+

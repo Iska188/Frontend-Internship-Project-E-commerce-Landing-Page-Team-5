@@ -1,5 +1,5 @@
 import { SaleNotification } from '../../molecules';
-import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection, FeatureSection, TopProducts, ShopByCategories } from '../../organisms';
+import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection, FeatureSection, TopProducts, ShopByCategories} from '../../organisms';
 
 export function HomePage(){
 

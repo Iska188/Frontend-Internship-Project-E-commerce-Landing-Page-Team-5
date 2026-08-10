@@ -1,0 +1,33 @@
+.m-provide-card {
+  background-color: var(--color-white);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.m-provide-card__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.m-provide-card__link {
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.m-provide-card__link:visited {
+  color: var(--color-primary);
+}
+
+.m-provide-card__link:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}

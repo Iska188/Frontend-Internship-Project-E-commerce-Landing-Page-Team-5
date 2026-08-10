@@ -11,3 +11,9 @@ export * from './featureSection/featureSection'
 export * from './topProducts/topProducts'
 export * from './shopByCategories/shopByCategories'
 export * from './cartAction/cartAction'
+export * from './welcomeSection/welcomeSection'
+export * from './whatWeProvide/whatWeProvide'
+export * from './aboutHero/aboutHero'
+export * from './statsBanner/statsBanner';
+export * from './ourTeam/ourTeam';
+export * from './aboutBottomBanner/aboutBottomBanner';

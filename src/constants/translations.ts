@@ -272,4 +272,58 @@ export const TRANSLATIONS = {
     }
   },
 
+  welcomeSection: {
+  title: 'Welcome to Nest',
+  paragraphOne:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  paragraphTwo:
+    'Ius ferri velit sanctus cu, sed at soleat accusata. Dictas prompta et ut placerat legendos interpre. Donec vitae sapien ut libero venenatis faucibus.',
+},
+
+  whatWeProvide: {
+  title: 'What We Provide?',
+  readMore: 'Read more',
+  items: {
+    bestPrices: { title: 'Best Prices & Offers', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+    wideAssortment: { title: 'Wide Assortment', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+    freeDelivery: { title: 'Free Delivery', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+    easyReturns: { title: 'Easy Returns', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+    satisfaction: { title: '100% Satisfaction', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+    dailyDeal: { title: 'Great Daily Deal', description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form' },
+  },
+},
+
+  aboutHero: {
+  eyebrow: 'Our performance',
+  title: 'Your Partner for e-commerce grocery solution',
+  paragraphOne: 'Ut ed perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.',
+  paragraphTwo: 'Pitatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia.',
+  columns: {
+    whoWeAre: { title: 'Who we are', description: 'Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in, elus donec ac odio orci ultrices.' },
+    ourHistory: { title: 'Our history', description: 'Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in, elus donec ac odio orci ultrices.' },
+    ourMission: { title: 'Our mission', description: 'Volutpat diam ut venenatis tellus in metus. Nec dui nunc mattis enim ut tellus eros donec ac odio orci ultrices in, elus donec ac odio orci ultrices.' },
+  },
+},
+
+statsBanner: {
+  glorousYears: 'Glorious years',
+  happyClients: 'Happy clients',
+  projectsComplete: 'Projects complete',
+  teamAdvisor: 'Team advisor',
+  productsSale: 'Products Sale',
+},
+
+ourTeam: {
+  title: 'Our Team',
+  eyebrow: 'Our Team',
+  subtitle: 'Meet Our Expert Team',
+  paragraphOne: 'Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.',
+  paragraphTwo: 'Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.',
+  viewAllMembers: 'View All Members',
+  members: {
+    merinda: { name: 'H. Merinda', role: 'CEO & Co-Founder' },
+    specter: { name: 'Dilan Specter', role: 'Head Engineer' },
+  },
+},
+
 };
