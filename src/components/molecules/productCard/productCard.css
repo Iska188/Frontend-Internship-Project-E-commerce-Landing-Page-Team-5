@@ -121,7 +121,7 @@
 }
 
 .m-product-card__star--filled {
-  color: #ffb300;
+  color: var(--color-star-filled);
 }
 
 .m-product-card__star--empty {
