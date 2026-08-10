@@ -1,0 +1,103 @@
+.header-cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.header-cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 17.5rem;
+  background: var(--color-white);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-from-dropdown);
+  padding: 1rem;
+  display: none;
+  z-index: 1000;
+}
+
+.header-cart-wrapper:not(.header-cart-wrapper--cart-page):hover .header-cart-dropdown {
+  display: block;
+}
+
+.header-cart-wrapper--cart-page .header-cart-dropdown {
+  display: none;
+}
+
+.header-cart-dropdown .empty-cart {
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.header-cart-dropdown .dropdown-items-list {
+  max-height: 13.75rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.header-cart-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-cart-dropdown .dropdown-item img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+
+.header-cart-dropdown .item-details {
+  flex: 1;
+  margin-left: 0.5rem;
+}
+
+.header-cart-dropdown .item-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.header-cart-dropdown .item-details span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.header-cart-dropdown .dropdown-item button {
+  background: none;
+  border: none;
+  color: var(--color-danger, #d32f2f);
+  cursor: pointer;
+  font-size: var(--font-size-sublg);
+}
+
+.header-cart-dropdown .dropdown-footer {
+  border-top: 0.0625rem solid var(--color-border);
+  padding-top: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.header-cart-dropdown .total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.header-cart-dropdown .total strong {
+  color: var(--color-primary);
+}
+
+.header-cart-dropdown .dropdown-footer a {
+  display: block;
+  text-align: center;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: bold;
+}

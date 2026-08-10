@@ -1,39 +1,30 @@
-import { SaleNotification } from './components/molecules';
-import { Header, Hero, BottomBanner, Footer, FeaturedCategories, PromoBanners, PopularProducts, DailyBestSells, DealsSection, FeatureSection, TopProducts, ShopByCategories } from './components/organisms';
+import { useEffect, useState } from 'react';
+import { CartPage, HomePage } from './components/pages';
+import { CartProvider } from './context/cartContext';
 
-function App(){
+function App() {
+  const [currentRoute, setCurrentRoute] = useState<string>(() => {
+    return window.location.hash === '#/cart' ? '/cart' : '/';
+  });
+
+  useEffect(() => {
+    const syncRoute = () => {
+      const nextRoute = window.location.hash === '#/cart' ? '/cart' : '/';
+      setCurrentRoute(nextRoute);
+    };
+
+    syncRoute();
+    window.addEventListener('hashchange', syncRoute);
+
+    return () => {
+      window.removeEventListener('hashchange', syncRoute);
+    };
+  }, []);
 
   return (
-    <div>
-      <Header />
-
-      <main>
-        <Hero/> 
-
-        <FeaturedCategories />
-
-        <PromoBanners />
-
-        <PopularProducts />
-
-        <DailyBestSells />
-
-        <DealsSection />
-
-        <TopProducts />
-
-        <ShopByCategories />
-
-        <BottomBanner />
-
-        <SaleNotification />
-
-        <FeatureSection />
-
-        <Footer />
-
-      </main>
-    </div>
+    <CartProvider>
+      {currentRoute === '/cart' ? <CartPage /> : <HomePage />}
+    </CartProvider>
   );
 }
 

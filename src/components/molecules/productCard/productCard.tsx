@@ -1,12 +1,14 @@
 import React from 'react';
 import { Text, Button, Badge } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
+import { useCart } from '../../../context/cartContext';
 import './productCard.css';
 
 interface ProductCardProps {
+  id?: string | number;
   imageSrc: string;
   discountBadge?: string;
-  discountBgColor?: string; 
+  discountBgColor?: string;
   statusBadge?: string;
   statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
   category: string;
@@ -23,6 +25,7 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   imageSrc,
   discountBadge,
   discountBgColor,
@@ -40,13 +43,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   soldPercentage,
   onAdd,
 }) => {
+  const { addToCart } = useCart();
+
+  const parsePrice = (text?: string) => {
+    if (!text) {
+      return 0;
+    }
+
+    const numeric = Number.parseFloat(text.replace(/[^0-9.]/g, ''));
+    return Number.isFinite(numeric) ? numeric : 0;
+  };
+
+  const handleAdd = () => {
+    addToCart({
+      id: id ?? title,
+      title,
+      price: parsePrice(price),
+      oldPrice: parsePrice(oldPrice),
+      image: imageSrc,
+    });
+
+    if (onAdd) {
+      onAdd();
+    }
+  };
+
   const renderStars = () => {
     const stars = [];
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 5; i += 1) {
       const isFilled = i <= rating;
       stars.push(
-        <span 
-          key={i} 
+        <span
+          key={i}
           className={`m-product-card__star ${isFilled ? 'm-product-card__star--filled' : 'm-product-card__star--empty'}`}
         >
           S
@@ -60,16 +88,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <div className={`m-product-card m-product-card--${variant}`}>
       <div className="m-product-card__badges">
         {discountBadge && (
-          <Badge 
-            label={discountBadge} 
-            type="discount" 
-            bgColor={discountBgColor} 
+          <Badge
+            label={discountBadge}
+            type="discount"
+            bgColor={discountBgColor}
           />
         )}
         {statusBadge && (
-          <Badge 
-            label={statusBadge} 
-            type={statusBadgeType} 
+          <Badge
+            label={statusBadge}
+            type={statusBadgeType}
           />
         )}
       </div>
@@ -105,8 +133,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <span className="m-product-card__sold-percentage">{soldPercentage}%</span>
             </div>
             <div className="m-product-card__progress-bar">
-              <div 
-                className="m-product-card__progress-fill" 
+              <div
+                className="m-product-card__progress-fill"
                 style={{ width: `${soldPercentage}%` }}
               ></div>
             </div>
@@ -120,11 +148,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </div>
 
           {variant === 'popular' ? (
-            <Button variant="add-short" onClick={onAdd} className="m-product-card__add-btn">
+            <Button variant="add-short" onClick={handleAdd} className="m-product-card__add-btn">
               {TRANSLATIONS.button.add}
             </Button>
           ) : (
-            <Button variant="add-long" onClick={onAdd} className="m-product-card__cart-btn">
+            <Button variant="add-long" onClick={handleAdd} className="m-product-card__cart-btn">
               {TRANSLATIONS.button.addtoCart}
             </Button>
           )}
