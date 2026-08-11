@@ -13,3 +13,4 @@ export { default as Mail } from './footer/mail.svg';
 export { default as Clock } from './footer/clock.svg';
 export { default as Add } from './addicon.svg';
 export { default as Addto } from './addiconw.svg';
+export { default as Arrow} from './arrow.svg';

@@ -40,7 +40,6 @@
   gap: 2.5rem;
 }
 
-/* --- Responsive --- */
 @media (max-width: 62rem) {
   .o-about-hero__top {
     flex-direction: column;
@@ -51,24 +50,23 @@
   .o-about-hero__collage {
     width: 100%;
     max-width: 100%;
-    justify-content: center; /* Centrează imaginile în container */
+    justify-content: center; 
     gap: 1rem;
   }
 
   .o-about-hero__collage-img {
-    flex: 1; /* Împarte spațiul perfect în două, ținând cont de gap */
-    min-width: 0; /* Previne imaginile din a forța lățimea containerului */
+    flex: 1; 
+    min-width: 0; 
     height: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
   }
 
-  /* Resetăm marginile/transformările posibile de pe desktop */
   .o-about-hero__collage-img--back,
   .o-about-hero__collage-img--front {
-    margin: 0 !important;
-    transform: none !important;
-    position: static !important;
+    margin: 0;
+    transform: none;
+    position: static;
   }
 
   .o-about-hero__content {
