@@ -1,0 +1,82 @@
+
+.o-about-hero__container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.o-about-hero__top {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.o-about-hero__collage {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1 1 0;
+}
+
+.o-about-hero__collage-img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: var(--shadow-from-newsletter);
+  display: block;
+}
+
+.o-about-hero__content {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.o-about-hero__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 62rem) {
+  .o-about-hero__top {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .o-about-hero__collage {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center; /* Centrează imaginile în container */
+    gap: 1rem;
+  }
+
+  .o-about-hero__collage-img {
+    flex: 1; /* Împarte spațiul perfect în două, ținând cont de gap */
+    min-width: 0; /* Previne imaginile din a forța lățimea containerului */
+    height: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  /* Resetăm marginile/transformările posibile de pe desktop */
+  .o-about-hero__collage-img--back,
+  .o-about-hero__collage-img--front {
+    margin: 0 !important;
+    transform: none !important;
+    position: static !important;
+  }
+
+  .o-about-hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .o-about-hero__columns {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,56 @@
+.o-our-team__container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.o-our-team__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.o-our-team__squiggle {
+  display: inline-block;
+  width: 2.5rem;
+  height: 0.5rem;
+  margin-top: 0.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 4 Q5 0 10 4 T20 4 T30 4 T40 4' stroke='%233bb77e' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.o-our-team__body {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.o-our-team__content {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.o-our-team__content .a-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.o-our-team__grid {
+  flex: 1 1 70%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 56.25rem) {
+  .o-our-team__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .o-our-team__grid {
+    grid-template-columns: 1fr;
+  }
+}

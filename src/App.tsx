@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
-import { CartPage, HomePage } from './components/pages';
+import { CartPage, HomePage, AboutPage } from './components/pages';
 import { CartProvider } from './context/cartContext';
 
+const getRouteFromHash = () => {
+  if (window.location.hash === '#/cart') return '/cart';
+  if (window.location.hash === '#/about') return '/about';
+  return '/';
+};
+
 function App() {
-  const [currentRoute, setCurrentRoute] = useState<string>(() => {
-    return window.location.hash === '#/cart' ? '/cart' : '/';
-  });
+  const [currentRoute, setCurrentRoute] = useState<string>(getRouteFromHash());
 
   useEffect(() => {
     const syncRoute = () => {
-      const nextRoute = window.location.hash === '#/cart' ? '/cart' : '/';
-      setCurrentRoute(nextRoute);
+      setCurrentRoute(getRouteFromHash());
     };
 
     syncRoute();
@@ -23,7 +26,13 @@ function App() {
 
   return (
     <CartProvider>
-      {currentRoute === '/cart' ? <CartPage /> : <HomePage />}
+      {currentRoute === '/cart' ? (
+        <CartPage />
+      ) : currentRoute === '/about' ? (
+        <AboutPage />
+      ) : (
+        <HomePage />
+      )}
     </CartProvider>
   );
 }

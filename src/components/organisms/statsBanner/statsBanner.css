@@ -1,0 +1,41 @@
+.o-stats-banner__container {
+  max-width: var(--max-width-container-statbanner);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.o-stats-banner__panel {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 2rem;
+}
+
+.o-stats-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-statbanner);
+  opacity: 0.75;
+}
+
+.o-stats-banner__grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 62rem) {
+  .o-stats-banner__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 30rem) {
+  .o-stats-banner__grid {
+    grid-template-columns: 1fr;
+  }
+}

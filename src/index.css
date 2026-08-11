@@ -83,6 +83,8 @@ body, html {
   --color-star-filled: #FDC040;
   --color-star-empty: #D4D4D4;
 
+  --color-statbanner:#4B675A;
+
   --font-size-xxxs: 0.45rem;
   --font-size-xxs: 0.5rem;
   --font-size-xs: 0.6875rem;
@@ -101,6 +103,8 @@ body, html {
   --font-size-xxxxl: 2.25rem;      
   --font-size-subtitle: 1.5625rem;
   --max-width-container: 100rem;
+  --max-width-container-statbanner: 110rem;
+
 
   --shadow-from-button1: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
   --shadow-from-button2: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.02);

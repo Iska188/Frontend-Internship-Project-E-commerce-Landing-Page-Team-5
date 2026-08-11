@@ -6,7 +6,7 @@ import './footer.css';
 
 export const Footer: React.FC = () => {
   const companyLinks = [
-    { label: TRANSLATIONS.footer.companyLinks.about, href: '/about' },
+    { label: TRANSLATIONS.footer.companyLinks.about, href: '#/about' },
     { label: TRANSLATIONS.footer.companyLinks.delivery, href: '/delivery' },
     { label: TRANSLATIONS.footer.companyLinks.privacy, href: '/privacy' },
     { label: TRANSLATIONS.footer.companyLinks.terms, href: '/terms' },

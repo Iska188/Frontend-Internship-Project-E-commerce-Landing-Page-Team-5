@@ -1,0 +1,41 @@
+.o-welcome-section__container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.o-welcome-section__image {
+  flex: 1 1 45%;
+  width: 100%;
+}
+
+.o-welcome-section__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.o-welcome-section__content {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .o-welcome-section__container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .o-welcome-section__image,
+  .o-welcome-section__content {
+    flex: 1 1 100%;
+  }
+}

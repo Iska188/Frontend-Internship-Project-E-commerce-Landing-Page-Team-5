@@ -74,3 +74,37 @@
 .a-text--footer-link:hover {
   color: var(--color-footer-link-hover); 
 }
+
+.a-text--welcome-title {
+  font-size: var(--font-size-xxxl);
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.5rem;
+}
+
+.a-text--welcome-body {
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.a-text--about-eyebrow {
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.a-text--stat-value {
+  font-size: var(--font-size-xxxxl);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+}
+
+.a-text--stat-label {
+  font-size: var(--font-size-base);
+  color: var(--color-white);
+}

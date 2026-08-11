@@ -18,7 +18,8 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
         <div className="o-header__top">
           <div className="o-header__container">
             <div className="o-header__top-left">
-              <span>{TRANSLATIONS.header.aboutUs}</span> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
+              <a href="#/about" className="o-header__top-link">
+              <span>{TRANSLATIONS.header.nav.about}</span></a> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
             </div>
             <div className="o-header__top-center">
               <span className="text-green">{TRANSLATIONS.header.secureDelivery}</span>
@@ -84,7 +85,9 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
                 <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
               </span>
               <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
-              <span className="nav-item">{TRANSLATIONS.header.nav.about}</span>
+              <a href="#/about" className="nav-item">
+                {TRANSLATIONS.header.nav.about}
+              </a>
               <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
               <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
               <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={['Fruits', 'Vegetables', 'Meat']} />
