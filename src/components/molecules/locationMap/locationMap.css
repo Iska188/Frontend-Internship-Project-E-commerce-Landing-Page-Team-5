@@ -1,0 +1,14 @@
+.m-location-map {
+  width: 65%;
+  max-width: var(--max-width-container);
+  height: 22rem; 
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.05);
+  margin: auto;
+}
+
+.leaflet-container {
+  z-index: 1; 
+  font-family: inherit;
+}

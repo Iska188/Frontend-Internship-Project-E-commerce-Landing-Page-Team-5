@@ -6,8 +6,18 @@ import memberTwo from '../../../assets/about/ourTeam/member2.png';
 import './ourTeam.css';
 
 const TEAM_DATA = [
-  { imageSrc: memberOne, name: TRANSLATIONS.ourTeam.members.merinda.name, role: TRANSLATIONS.ourTeam.members.merinda.role },
-  { imageSrc: memberTwo, name: TRANSLATIONS.ourTeam.members.specter.name, role: TRANSLATIONS.ourTeam.members.specter.role },
+  {
+    id: 'merinda',
+    imageSrc: memberOne,
+    name: TRANSLATIONS.ourTeam.members.merinda.name,
+    role: TRANSLATIONS.ourTeam.members.merinda.role,
+  },
+  {
+    id: 'specter',
+    imageSrc: memberTwo,
+    name: TRANSLATIONS.ourTeam.members.specter.name,
+    role: TRANSLATIONS.ourTeam.members.specter.role,
+  },
 ];
 
 export const OurTeam = () => {
@@ -32,11 +42,11 @@ export const OurTeam = () => {
             </Text>
 
             <Text variant="welcome-body" as="p">
-              {TRANSLATIONS.ourTeam.paragraphOne}
+              {TRANSLATIONS.ourTeam.paragraph}
             </Text>
 
             <Text variant="welcome-body" as="p">
-              {TRANSLATIONS.ourTeam.paragraphTwo}
+              {TRANSLATIONS.ourTeam.paragraph}
             </Text>
 
             <Button variant="primary">{TRANSLATIONS.ourTeam.viewAllMembers}</Button>
@@ -45,7 +55,7 @@ export const OurTeam = () => {
           <div className="o-our-team__grid">
             {TEAM_DATA.map((member) => (
               <TeamMemberCard
-                key={member.name}
+                key={member.id}
                 imageSrc={member.imageSrc}
                 name={member.name}
                 role={member.role}

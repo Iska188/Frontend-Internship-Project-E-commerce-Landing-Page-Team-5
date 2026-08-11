@@ -7,9 +7,10 @@ import './header.css';
 
 interface HeaderProps {
   cartPage?: boolean;
+  currentPage?: 'home' | 'about' | 'contact';
 }
 
-export const Header = ({ cartPage = false }: HeaderProps) => {
+export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -18,7 +19,7 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
         <div className="o-header__top">
           <div className="o-header__container">
             <div className="o-header__top-left">
-              <a href="#/about" className="o-header__top-link">
+              <a href="#/about" className={`o-header__top-link o-header__top-link--about ${currentPage === 'about' ? 'active' : ''}`}>
               <span>{TRANSLATIONS.header.nav.about}</span></a> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
             </div>
             <div className="o-header__top-center">
@@ -84,8 +85,8 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
               <span className="nav-item">
                 <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
               </span>
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
-              <a href="#/about" className="nav-item">
+              <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={currentPage === 'home'} />
+              <a href="#/about" className={`nav-item nav-item--about ${currentPage === 'about' ? 'active' : ''}`}>
                 {TRANSLATIONS.header.nav.about}
               </a>
               <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
@@ -93,7 +94,9 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
               <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={['Fruits', 'Vegetables', 'Meat']} />
               <NavDropdown label={TRANSLATIONS.header.nav.blog} options={['Blog Category', 'Single Post']} />
               <NavDropdown label={TRANSLATIONS.header.nav.pages} options={['About Us', 'Contact', '404 Page']} />
-              <span className="nav-item">{TRANSLATIONS.header.nav.contact}</span>
+              <a href="#/contact" className={`nav-item nav-item--contact ${currentPage === 'contact' ? 'active' : ''}`}>
+                {TRANSLATIONS.header.nav.contact}
+              </a>
             </nav>
           </div>
         </div>
@@ -127,9 +130,11 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
                 <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
               </span>
 
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={true} />
+              <NavDropdown label={TRANSLATIONS.header.nav.home} options={['Home 1', 'Home 2', 'Home 3']} isActive={currentPage === 'home'} />
 
-              <span className="nav-item">{TRANSLATIONS.header.nav.about}</span>
+              <a href="#/about" className={`nav-item ${currentPage === 'about' ? 'active' : ''}`}>
+                {TRANSLATIONS.header.nav.about}
+              </a>
 
               <NavDropdown label={TRANSLATIONS.header.nav.shop} options={['Shop Grid', 'Shop List', 'Single Product']} />
               <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={['Vendors Grid', 'Vendors List', 'Dashboard']} />
@@ -137,7 +142,9 @@ export const Header = ({ cartPage = false }: HeaderProps) => {
               <NavDropdown label={TRANSLATIONS.header.nav.blog} options={['Blog Category', 'Single Post']} />
               <NavDropdown label={TRANSLATIONS.header.nav.pages} options={['About Us', 'Contact', '404 Page']} />
 
-              <span className="nav-item">{TRANSLATIONS.header.nav.contact}</span>
+              <a href="#/contact" className={`nav-item nav-item--contact ${currentPage === 'contact' ? 'active' : ''}`}>
+                {TRANSLATIONS.header.nav.contact}
+              </a>
             </nav>
 
             <div className="o-header__support">

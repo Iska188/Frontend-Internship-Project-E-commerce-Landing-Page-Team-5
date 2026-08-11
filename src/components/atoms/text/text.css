@@ -108,3 +108,45 @@
   font-size: var(--font-size-base);
   color: var(--color-white);
 }
+
+.a-text--help-eyebrow {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.75rem;
+  margin-top: -0.5rem;
+}
+
+.a-text--help-title {
+  font-size: var(--font-size-contactxl);
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.2;
+  display: block;
+  margin-bottom: 1.25rem;
+  max-width: 40rem;
+}
+
+.a-text--help-feature-title {
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 700;
+  color: var(--color-text-main);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.a-text--help-feature-title-green {
+  font-size: var(--font-size-md, 1rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.a-text--help-desc {
+  font-size: var(--font-size-subsm, 0.8125rem);
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  display: block;
+}

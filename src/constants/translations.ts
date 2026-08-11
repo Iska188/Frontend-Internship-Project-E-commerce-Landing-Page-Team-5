@@ -317,13 +317,28 @@ ourTeam: {
   title: 'Our Team',
   eyebrow: 'Our Team',
   subtitle: 'Meet Our Expert Team',
-  paragraphOne: 'Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.',
-  paragraphTwo: 'Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.',
+  paragraph: 'Proin ullamcorper pretium orci. Donec necscele risque leo. Nam massa dolor imperdiet neccon sequata congue idsem. Maecenas malesuada faucibus finibus.',
   viewAllMembers: 'View All Members',
   members: {
     merinda: { name: 'H. Merinda', role: 'CEO & Co-Founder' },
     specter: { name: 'Dilan Specter', role: 'Head Engineer' },
   },
+},
+
+contactPage:{
+  eyebrow: 'How can help you ?',
+  title: 'Let us know how we can help you',
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.',
+  title1: '01. Visit Feedback',
+  title2: '02. Employer Services',
+  title3: '03. Billing Inquiries',
+  title4: '04. General Inquiries',
+  shop: 'Shop',
+  studio: 'Studio',
+  office: 'Office',
+  adress: '205 North Michigan Avenue, Suite 810\nChicago, 60601, USA',
+  number: '(123) 456-7890',
+  email: 'contact@Evara.com',
 },
 
 };

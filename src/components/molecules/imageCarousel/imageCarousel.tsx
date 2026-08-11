@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../atoms';
+import { Arrow } from '../../../assets';
 import './imageCarousel.css';
 
 interface ImageCarouselProps {
@@ -21,7 +22,7 @@ export const ImageCarousel = ({ images, visibleCount = 3 }: ImageCarouselProps) 
   return (
     <div className="m-carousel">
       <Button variant="carousel" onClick={handlePrev} disabled={currentIndex === 0}>
-        &larr;
+        <img src={Arrow} alt="Previous" className="m-carousel__arrow m-carousel__arrow--prev" />
       </Button>
 
       <div className="m-carousel__viewport">
@@ -29,16 +30,20 @@ export const ImageCarousel = ({ images, visibleCount = 3 }: ImageCarouselProps) 
           className="m-carousel__track"
           style={{ width: `${trackWidth}%`, transform: `translateX(-${translateX}%)` }}
         >
-          {images.map((src, index) => (
-            <div className="m-carousel__item" key={index} style={{ width: `${itemWidth}%` }}>
-              <img src={src} alt={`Gallery image ${index + 1}`} />
-            </div>
-          ))}
+          {images.map((src, index) => {
+            const uniqueKey = `${src.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${index}`;
+
+            return (
+              <div className="m-carousel__item" key={uniqueKey} style={{ width: `${itemWidth}%` }}>
+                <img src={src} alt={`Gallery image ${index + 1}`} />
+              </div>
+            );
+          })}
         </div>
       </div>
 
       <Button variant="carousel" onClick={handleNext} disabled={currentIndex === maxIndex}>
-        &rarr;
+        <img src={Arrow} alt="Next" className="m-carousel__arrow m-carousel__arrow--next" />
       </Button>
     </div>
   );

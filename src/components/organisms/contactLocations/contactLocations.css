@@ -1,0 +1,27 @@
+.o-contact-locations {
+  width: 100%;
+  padding: 2.5rem 0 3.5rem;
+}
+
+.o-contact-locations__container {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5rem;
+}
+
+@media (max-width: 62rem) {
+  .o-contact-locations__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .o-contact-locations__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

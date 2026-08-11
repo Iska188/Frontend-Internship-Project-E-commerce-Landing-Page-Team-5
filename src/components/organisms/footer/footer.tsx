@@ -10,14 +10,14 @@ export const Footer: React.FC = () => {
     { label: TRANSLATIONS.footer.companyLinks.delivery, href: '/delivery' },
     { label: TRANSLATIONS.footer.companyLinks.privacy, href: '/privacy' },
     { label: TRANSLATIONS.footer.companyLinks.terms, href: '/terms' },
-    { label: TRANSLATIONS.footer.companyLinks.contact, href: '/contact' },
+    { label: TRANSLATIONS.footer.companyLinks.contact, href: '#/contact' },
     { label: TRANSLATIONS.footer.companyLinks.support, href: '/support' },
     { label: TRANSLATIONS.footer.companyLinks.careers, href: '/careers' },
   ];
 
   const accountLinks = [
     { label: TRANSLATIONS.footer.accountLinks.signIn, href: '/login' },
-    { label: TRANSLATIONS.footer.accountLinks.viewCart, href: '/cart' },
+    { label: TRANSLATIONS.footer.accountLinks.viewCart, href: '#/cart' },
     { label: TRANSLATIONS.footer.accountLinks.myWishlist, href: '/wishlist' },
     { label: TRANSLATIONS.footer.accountLinks.trackOrder, href: '/track' },
     { label: TRANSLATIONS.footer.accountLinks.helpTicket, href: '/help' },

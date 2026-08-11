@@ -7,6 +7,19 @@ export interface TeamMemberCardProps {
   role: string;
 }
 
+interface SocialLink {
+  platform: string;
+  iconSrc: string;
+  url: string;
+}
+
+const SOCIAL_LINKS: SocialLink[] = [
+  { platform: 'Facebook', iconSrc: 'src/assets/about/ourTeam/facebook.svg', url: '#' },
+  { platform: 'Twitter', iconSrc: 'src/assets/about/ourTeam/twitter.svg', url: '#' },
+  { platform: 'Instagram', iconSrc: 'src/assets/about/ourTeam/instagram.svg', url: '#' },
+  { platform: 'YouTube', iconSrc: 'src/assets/about/ourTeam/youtube.svg', url: '#' },
+];
+
 export const TeamMemberCard = ({ imageSrc, name, role }: TeamMemberCardProps) => {
   return (
     <div className="m-team-card">
@@ -23,18 +36,20 @@ export const TeamMemberCard = ({ imageSrc, name, role }: TeamMemberCardProps) =>
         </Text>
 
         <div className="m-team-card__socials">
-          <a href="#" aria-label="Facebook" className="m-team-card__social-icon">
-            <img src="src/assets/about/ourTeam/facebook.svg" alt="" />
-          </a>
-          <a href="#" aria-label="Twitter" className="m-team-card__social-icon">
-            <img src="src/assets/about/ourTeam/twitter.svg" alt="" />
-          </a>
-          <a href="#" aria-label="Instagram" className="m-team-card__social-icon">
-            <img src="src/assets/about/ourTeam/instagram.svg" alt="" />
-          </a>
-          <a href="#" aria-label="YouTube" className="m-team-card__social-icon">
-            <img src="src/assets/about/ourTeam/youtube.svg" alt="" />
-          </a>
+          {SOCIAL_LINKS.map((social) => {
+            const uniqueKey = `${name.toLowerCase().replace(/[^a-z0-9]/g, '-')}-${social.platform.toLowerCase()}`;
+
+            return (
+              <a
+                key={uniqueKey}
+                href={social.url}
+                aria-label={social.platform}
+                className="m-team-card__social-icon"
+              >
+                <img src={social.iconSrc} alt={`${social.platform} icon`} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
