@@ -1,0 +1,5 @@
+body.contact .o-header__nav a.nav-item[href="#/contact"],
+body.contact .o-header__mobile-nav a.nav-item[href="#/contact"],
+body.contact .o-header__top-left a.o-header__top-link[href="#/contact"] {
+  color: var(--color-primary);
+}

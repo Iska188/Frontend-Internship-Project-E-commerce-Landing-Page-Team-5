@@ -6,6 +6,34 @@
 .o-header__top-link:visited {
   color: inherit;
 }
+
+
+a.nav-item {
+  color: inherit;
+  text-decoration: none;
+}
+
+.o-header__nav a.nav-item,
+.o-header__mobile-nav a.nav-item {
+  color: var(--color-text-main);
+}
+
+.o-header__nav a.nav-item[href="#/about"],
+.o-header__mobile-nav a.nav-item[href="#/about"],
+.o-header__top-left a.o-header__top-link[href="#/about"] {
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.o-header__nav a.nav-item[href="#/about"]:hover,
+.o-header__nav a.nav-item[href="#/about"]:focus,
+.o-header__mobile-nav a.nav-item[href="#/about"]:hover,
+.o-header__mobile-nav a.nav-item[href="#/about"]:focus,
+.o-header__top-left a.o-header__top-link[href="#/about"]:hover,
+.o-header__top-left a.o-header__top-link[href="#/about"]:focus {
+  color: var(--color-primary);
+}
+
 .o-header {
   width: 100%;
   background-color: var(--color-white);

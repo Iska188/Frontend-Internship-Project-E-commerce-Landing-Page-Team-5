@@ -17,3 +17,6 @@ export * from './aboutHero/aboutHero'
 export * from './statsBanner/statsBanner';
 export * from './ourTeam/ourTeam';
 export * from './aboutBottomBanner/aboutBottomBanner';
+export * from './contactHelp/contactHelp';
+export * from './contactLocations/contactLocations';
+export * from './contactForm/contactForm';

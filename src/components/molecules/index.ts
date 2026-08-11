@@ -15,5 +15,5 @@ export * from './provideCard/provideCard';
 export * from './infoColumn/infoColumn';
 export * from './statColumn/statColumn';
 export * from './teamMemberCard/teamMemberCard';
-
-
+export * from './helpItem/helpItem';
+export * from './locationMap/locationMap';

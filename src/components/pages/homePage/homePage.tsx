@@ -5,7 +5,7 @@ export function HomePage(){
 
   return (
     <div>
-      <Header />
+      <Header currentPage='home' />
 
       <main>
         <Hero/> 

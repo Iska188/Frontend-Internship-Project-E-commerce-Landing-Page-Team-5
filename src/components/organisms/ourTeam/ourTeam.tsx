@@ -32,11 +32,11 @@ export const OurTeam = () => {
             </Text>
 
             <Text variant="welcome-body" as="p">
-              {TRANSLATIONS.ourTeam.paragraphOne}
+              {TRANSLATIONS.ourTeam.paragraph}
             </Text>
 
             <Text variant="welcome-body" as="p">
-              {TRANSLATIONS.ourTeam.paragraphTwo}
+              {TRANSLATIONS.ourTeam.paragraph}
             </Text>
 
             <Button variant="primary">{TRANSLATIONS.ourTeam.viewAllMembers}</Button>

@@ -1,19 +1,46 @@
 import { useEffect, useState } from 'react';
-import { CartPage, HomePage, AboutPage } from './components/pages';
+import { CartPage, HomePage, AboutPage, ContactPage } from './components/pages';
 import { CartProvider } from './context/cartContext';
 
-const getRouteFromHash = () => {
-  if (window.location.hash === '#/cart') return '/cart';
-  if (window.location.hash === '#/about') return '/about';
-  return '/';
-};
-
 function App() {
-  const [currentRoute, setCurrentRoute] = useState<string>(getRouteFromHash());
+  const [currentRoute, setCurrentRoute] = useState<string>(() => {
+    const hash = window.location.hash;
+
+    if (hash === '#/cart') {
+      return '/cart';
+    }
+
+    if (hash === '#/about') {
+      return '/about';
+    }
+
+    if (hash === '#/contact') {
+      return '/contact';
+    }
+
+    return '/';
+  });
 
   useEffect(() => {
     const syncRoute = () => {
-      setCurrentRoute(getRouteFromHash());
+      const hash = window.location.hash;
+
+      if (hash === '#/cart') {
+        setCurrentRoute('/cart');
+        return;
+      }
+
+      if (hash === '#/about') {
+        setCurrentRoute('/about');
+        return;
+      }
+
+      if (hash === '#/contact') {
+        setCurrentRoute('/contact');
+        return;
+      }
+
+      setCurrentRoute('/');
     };
 
     syncRoute();
@@ -26,13 +53,10 @@ function App() {
 
   return (
     <CartProvider>
-      {currentRoute === '/cart' ? (
-        <CartPage />
-      ) : currentRoute === '/about' ? (
-        <AboutPage />
-      ) : (
-        <HomePage />
-      )}
+      {currentRoute === '/cart' && <CartPage />}
+      {currentRoute === '/about' && <AboutPage />}
+      {currentRoute === '/contact' && <ContactPage />}
+      {currentRoute === '/' && <HomePage />}
     </CartProvider>
   );
 }
