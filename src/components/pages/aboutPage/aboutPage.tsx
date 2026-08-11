@@ -1,4 +1,4 @@
-import { Header, Footer, WelcomeSection, WhatWeProvide, AboutHero, StatsBanner, OurTeam, AboutBottomBanner } from '../../organisms';
+import { Header, Footer, WelcomeSection, WhatWeProvide, AboutHero, StatsBanner, OurTeam, AboutBottomBanner} from '../../organisms';
 import { useEffect } from 'react';
 import './aboutPage.css';
 

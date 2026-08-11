@@ -17,3 +17,6 @@ export * from './statColumn/statColumn';
 export * from './teamMemberCard/teamMemberCard';
 export * from './helpItem/helpItem';
 export * from './locationMap/locationMap';
+export * from './sideBarCategoryItem/sideBarCategoryItem';
+export * from './sideBarTrendingItem/sideBarTrendingItem';
+export * from './blogPostCard/blogPostCard';

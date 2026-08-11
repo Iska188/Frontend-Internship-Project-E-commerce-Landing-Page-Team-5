@@ -341,4 +341,20 @@ contactPage:{
   email: 'contact@Evara.com',
 },
 
+blogSidebar: {
+  searchPlaceholder: 'Search...',
+  category: 'Category',
+  trendingNow: 'Trending Now',
+  gallery: 'Gallery',
+  popularTags: 'Popular Tags',
+  categories: {
+    milksAndDairies: 'Milks & Dairies',
+    clothing: 'Clothing',
+    petFoods: 'Pet Foods',
+    bakingMaterial: 'Baking material',
+    freshFruit: 'Fresh Fruit',
+  },
+},
+
+
 };

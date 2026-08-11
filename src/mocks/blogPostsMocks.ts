@@ -1,0 +1,17 @@
+export const BLOG_POSTS_MOCK = [
+  { id: 'healthy-food-guide', imageSrc: 'src/assets/blog/posts/post1.png', badge: 'New', category: 'Side Dish', title: 'The Intermediate Guide to Healthy Food', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'quinoa-salad-lemon-dill', imageSrc: 'src/assets/blog/posts/post2.png', badge: 'Hot', category: 'Soups and Stews', title: 'Summer Quinoa Salad Jars with Lemon Dill', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'caprese-chicken-potatoes', imageSrc: 'src/assets/blog/posts/post3.png', badge: 'New', category: 'Salad', title: 'Caprese Chicken with Smashed Potatoes', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'harissa-chickpeas-feta', imageSrc: 'src/assets/blog/posts/post4.png', badge: 'New', category: 'Dessert', title: 'Harissa Chickpeas with Whipped Feta', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'almond-butter-zucchini-bars', imageSrc: 'src/assets/blog/posts/post5.png', badge: 'New', category: 'Breakfast', title: 'Almond Butter Chocolate Chip Zucchini Bars', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'smoky-beans-greens-tacos', imageSrc: 'src/assets/blog/posts/post6.png', badge: 'Hot', category: 'Vegan', title: 'Smoky Beans & Greens Tacos with Aji Verde', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'sticky-ginger-rice-pickled-veg', imageSrc: 'src/assets/blog/posts/post7.png', badge: 'New', category: 'Gluten Free', title: 'Sticky Ginger Rice Bowls with Pickled Veg', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'creamy-garlic-sundried-tomato-pasta', imageSrc: 'src/assets/blog/posts/post8.png', badge: 'New', category: 'Side Dish', title: 'Creamy Garlic Sun-Dried Tomato Pasta', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'spinach-mozza-pizza', imageSrc: 'src/assets/blog/posts/post9.png', badge: 'New', category: 'Dairy Free', title: 'The Absolute Easiest Spinach and Pizza', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'sticky-ginger-rice-pickled', imageSrc: 'src/assets/blog/posts/post10.png', badge: 'New', category: 'Salad', title: 'Sticky Ginger Rice Bowls with Pickled', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'soft-chocolate-chip-cookies', imageSrc: 'src/assets/blog/posts/post11.png', badge: 'New', category: 'Soups', title: 'The Best Soft Chocolate Chip Cookies', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'baked-mozzarella-chicken-rolls', imageSrc: 'src/assets/blog/posts/post12.png', badge: 'New', category: 'Vegetarian', title: 'Baked Mozzarella Chicken Rolls', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'avocado-egg-salad', imageSrc: 'src/assets/blog/posts/post13.png', badge: 'New', category: 'Dessert', title: 'The Best Avocado Egg Salad', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'litigans', imageSrc: 'src/assets/blog/posts/post14.png', badge: 'New', category: 'Dessert', title: 'The Best Avocado Egg Salad', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+  { id: 'litigans-actor', imageSrc: 'src/assets/blog/posts/post15.png', badge: 'New', category: 'Dessert', title: 'The litigants on the screen are not actors', date: '25 April 2022', views: '126k', readTime: '4 mins read' },
+];
