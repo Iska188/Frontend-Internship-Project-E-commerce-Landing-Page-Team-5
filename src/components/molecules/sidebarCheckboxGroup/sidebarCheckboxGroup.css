@@ -1,0 +1,31 @@
+.m-checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  list-style: none;
+}
+
+.m-checkbox-group__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.m-checkbox-group__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.m-checkbox-group__input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.m-checkbox-group__count {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}

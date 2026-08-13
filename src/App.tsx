@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CartPage, HomePage, AboutPage, ContactPage, BlogPage } from './components/pages';
+import { CartPage, HomePage, AboutPage, ContactPage, BlogPage, ShopPage } from './components/pages';
 import { CartProvider } from './context/cartContext';
 
 function App() {
@@ -49,6 +49,11 @@ function App() {
         return;
       }
 
+      if (hash === '#/shop') {
+        setCurrentRoute('/shop');
+        return;
+      }
+
       setCurrentRoute('/');
     };
 
@@ -67,6 +72,7 @@ function App() {
       {currentRoute === '/contact' && <ContactPage />}
       {currentRoute === '/blog' && <BlogPage />}
       {currentRoute === '/' && <HomePage />}
+      {currentRoute === '/shop' && <ShopPage />}
     </CartProvider>
   );
 }

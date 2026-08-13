@@ -20,3 +20,6 @@ export * from './locationMap/locationMap';
 export * from './sideBarCategoryItem/sideBarCategoryItem';
 export * from './sideBarTrendingItem/sideBarTrendingItem';
 export * from './blogPostCard/blogPostCard';
+export * from './pagination/pagination';
+export * from './sidebarPriceRange/sidebarPriceRange';
+export * from './sidebarCheckboxGroup/sidebarCheckboxGroup';

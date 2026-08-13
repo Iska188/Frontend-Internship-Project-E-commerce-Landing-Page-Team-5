@@ -1,0 +1,35 @@
+.o-shop-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.o-shop-sidebar__section {
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-from-newsletter);
+  padding: 1.25rem;
+}
+
+.o-shop-sidebar__title {
+  margin-bottom: 1rem;
+}
+
+.o-shop-sidebar__category-list,
+.o-shop-sidebar__new-products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.o-shop-sidebar__subheading {
+  display: block;
+  margin: 1.25rem 0 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.o-shop-sidebar__filter-btn {
+  width: 100%;
+  margin-top: 1.25rem;
+}

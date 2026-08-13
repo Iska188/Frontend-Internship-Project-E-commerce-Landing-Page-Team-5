@@ -15,3 +15,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+.o-blog-posts-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}

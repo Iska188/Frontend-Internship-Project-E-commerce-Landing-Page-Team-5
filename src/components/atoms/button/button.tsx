@@ -4,7 +4,7 @@ import './button.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: 'add-short' | 'add-long' | 'carousel' | 'primary' | 'outline' | 'category' | 'dark' | 'icon';
+  variant?: 'add-short' | 'add-long' | 'carousel' | 'primary' | 'outline' | 'category' | 'dark' | 'icon' | 'pagination';
 }
 
 export const Button: React.FC<ButtonProps> = ({ 

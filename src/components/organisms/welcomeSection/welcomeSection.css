@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 62rem) {
   .o-welcome-section__container {
     flex-direction: column;
     gap: 2rem;

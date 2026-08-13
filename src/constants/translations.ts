@@ -356,5 +356,96 @@ blogSidebar: {
   },
 },
 
+blogPosts: {
+  badges: {
+    new: 'New',
+    hot: 'Hot',
+  },
+  posts: {
+    healthyFoodGuide: { title: 'The Intermediate Guide to Healthy Food', category: 'Side Dish' },
+    quinoaSaladLemonDill: { title: 'Summer Quinoa Salad Jars with Lemon Dill', category: 'Soups and Stews' },
+    capreseChickenPotatoes: { title: 'Caprese Chicken with Smashed Potatoes', category: 'Salad' },
+    harissaChickpeasFeta: { title: 'Harissa Chickpeas with Whipped Feta', category: 'Dessert' },
+    almondButterZucchiniBars: { title: 'Almond Butter Chocolate Chip Zucchini Bars', category: 'Breakfast' },
+    smokyBeansGreensTacos: { title: 'Smoky Beans & Greens Tacos with Aji Verde', category: 'Vegan' },
+    stickyGingerRicePickledVeg: { title: 'Sticky Ginger Rice Bowls with Pickled Veg', category: 'Gluten Free' },
+    creamyGarlicSundriedTomatoPasta: { title: 'Creamy Garlic Sun-Dried Tomato Pasta', category: 'Side Dish' },
+    spinachMozzaPizza: { title: 'The Absolute Easiest Spinach and Pizza', category: 'Dairy Free' },
+    stickyGingerRicePickled: { title: 'Sticky Ginger Rice Bowls with Pickled', category: 'Salad' },
+    softChocolateChipCookies: { title: 'The Best Soft Chocolate Chip Cookies', category: 'Soups' },
+    bakedMozzarellaChickenRolls: { title: 'Baked Mozzarella Chicken Rolls', category: 'Vegetarian' },
+    avocadoEggSalad: { title: 'The Best Avocado Egg Salad', category: 'Dessert' },
+    avocadoEggSaladAlt: { title: 'The Best Avocado Egg Salad', category: 'Dessert' },
+    litigantsNotActors: { title: 'The litigants on the screen are not actors', category: 'Dessert' },
+  },
+},
+
+blogBanner: {
+  title: 'Blog & News',
+  home: 'Home',
+  breadcrumbCurrent: 'Blog & News',
+  tags: {
+    shopping: 'Shopping',
+    recipes: 'Recipes',
+    kitchen: 'Kitchen',
+    news: 'News',
+    food: 'Food',
+  },
+},
+
+shopSidebar: {
+  category: 'Category',
+  fillByPrice: 'Fill by price',
+  color: 'Color',
+  itemCondition: 'Item Condition',
+  filter: 'Filter',
+  newProducts: 'New products',
+},
+shopCategories: {
+  milksAndDairies: 'Milks & Dairies',
+  clothing: 'Clothing',
+  petFoods: 'Pet Foods',
+  bakingMaterial: 'Baking material',
+  freshFruit: 'Fresh Fruit',
+},
+shopFilters: {
+  colors: {
+    red: 'Red',
+    green: 'Green',
+    blue: 'Blue',
+  },
+  conditions: {
+    new: 'New',
+    refurbished: 'Refurbished',
+    used: 'Used',
+  },
+},
+shopNewProducts: {
+  chenCardigan: 'Chen Cardigan',
+  chenSweater: 'Chen Sweater',
+  colorfulJacket: 'Colorful Jacket',
+},
+shopProductCategories: {
+  snack: 'Snack',
+  hotDog: 'Hoto Foods',
+  vegetables: 'Vegetables',
+  petFoods: 'Pet Foods',
+  hotoFoods: 'Hoto Foods',
+  mhoto: 'Mhoto',
+  coffee: 'Coffee',
+  cream: 'Cream',
+},
+shopProductNames: {
+  seedsOfChangeQuinoa: 'Seeds of Change Organic Quinoa',
+  italianMeatballs: 'All Natural Italian-Style Chicken Meatballs',
+  angiesBoomchickapop: "Angie's Boomchickapop Sweet & Salty",
+  fosterFarmsCrispy: 'Foster Farms Takeout Crispy Classic',
+  blueDiamondAlmonds: 'Blue Diamond Almonds Lightly',
+  chobaniVanillaGreek: 'Chobani Complete Vanilla Greek',
+  canadaDryGingerAle: 'Canada Dry Ginger Ale - 2 L Bottle',
+  encoreSeafoodsAlaskan: 'Encore Seafoods Stuffed Alaskan',
+  gortonsBeerBattered: "Gorton's Beer Battered Fish Fillets",
+  haagenDazsCaramelCone: 'Haagen-Dazs Caramel Cone Ice Cream',
+},
 
 };

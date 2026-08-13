@@ -1,5 +1,5 @@
-import { Header, Footer, BlogSidebar, BlogPostsGrid } from '../../organisms';
-import { BLOG_CATEGORIES_MOCK, BLOG_TRENDING_MOCK, BLOG_GALLERY_MOCK, BLOG_TAGS_MOCK } from '../../../mocks/blogSideBarMocks'
+import { Header, Footer, BlogSidebar, BlogPostsGrid, BlogBanner, AboutBottomBanner } from '../../organisms';
+import { BLOG_CATEGORIES_MOCK, BLOG_TRENDING_MOCK, BLOG_GALLERY_MOCK, BLOG_TAGS_MOCK } from '../../../mocks/blogSideBarMocks';
 import { BLOG_POSTS_MOCK } from '../../../mocks/blogPostsMocks';
 import './blogPage.css';
 
@@ -9,6 +9,10 @@ export const BlogPage = () => {
       <Header />
 
       <main className="p-blog-page">
+        <div className="p-blog-page__header">
+          <BlogBanner/>
+        </div>
+
         <div className="p-blog-page__container">
           <div className="p-blog-page__posts">
             <BlogPostsGrid posts={BLOG_POSTS_MOCK} />
@@ -22,6 +26,8 @@ export const BlogPage = () => {
           />
         </div>
       </main>
+
+      <AboutBottomBanner />
 
       <Footer />
     </>
