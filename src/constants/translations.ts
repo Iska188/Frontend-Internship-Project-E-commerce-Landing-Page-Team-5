@@ -54,6 +54,8 @@ export const TRANSLATIONS = {
   searchBar: {
     placeholder: "Search for products...",
     buttonText: "Search",
+    noResults: 'No products found',
+
   },
   featuredCategories: {
     title: "Featured Categories",

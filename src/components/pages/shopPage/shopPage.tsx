@@ -4,11 +4,11 @@ import { SHOP_PRODUCTS_MOCK, SHOP_CATEGORIES_MOCK, SHOP_COLORS_MOCK, SHOP_CONDIT
 import './shopPage.css';
 
 export const ShopPage = () => {
-  const [priceMin, setPriceMin] = useState(500);
-  const [priceMax, setPriceMax] = useState(1000);
+  const [priceMin, setPriceMin] = useState(0);
+  const [priceMax, setPriceMax] = useState(400);
+  const [appliedFilters, setAppliedFilters] = useState({ priceMin: 0, priceMax: 2000 });
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedConditions, setSelectedConditions] = useState<string[]>([]);
-  const [appliedFilters, setAppliedFilters] = useState({ priceMin: 500, priceMax: 1000 });
 
   const filteredProducts = useMemo(() => {
     return SHOP_PRODUCTS_MOCK.filter(
@@ -31,7 +31,7 @@ export const ShopPage = () => {
             <ShopSidebar
               categories={SHOP_CATEGORIES_MOCK}
               priceMin={0}
-              priceMax={2000}
+              priceMax={400}
               currentPriceMin={priceMin}
               currentPriceMax={priceMax}
               onPriceChange={(min, max) => {

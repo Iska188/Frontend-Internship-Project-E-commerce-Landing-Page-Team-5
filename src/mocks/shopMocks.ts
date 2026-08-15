@@ -1,13 +1,12 @@
 import { TRANSLATIONS } from '../constants/translations';
 
 export const SHOP_CATEGORIES_MOCK = [
-  { icon: 'src/assets/body/shop/category-milk.svg', label: TRANSLATIONS.shopCategories.milksAndDairies, count: 11 },
-  { icon: 'src/assets/body/shop/category-clothing.svg', label: TRANSLATIONS.shopCategories.clothing, count: 13 },
-  { icon: 'src/assets/body/shop/category-pet.svg', label: TRANSLATIONS.shopCategories.petFoods, count: 15 },
-  { icon: 'src/assets/body/shop/category-baking.svg', label: TRANSLATIONS.shopCategories.bakingMaterial, count: 25 },
-  { icon: 'src/assets/body/shop/category-fruit.svg', label: TRANSLATIONS.shopCategories.freshFruit, count: 32 },
+  { icon: 'src/assets/blog/sideBar/bottle.svg', label: TRANSLATIONS.shopCategories.milksAndDairies, count: 11 },
+  { icon: 'src/assets/blog/sideBar/clothes.svg', label: TRANSLATIONS.shopCategories.clothing, count: 13 },
+  { icon: 'src/assets/blog/sideBar/snack.svg', label: TRANSLATIONS.shopCategories.petFoods, count: 15 },
+  { icon: 'src/assets/blog/sideBar/bottle.svg', label: TRANSLATIONS.shopCategories.bakingMaterial, count: 25 },
+  { icon: 'src/assets/blog/sideBar/baking.svg', label: TRANSLATIONS.shopCategories.freshFruit, count: 32 },
 ];
-
 export const SHOP_COLORS_MOCK = [
   { id: 'red', label: TRANSLATIONS.shopFilters.colors.red, count: 56 },
   { id: 'green', label: TRANSLATIONS.shopFilters.colors.green, count: 78 },
@@ -21,15 +20,15 @@ export const SHOP_CONDITIONS_MOCK = [
 ];
 
 export const SHOP_NEW_PRODUCTS_MOCK = [
-  { imageSrc: 'src/assets/body/shop/new-product-1.jpg', title: TRANSLATIONS.shopNewProducts.chenCardigan, price: '$99.50' },
-  { imageSrc: 'src/assets/body/shop/new-product-2.jpg', title: TRANSLATIONS.shopNewProducts.chenSweater, price: '$89.50' },
-  { imageSrc: 'src/assets/body/shop/new-product-3.jpg', title: TRANSLATIONS.shopNewProducts.colorfulJacket, price: '$25' },
+  { imageSrc: 'src/assets/body/popularproducts/product-1.png', title: TRANSLATIONS.shopNewProducts.chenCardigan, price: '$99.50' },
+  { imageSrc: 'src/assets/body/popularproducts/product-2.png', title: TRANSLATIONS.shopNewProducts.chenSweater, price: '$89.50' },
+  { imageSrc: 'src/assets/body/popularproducts/product-3.png', title: TRANSLATIONS.shopNewProducts.colorfulJacket, price: '$25' },
 ];
 
 export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'seeds-of-change-organic-quinoa',
-    imageSrc: 'src/assets/body/shop/product-1.png',
+    imageSrc: 'src/assets/body/popularproducts/product-1.png',
     statusBadge: 'Hot',
     statusBadgeType: 'hot' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
@@ -42,7 +41,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'all-natural-italian-style-meatballs',
-    imageSrc: 'src/assets/body/shop/product-2.png',
+    imageSrc: 'src/assets/body/popularproducts/product-2.png',
     statusBadge: 'Sale',
     statusBadgeType: 'discount' as const,
     category: TRANSLATIONS.shopProductCategories.hotDog,
@@ -55,7 +54,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'angies-boomchickapop-sweet-salty',
-    imageSrc: 'src/assets/body/shop/product-3.png',
+    imageSrc: 'src/assets/body/popularproducts/product-3.png',
     statusBadge: 'New',
     statusBadgeType: 'new' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
@@ -68,7 +67,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'foster-farms-takeout-crispy-classic',
-    imageSrc: 'src/assets/body/shop/product-4.png',
+    imageSrc: 'src/assets/body/popularproducts/product-4.png',
     category: TRANSLATIONS.shopProductCategories.vegetables,
     title: TRANSLATIONS.shopProductNames.fosterFarmsCrispy,
     rating: 4,
@@ -79,7 +78,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'blue-diamond-almonds-lightly',
-    imageSrc: 'src/assets/body/shop/product-5.png',
+    imageSrc: 'src/assets/body/popularproducts/product-5.png',
     discountBadge: '14%',
     discountBgColor: 'var(--color-sale-yellow)',
     category: TRANSLATIONS.shopProductCategories.petFoods,
@@ -92,7 +91,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'chobani-complete-vanilla-greek',
-    imageSrc: 'src/assets/body/shop/product-6.png',
+    imageSrc: 'src/assets/body/popularproducts/product-6.png',
     category: TRANSLATIONS.shopProductCategories.hotoFoods,
     title: TRANSLATIONS.shopProductNames.chobaniVanillaGreek,
     rating: 4,
@@ -103,7 +102,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'canada-dry-ginger-ale-2l',
-    imageSrc: 'src/assets/body/shop/product-7.png',
+    imageSrc: 'src/assets/body/popularproducts/product-7.png',
     category: TRANSLATIONS.shopProductCategories.mhoto,
     title: TRANSLATIONS.shopProductNames.canadaDryGingerAle,
     rating: 4,
@@ -114,7 +113,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'encore-seafoods-stuffed-alaskan',
-    imageSrc: 'src/assets/body/shop/product-8.png',
+    imageSrc: 'src/assets/body/popularproducts/product-8.png',
     statusBadge: 'Sale',
     statusBadgeType: 'discount' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
@@ -127,7 +126,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'gortons-beer-battered-fish-fillets',
-    imageSrc: 'src/assets/body/shop/product-9.png',
+    imageSrc: 'src/assets/body/popularproducts/product-9.png',
     statusBadge: 'Hot',
     statusBadgeType: 'hot' as const,
     category: TRANSLATIONS.shopProductCategories.coffee,
@@ -140,7 +139,7 @@ export const SHOP_PRODUCTS_MOCK = [
   },
   {
     id: 'haagen-dazs-caramel-cone-ice-cream',
-    imageSrc: 'src/assets/body/shop/product-10.png',
+    imageSrc: 'src/assets/body/popularproducts/product-10.png',
     discountBadge: '14%',
     discountBgColor: 'var(--color-sale-yellow)',
     category: TRANSLATIONS.shopProductCategories.cream,

@@ -20,9 +20,18 @@ export const SidebarPriceRange = ({ min, max, currentMin, currentMax, onChange }
     onChange(currentMin, value);
   };
 
+  const minPercent = ((currentMin - min) / (max - min)) * 100;
+  const maxPercent = ((currentMax - min) / (max - min)) * 100;
+
   return (
     <div className="m-price-range">
       <div className="m-price-range__track-wrap">
+        <div className="m-price-range__track-bg" />
+        <div
+          className="m-price-range__track-fill"
+          style={{ left: `${minPercent}%`, right: `${100 - maxPercent}%` }}
+        />
+
         <input
           type="range"
           min={min}
