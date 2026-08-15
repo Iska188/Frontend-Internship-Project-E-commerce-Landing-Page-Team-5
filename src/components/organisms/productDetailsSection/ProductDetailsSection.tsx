@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductOverview } from '../productOverview/ProductOverview';
+import { ProductOverview } from '../productOverview/productOverview';
 import { ProductTabs } from '../../molecules';
 import type { ProductDetailsData } from '../../../mocks/productDetailsMock';
 import './productDetailsSection.css';

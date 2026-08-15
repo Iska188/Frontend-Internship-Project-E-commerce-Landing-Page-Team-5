@@ -1,20 +1,8 @@
 import { useState, useEffect } from 'react';
-import {
-  Header,
-  Footer,
-  BottomBanner,
-  ProductDetailsSection,
-  RelatedProducts,
-  ShopSidebar,
-} from '../../organisms';
+import { Header, Footer, BottomBanner, ProductDetailsSection, RelatedProducts, ShopSidebar } from '../../organisms';
 import { Breadcrumb } from '../../molecules';
 import { getProductById, RELATED_PRODUCTS_MOCK } from '../../../mocks/productDetailsMock';
-import {
-  SHOP_CATEGORIES_MOCK,
-  SHOP_COLORS_MOCK,
-  SHOP_CONDITIONS_MOCK,
-  SHOP_NEW_PRODUCTS_MOCK,
-} from '../../../mocks/shopMocks';
+import { SHOP_CATEGORIES_MOCK, SHOP_COLORS_MOCK, SHOP_CONDITIONS_MOCK, SHOP_NEW_PRODUCTS_MOCK } from '../../../mocks/shopMocks';
 import './productPage.css';
 
 export const ProductPage = () => {

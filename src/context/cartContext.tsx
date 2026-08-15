@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useState, useEffect } from 'react';
-import { CartNotificationToast } from '../components/molecules/cartNotificationToast/CartNotificationToast';
-import type { CartNotificationData } from '../components/molecules/cartNotificationToast/CartNotificationToast';
+import { CartNotificationToast, type CartNotificationData } from '../components/molecules';
 
 export interface CartItem {
   id: string | number;
