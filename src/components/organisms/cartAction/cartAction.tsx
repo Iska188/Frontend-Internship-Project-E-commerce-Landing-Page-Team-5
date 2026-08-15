@@ -39,7 +39,6 @@ export function CartActionContainer({ cartPage = false }: CartActionContainerPro
                       className="dropdown-remove-button"
                       aria-label="Remove cart item"
                     >
-                      &times;
                     </button>
                   </div>
                 ))}

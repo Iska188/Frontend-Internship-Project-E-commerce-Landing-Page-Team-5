@@ -3,61 +3,22 @@ import { CartPage, HomePage, AboutPage, ContactPage, BlogPage, ShopPage } from '
 import { CartProvider } from './context/cartContext';
 
 function App() {
-  const [currentRoute, setCurrentRoute] = useState<string>(() => {
+  // Verificăm ruta exact cu '#' cum aveai tu
+  const getActiveRoute = () => {
     const hash = window.location.hash;
+    const validRoutes = ['#/cart', '#/about', '#/contact', '#/blog', '#/shop'];
+    
+    // Dacă e o rută validă, o returnăm pe aia. Altfel, default e '#/' (Home)
+    return validRoutes.includes(hash) ? hash : '#/';
+  };
 
-    if (hash === '#/cart') {
-      return '/cart';
-    }
-
-    if (hash === '#/about') {
-      return '/about';
-    }
-
-    if (hash === '#/contact') {
-      return '/contact';
-    }
-
-    if (hash === '#/blog') {
-      return '/blog';
-    }
-
-    return '/';
-  });
+  const [currentRoute, setCurrentRoute] = useState<string>(getActiveRoute);
 
   useEffect(() => {
     const syncRoute = () => {
-      const hash = window.location.hash;
-
-      if (hash === '#/cart') {
-        setCurrentRoute('/cart');
-        return;
-      }
-
-      if (hash === '#/about') {
-        setCurrentRoute('/about');
-        return;
-      }
-
-      if (hash === '#/contact') {
-        setCurrentRoute('/contact');
-        return;
-      }
-
-      if (hash === '#/blog') {
-        setCurrentRoute('/blog');
-        return;
-      }
-
-      if (hash === '#/shop') {
-        setCurrentRoute('/shop');
-        return;
-      }
-
-      setCurrentRoute('/');
+      setCurrentRoute(getActiveRoute());
     };
 
-    syncRoute();
     window.addEventListener('hashchange', syncRoute);
 
     return () => {
@@ -67,12 +28,13 @@ function App() {
 
   return (
     <CartProvider>
-      {currentRoute === '/cart' && <CartPage />}
-      {currentRoute === '/about' && <AboutPage />}
-      {currentRoute === '/contact' && <ContactPage />}
-      {currentRoute === '/blog' && <BlogPage />}
-      {currentRoute === '/' && <HomePage />}
-      {currentRoute === '/shop' && <ShopPage />}
+      {currentRoute === '#/cart' && <CartPage />}
+      {currentRoute === '#/about' && <AboutPage />}
+      {currentRoute === '#/contact' && <ContactPage />}
+      {currentRoute === '#/blog' && <BlogPage />}
+      {currentRoute === '#/shop' && <ShopPage />}
+      {/* Home-ul se afișează dacă avem '#/' sau dacă abia am intrat pe site (fără hash) */}
+      {(currentRoute === '#/' || currentRoute === '') && <HomePage />}
     </CartProvider>
   );
 }

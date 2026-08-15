@@ -18,7 +18,7 @@ interface BlogPostsGridProps {
   postsPerPage?: number;
 }
 
-export const BlogPostsGrid = ({ posts, postsPerPage = 9 }: BlogPostsGridProps) => {
+export const BlogPostsGrid = ({ posts, postsPerPage = 15 }: BlogPostsGridProps) => {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = Math.ceil(posts.length / postsPerPage);
 
