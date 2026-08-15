@@ -4,3 +4,4 @@ export * from './aboutPage/aboutPage';
 export * from './contactPage/contactPage';
 export * from './blogPage/blogPage';
 export * from './shopPage/shopPage';
+export * from './productPage/ProductPage';

@@ -59,6 +59,12 @@ export function CartPage() {
                       <Text variant="prod-title" as="h3" className="cart-page__item-title">
                         {item.title}
                       </Text>
+                      {item.selectedSize && (
+                        <div className="cart-page__item-size-wrap">
+                          <span className="cart-page__item-size-label">Option:</span>
+                          <span className="cart-page__item-size-badge">{item.selectedSize}</span>
+                        </div>
+                      )}
                       <div className="cart-page__item-price">${item.price.toFixed(2)}</div>
                     </div>
 

@@ -32,6 +32,9 @@ export function CartActionContainer({ cartPage = false }: CartActionContainerPro
                     <img src={item.image} alt={item.title} className="dropdown-image" />
                     <div className="item-details">
                       <p className="item-title">{item.title}</p>
+                      {item.selectedSize && (
+                        <span className="item-size-badge">{item.selectedSize}</span>
+                      )}
                       <span>{item.quantity} x ${item.price.toFixed(2)}</span>
                     </div>
                     <button

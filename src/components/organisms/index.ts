@@ -25,3 +25,6 @@ export * from './blogPostsGrid/blogPostsGrid';
 export * from './blogBanner/blogBanner';
 export * from './shopSidebar/shopSidebar';
 export * from './shopProductsGrid/shopProductsGrid';
+export * from './productOverview/ProductOverview';
+export * from './productDetailsSection/ProductDetailsSection';
+export * from './relatedProducts/RelatedProducts';

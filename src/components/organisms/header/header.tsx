@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '../../atoms';
 import { SearchBar, HeaderAction, NavDropdown } from '../../molecules';
 import { CartActionContainer } from '../../organisms';
@@ -7,13 +7,34 @@ import './header.css';
 
 interface HeaderProps {
   cartPage?: boolean;
-  currentPage?: 'home' | 'about' | 'contact';
+  currentPage?: 'home' | 'about' | 'contact' | 'shop' | 'blog' | 'vendors' | 'pages';
 }
 
 export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // --- CONFIGURARE MENIURI PENTRU DROPDOWN ---
+  const getNavFromRoute = () => {
+    const hash = typeof window !== 'undefined' ? window.location.hash : '';
+    if (hash === '#/about') return 'about';
+    if (hash === '#/contact') return 'contact';
+    if (hash.startsWith('#/shop') || hash.startsWith('#/product')) return 'shop';
+    if (hash.startsWith('#/blog')) return 'blog';
+    if (hash.startsWith('#/vendors')) return 'vendors';
+    if (hash.startsWith('#/pages')) return 'pages';
+    if (hash === '#/' || hash === '' || hash === '#home') return 'home';
+    return '';
+  };
+
+  const [activeNav, setActiveNav] = useState<string>(currentPage || getNavFromRoute);
+
+  useEffect(() => {
+    const handleHash = () => {
+      setActiveNav(currentPage || getNavFromRoute());
+    };
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, [currentPage]);
+
   const homeOptions = [
     { label: 'Home 1', path: '#/' },
     { label: 'Home 2', path: '#/' },
@@ -22,13 +43,12 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
 
   const shopOptions = [
     { label: 'Shop Grid', path: '#/shop' },
-    { label: 'Shop List', path: '#/shop' },
-    { label: 'Single Product', path: '#/' }
+    { label: 'Shop List', path: '#/shop' }
   ];
 
   const blogOptions = [
     { label: 'Blog Category', path: '#/blog' },
-    { label: 'Single Post', path: '#/' }
+    { label: 'Single Post', path: '#/blog' }
   ];
 
   const pagesOptions = [
@@ -57,8 +77,20 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
     { label: TRANSLATIONS.header.categories.fruit, path: '#/shop' }
   ];
 
-  const languageOptions = [{ label: 'English' }, { label: 'Română' }, { label: 'Français' }];
-  const currencyOptions = [{ label: 'USD' }, { label: 'EUR' }, { label: 'RON' }];
+  const [selectedLanguage, setSelectedLanguage] = useState('English');
+  const [selectedCurrency, setSelectedCurrency] = useState('USD');
+
+  const languageOptions = [
+    { label: 'English', onClick: () => setSelectedLanguage('English') },
+    { label: 'Română', onClick: () => setSelectedLanguage('Română') },
+    { label: 'Français', onClick: () => setSelectedLanguage('Français') }
+  ];
+
+  const currencyOptions = [
+    { label: 'USD', onClick: () => setSelectedCurrency('USD') },
+    { label: 'EUR', onClick: () => setSelectedCurrency('EUR') },
+    { label: 'RON', onClick: () => setSelectedCurrency('RON') }
+  ];
 
   return (
     <header className={`o-header${cartPage ? ' o-header--cart-page' : ''}`}> 
@@ -66,7 +98,7 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
         <div className="o-header__top">
           <div className="o-header__container">
             <div className="o-header__top-left">
-              <a href="#/about" className={`o-header__top-link o-header__top-link--about ${currentPage === 'about' ? 'active' : ''}`}>
+              <a href="#/about" className={`o-header__top-link o-header__top-link--about ${activeNav === 'about' ? 'active' : ''}`}>
                 <span>{TRANSLATIONS.header.nav.about}</span>
               </a> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
             </div>
@@ -74,9 +106,9 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
               <span className="text-green">{TRANSLATIONS.header.secureDelivery}</span>
             </div>
             <div className="o-header__top-right">
-              <span>{TRANSLATIONS.header.needHelp} <strong className="text-green">+1800900122</strong></span> |
-              <NavDropdown label="English" options={languageOptions} /> |
-              <NavDropdown label="USD" options={currencyOptions} />
+              <span className="o-header__help-text">{TRANSLATIONS.header.needHelp} <strong className="text-green">+1800900122</strong></span> |
+              <NavDropdown variant="header-top" label={selectedLanguage} options={languageOptions} /> |
+              <NavDropdown variant="header-top" label={selectedCurrency} options={currencyOptions} />
             </div>
           </div>
         </div>
@@ -133,16 +165,16 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
               <span className="nav-item">
                 <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
               </span>
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={currentPage === 'home'} />
-              <a href="#/about" className={`nav-item nav-item--about ${currentPage === 'about' ? 'active' : ''}`}>
+              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={activeNav === 'home'} />
+              <a href="#/about" className={`nav-item nav-item--about ${activeNav === 'about' ? 'active' : ''}`}>
                 {TRANSLATIONS.header.nav.about}
               </a>
-              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} />
+              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} isActive={activeNav === 'shop'} />
+              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} isActive={activeNav === 'vendors'} />
               <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={megaMenuOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} />
-              <a href="#/contact" className={`nav-item nav-item--contact ${currentPage === 'contact' ? 'active' : ''}`}>
+              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} isActive={activeNav === 'blog'} />
+              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} isActive={activeNav === 'pages'} />
+              <a href="#/contact" className={`nav-item nav-item--contact ${activeNav === 'contact' ? 'active' : ''}`}>
                 {TRANSLATIONS.header.nav.contact}
               </a>
             </nav>
@@ -172,19 +204,19 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
                 <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
               </span>
 
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={currentPage === 'home'} />
+              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={activeNav === 'home'} />
 
-              <a href="#/about" className={`nav-item ${currentPage === 'about' ? 'active' : ''}`}>
+              <a href="#/about" className={`nav-item ${activeNav === 'about' ? 'active' : ''}`}>
                 {TRANSLATIONS.header.nav.about}
               </a>
 
-              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} />
+              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} isActive={activeNav === 'shop'} />
+              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} isActive={activeNav === 'vendors'} />
               <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={megaMenuOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} />
+              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} isActive={activeNav === 'blog'} />
+              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} isActive={activeNav === 'pages'} />
 
-              <a href="#/contact" className={`nav-item nav-item--contact ${currentPage === 'contact' ? 'active' : ''}`}>
+              <a href="#/contact" className={`nav-item nav-item--contact ${activeNav === 'contact' ? 'active' : ''}`}>
                 {TRANSLATIONS.header.nav.contact}
               </a>
             </nav>

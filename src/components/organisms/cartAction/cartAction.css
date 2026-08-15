@@ -60,6 +60,23 @@
   margin: 0;
   font-weight: 600;
   font-size: var(--font-size-sm);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}
+
+.header-cart-dropdown .item-size-badge {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  border: 0.0625rem solid var(--color-border-green);
+  border-radius: 0.2rem;
+  padding: 0.05rem 0.35rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
 }
 
 .header-cart-dropdown .item-details span {

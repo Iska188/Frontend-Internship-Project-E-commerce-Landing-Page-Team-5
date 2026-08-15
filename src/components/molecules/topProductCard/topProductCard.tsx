@@ -18,14 +18,20 @@ export const TopProductCard: React.FC<TopProductCardProps> = ({
   currentPrice,
   originalPrice,
 }) => {
+  const productHref = `#/product?id=${encodeURIComponent(title)}`;
+
   return (
     <div className="m-top-product">
       <div className="m-top-product__img-wrapper">
-        <img src={imageSrc} alt={title} className="m-top-product__img" />
+        <a href={productHref}>
+          <img src={imageSrc} alt={title} className="m-top-product__img" />
+        </a>
       </div>
       
       <div className="m-top-product__content">
-        <h4 className="m-top-product__title">{title}</h4>
+        <a href={productHref}>
+          <h4 className="m-top-product__title">{title}</h4>
+        </a>
         
         <div className="m-top-product__rating">
           <div className="m-top-product__stars" aria-label={`Rating: ${rating} out of 5`}>

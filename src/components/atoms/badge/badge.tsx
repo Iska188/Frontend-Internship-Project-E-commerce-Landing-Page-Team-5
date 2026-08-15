@@ -3,7 +3,7 @@ import './badge.css';
 
 interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string | number;
-  type: 'discount' | 'hot' | 'new' | 'count';
+  type: 'discount' | 'hot' | 'new' | 'count' | 'sale-off';
   bgColor?: string;
 }
 

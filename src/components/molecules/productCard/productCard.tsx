@@ -84,6 +84,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     return stars;
   };
 
+  const productHref = id ? `#/product?id=${encodeURIComponent(String(id))}` : `#/product?id=${encodeURIComponent(title)}`;
+
   return (
     <div className={`m-product-card m-product-card--${variant}`}>
       <div className="m-product-card__badges">
@@ -103,7 +105,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div className="m-product-card__image-container">
-        <img src={imageSrc} alt={title} className="m-product-card__image" />
+        <a href={productHref} className="m-product-card__img-link">
+          <img src={imageSrc} alt={title} className="m-product-card__image" />
+        </a>
       </div>
 
       <div className="m-product-card__content">
@@ -111,9 +115,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {category}
         </Text>
 
-        <Text variant="prod-title" as="h4" className="m-product-card__title">
-          {title}
-        </Text>
+        <a href={productHref} className="m-product-card__title-link">
+          <Text variant="prod-title" as="h4" className="m-product-card__title">
+            {title}
+          </Text>
+        </a>
 
         <div className="m-product-card__rating">
           <div className="m-product-card__stars">

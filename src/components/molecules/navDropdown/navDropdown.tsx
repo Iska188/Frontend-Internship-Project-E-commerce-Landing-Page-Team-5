@@ -11,7 +11,7 @@ interface NavDropdownProps {
   label: React.ReactNode;
   options: DropdownOption[];
   isActive?: boolean;
-  variant?: 'default' | 'categories';
+  variant?: 'default' | 'categories' | 'header-top';
 }
 
 export const NavDropdown = ({ label, options, isActive, variant = 'default' }: NavDropdownProps) => {
@@ -26,7 +26,23 @@ export const NavDropdown = ({ label, options, isActive, variant = 'default' }: N
   return (
     <div className={`m-nav-dropdown m-nav-dropdown--${variant}`}>
       <span className={`m-nav-dropdown__label ${isActive ? 'active' : ''}`}>
-        {label} <span className="arrow">⏷</span>
+        {label}
+        <svg
+          className="arrow-svg"
+          width="9"
+          height="6"
+          viewBox="0 0 10 6"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1 1L5 5L9 1"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </span>
 
       <ul className="m-nav-dropdown__menu">
@@ -45,6 +61,7 @@ export const NavDropdown = ({ label, options, isActive, variant = 'default' }: N
                 </a>
               ) : (
                 <button 
+                  type="button"
                   onClick={option.onClick} 
                   className="m-nav-dropdown__action"
                 >

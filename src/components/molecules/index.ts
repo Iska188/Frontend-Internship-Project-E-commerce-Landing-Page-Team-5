@@ -23,3 +23,8 @@ export * from './blogPostCard/blogPostCard';
 export * from './pagination/pagination';
 export * from './sidebarPriceRange/sidebarPriceRange';
 export * from './sidebarCheckboxGroup/sidebarCheckboxGroup';
+export * from './breadcrumb/Breadcrumb';
+export * from './productGallery/ProductGallery';
+export * from './productInfo/ProductInfo';
+export * from './productTabs/ProductTabs';
+export * from './cartNotificationToast/CartNotificationToast';

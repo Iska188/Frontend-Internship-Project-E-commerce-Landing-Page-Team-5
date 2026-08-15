@@ -1,6 +1,6 @@
 .o-featured-categories {
   width: 100%;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   background-color: var(--color-white);
 }
 
@@ -15,13 +15,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.0125rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .o-featured-categories__title-group {
   display: flex;
   align-items: baseline;
   gap: 1.875rem;
+  flex-wrap: wrap;
 }
 
 .o-featured-categories__tabs {
@@ -30,6 +33,7 @@
   gap: 1.25rem;
   padding: 0;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .o-featured-categories__tabs li {
@@ -37,11 +41,15 @@
   font-weight: 600;
   color: var(--color-text-main);
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  padding-bottom: 0.25rem;
+  border-bottom: 0.125rem solid transparent;
 }
 
-.o-featured-categories__tabs li:hover {
+.o-featured-categories__tabs li:hover,
+.o-featured-categories__tabs li.active {
   color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
 }
 
 .o-featured-categories__arrows {
@@ -49,23 +57,50 @@
   gap: 0.625rem;
 }
 
-.o-featured-categories__grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 1rem;
+.o-featured-categories__track-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
+.o-featured-categories__track {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0.5rem 0.25rem 1rem 0.25rem;
+}
 
+.o-featured-categories__track::-webkit-scrollbar {
+  display: none;
+}
+
+.o-featured-categories__item {
+  flex: 0 0 8.75rem;
+  min-width: 8.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.o-featured-categories__item:hover {
+  transform: translateY(-0.35rem);
+}
 
 @media (max-width: 62rem) {
-  .o-featured-categories {
-    display:none;
+  .o-featured-categories__item {
+    flex: 0 0 8rem;
+    min-width: 8rem;
   }
 }
 
-
 @media (max-width: 40rem) {
-  .o-featured-categories {
-    display:none;
+  .o-featured-categories__tabs {
+    display: none;
+  }
+
+  .o-featured-categories__item {
+    flex: 0 0 7.5rem;
+    min-width: 7.5rem;
   }
 }
