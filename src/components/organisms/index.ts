@@ -20,3 +20,8 @@ export * from './aboutBottomBanner/aboutBottomBanner';
 export * from './contactHelp/contactHelp';
 export * from './contactLocations/contactLocations';
 export * from './contactForm/contactForm';
+export * from './blogSideBar/blogSideBar'
+export * from './blogPostsGrid/blogPostsGrid';
+export * from './blogBanner/blogBanner';
+export * from './shopSidebar/shopSidebar';
+export * from './shopProductsGrid/shopProductsGrid';

@@ -1,0 +1,32 @@
+.m-sidebar-trending-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.m-sidebar-trending-item__img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  flex-shrink: 0;
+}
+
+.m-sidebar-trending-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.m-sidebar-trending-item__title {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+.m-sidebar-trending-item__price {
+  font-size: var(--font-size-sm);
+}

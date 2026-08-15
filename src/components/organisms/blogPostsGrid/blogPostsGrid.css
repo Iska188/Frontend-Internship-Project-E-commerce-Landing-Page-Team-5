@@ -1,0 +1,23 @@
+.o-blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 62rem) {
+  .o-blog-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 40rem) {
+  .o-blog-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.o-blog-posts-grid-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}

@@ -24,7 +24,7 @@ export function CartPage() {
             </div>
 
             <a className="cart-page__continue" href="/#">
-              <span aria-hidden="true">?</span>
+              <span aria-hidden="true"></span>
               {TRANSLATIONS.cartPage.continueShopping}
             </a>
           </div>
