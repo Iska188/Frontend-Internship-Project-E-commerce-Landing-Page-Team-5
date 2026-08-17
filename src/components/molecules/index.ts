@@ -28,3 +28,4 @@ export * from './productGallery/productGallery';
 export * from './productInfo/productInfo';
 export * from './productTabs/productTabs';
 export * from './cartNotificationToast/cartNotificationToast';
+export * from './resultsBar/resultsBar';

@@ -29,8 +29,6 @@ export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'seeds-of-change-organic-quinoa-brown',
     imageSrc: 'src/assets/body/popularproducts/product-7.png',
-    statusBadge: 'Hot',
-    statusBadgeType: 'hot' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
     title: TRANSLATIONS.shopProductNames.seedsOfChangeQuinoa,
     rating: 4,
@@ -42,8 +40,6 @@ export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'all-natural-style-chicken',
     imageSrc: 'src/assets/body/popularproducts/product-4.png',
-    statusBadge: 'Sale',
-    statusBadgeType: 'discount' as const,
     category: TRANSLATIONS.shopProductCategories.hotDog,
     title: TRANSLATIONS.shopProductNames.italianMeatballs,
     rating: 3.5,
@@ -55,8 +51,6 @@ export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'angles-sweet-salty-kettle-corn',
     imageSrc: 'src/assets/body/popularproducts/product-10.png',
-    statusBadge: 'New',
-    statusBadgeType: 'new' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
     title: TRANSLATIONS.shopProductNames.angiesBoomchickapop,
     rating: 4,
@@ -114,8 +108,6 @@ export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'encore-seafoods-stuffed-alaskan',
     imageSrc: 'src/assets/body/popularproducts/product-9.png',
-    statusBadge: 'Sale',
-    statusBadgeType: 'discount' as const,
     category: TRANSLATIONS.shopProductCategories.snack,
     title: TRANSLATIONS.shopProductNames.encoreSeafoodsAlaskan,
     rating: 4,
@@ -127,8 +119,6 @@ export const SHOP_PRODUCTS_MOCK = [
   {
     id: 'gortons-beer-battered-fish',
     imageSrc: 'src/assets/body/popularproducts/product-6.png',
-    statusBadge: 'Hot',
-    statusBadgeType: 'hot' as const,
     category: TRANSLATIONS.shopProductCategories.coffee,
     title: TRANSLATIONS.shopProductNames.gortonsBeerBattered,
     rating: 4,

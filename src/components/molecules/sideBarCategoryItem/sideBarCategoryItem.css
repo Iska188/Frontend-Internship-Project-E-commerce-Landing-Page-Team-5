@@ -7,6 +7,12 @@
   cursor: pointer;
   border: 0.0625rem solid var(--color-border);
   border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+.m-sidebar-category-item.is-active {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-light);
 }
 
 .m-sidebar-category-item__icon-wrap {
