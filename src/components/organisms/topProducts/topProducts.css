@@ -81,7 +81,8 @@
 
 @media (max-width: 30rem) {
   .o-top-products__container {
-    gap: 0.5rem;
-    padding: 0 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 0 1rem;
   }
 }

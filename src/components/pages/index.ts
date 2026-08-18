@@ -4,4 +4,7 @@ export * from './aboutPage/aboutPage';
 export * from './contactPage/contactPage';
 export * from './blogPage/blogPage';
 export * from './shopPage/shopPage';
-export * from './productPage/productPage';
+export * from './productPage/ProductPage';
+export * from './singleBlogPage/SingleBlogPage';
+export * from './wishlistPage/WishlistPage';
+export * from './comparePage/ComparePage';

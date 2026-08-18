@@ -1,20 +1,6 @@
 import { TRANSLATIONS } from '../constants/translations';
-
-export interface ProductItem {
-  id: string;
-  imageSrc: string;
-  discountBadge?: string;
-  discountBgColor?: string;
-  statusBadge?: string;
-  statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
-  category: string;
-  title: string;
-  rating: number;
-  reviewsCount: number;
-  vendor: string;
-  price: string;
-  oldPrice?: string;
-}
+import type { ProductItem } from './mockedProduct';
+export type { ProductItem };
 
 export const POPULAR_CATEGORIES_MOCK: string[] = [
   TRANSLATIONS.header.categories.all,
@@ -69,7 +55,7 @@ export const POPULAR_PRODUCTS_MOCK: ProductItem[] = [
     id: 'all-natural-style-chicken',
     imageSrc: 'src/assets/body/popularproducts/product-4.png',
     statusBadge: 'Sale',
-    statusBadgeType: 'new',
+    statusBadgeType: 'sale',
     discountBadge: '66%',
     discountBgColor: 'var(--color-sale-lightblue)',
     category: 'Fresh Seafood',

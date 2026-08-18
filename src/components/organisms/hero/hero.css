@@ -212,36 +212,7 @@
     bottom: 0.5rem;
   }
 
-  .o-hero__newsletter form,
-  .o-hero__newsletter > div,
-  .hero-newsletter {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: var(--color-white);
-    border-radius: 3.125rem;
-    padding: 0;
-    width: 100%;
-    max-width: 12rem;
-    box-shadow: var(--shadow-from-hero-dropdown);
-  }
-
-  .o-hero__newsletter input {
-    border: none;
-    background: transparent;
-    padding: 0.375rem 0.625rem;
-    font-size: var(--font-size-xxs);
-    flex-grow: 1;
-    outline: none;
-    box-shadow: none;
-    min-width: 0;
-  }
-
-  .o-hero__newsletter button {
-    border-radius: 3.125rem;
-    padding: 0.575rem 0.75rem;
-    font-size: var(--font-size-sm);
-    white-space: nowrap;
-    width: auto;
+  .o-hero__newsletter .m-newsletter-form {
+    max-width: 18rem;
   }
 }

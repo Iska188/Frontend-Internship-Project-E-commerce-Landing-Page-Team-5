@@ -62,6 +62,10 @@ export const ProductPage = () => {
           <aside className="p-product-page__sidebar">
             <ShopSidebar
               categories={SHOP_CATEGORIES_MOCK}
+              activeCategory="All"
+              onCategoryChange={() => {
+                window.location.hash = '#/shop';
+              }}
               priceMin={0}
               priceMax={400}
               currentPriceMin={priceMin}

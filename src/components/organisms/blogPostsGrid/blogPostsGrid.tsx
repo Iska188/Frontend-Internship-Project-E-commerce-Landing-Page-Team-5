@@ -31,6 +31,7 @@ export const BlogPostsGrid = ({ posts, postsPerPage = 15 }: BlogPostsGridProps) 
         {visiblePosts.map((post) => (
           <BlogPostCard
             key={post.id}
+            id={post.id}
             imageSrc={post.imageSrc}
             badge={post.badge}
             category={post.category}

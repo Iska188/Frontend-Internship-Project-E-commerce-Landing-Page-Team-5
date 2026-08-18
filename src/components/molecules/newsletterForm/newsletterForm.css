@@ -1,21 +1,25 @@
 .m-newsletter-form {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   background: var(--color-white);
-  border-radius: 1.875rem;
-  box-shadow: var(--shadow-from-newsletter);
-  max-width: 27.5rem;
+  border-radius: 3.125rem;
+  max-width: 28rem;
   width: 100%;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .m-newsletter-form__input {
-  flex-grow: 1;
+  flex: 1 1 auto;
+  min-width: 0;
   border: none;
   outline: none;
-  padding: 0 1.25rem;
-  font-size: var(--font-size-md);
-  color: var(--color-text-main);
   background: transparent;
+  padding: 0.85rem 1.5rem;
+  font-family: inherit;
+  font-size: var(--font-size-base);
+  color: var(--color-text-main);
 }
 
 .m-newsletter-form__input::placeholder {
@@ -23,46 +27,42 @@
 }
 
 .m-newsletter-form__btn {
+  flex-shrink: 0;
   background-color: var(--color-primary);
   color: var(--color-white);
-  border-radius: 1.875rem;
-  padding: 1.375rem 1.5625rem;
-  font-weight: 400;
   border: none;
+  border-radius: 3.125rem;
+  padding: 0.85rem 2.25rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-size-base);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .m-newsletter-form__btn:hover {
   background-color: var(--color-primary-hover);
 }
 
-
-
-@media (max-width: 62rem) {
+@media (max-width: 48rem) {
   .m-newsletter-form {
-    max-width: 25rem;
-  }
-
-  .m-newsletter-form__btn {
-    padding: 1.125rem 1.375rem;
-  }
-}
-
-
-@media (max-width: 40rem) {
-  .m-newsletter-form {
-    max-width: 100%;
+    max-width: 18rem;
+    border-radius: 2rem;
   }
 
   .m-newsletter-form__input {
-    padding: 0 0.875rem;
-    font-size: var(--font-size-base);
+    padding: 0.55rem 0.85rem;
+    font-size: var(--font-size-xs);
   }
 
   .m-newsletter-form__btn {
-    padding: 0.875rem 1.125rem;
-    font-size: var(--font-size-base);
-    white-space: nowrap;
+    padding: 0.55rem 1.15rem;
+    font-size: var(--font-size-xs);
+    border-radius: 2rem;
   }
 }
