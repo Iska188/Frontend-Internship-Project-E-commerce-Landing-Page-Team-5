@@ -4,18 +4,20 @@ import './button.css';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  variant?: 'add-short' | 'add-long' | 'carousel' | 'primary' | 'outline' | 'category' | 'dark' | 'icon' | 'pagination';
+  variant?: 'add-short' | 'add-long' | 'carousel' | 'primary' | 'outline' | 'category' | 'dark' | 'icon' | 'pagination' | 'add-cart-large' | 'pill' | 'tab' | 'icon-action';
+  isActive?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({ 
   children, 
   variant = 'add-short', 
+  isActive = false,
   className, 
   ...props 
 }) => {
   return (
     <button 
-      className={`a-btn a-btn--${variant} ${className || ''}`} 
+      className={`a-btn a-btn--${variant} ${isActive ? 'is-active' : ''} ${className || ''}`} 
       {...props}
     >
       {(variant === 'add-short') && <span className="a-btn__icon"><img src={Add} alt="Add" /></span>}

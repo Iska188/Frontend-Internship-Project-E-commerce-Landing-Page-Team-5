@@ -23,6 +23,8 @@ interface NewProductData {
 
 interface ShopSidebarProps {
   categories: CategoryData[];
+  activeCategory: string;
+  onCategoryChange: (category: string) => void;
   priceMin: number;
   priceMax: number;
   currentPriceMin: number;
@@ -40,6 +42,8 @@ interface ShopSidebarProps {
 
 export const ShopSidebar = ({
   categories,
+  activeCategory,
+  onCategoryChange,
   priceMin,
   priceMax,
   currentPriceMin,
@@ -62,7 +66,14 @@ export const ShopSidebar = ({
         </Text>
         <ul className="o-shop-sidebar__category-list">
           {categories.map((cat) => (
-            <SidebarCategoryItem key={cat.label} icon={cat.icon} label={cat.label} count={cat.count} />
+            <SidebarCategoryItem
+              key={cat.label}
+              icon={cat.icon}
+              label={cat.label}
+              count={cat.count}
+              isActive={activeCategory === cat.label}
+              onClick={() => onCategoryChange(cat.label)}
+            />
           ))}
         </ul>
       </div>

@@ -14,14 +14,61 @@
 .o-hero__main-banner {
   background: linear-gradient(90deg, var(--color-bg-light) 0%, var(--color-bg-alt) 100%);
   border-radius: 1.25rem;
+  position: relative;
+  min-height: 31.25rem;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.o-hero__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   padding: 3.75rem 5rem;
   display: flex;
   align-items: center;
-  position: relative;
   background-size: cover;
   background-position: center;
-  min-height: 31.25rem;
-  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.03);
+  transition: opacity 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.75s cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 0.75s;
+  z-index: 1;
+}
+
+.o-hero__slide--active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  z-index: 2;
+}
+
+.o-hero__slide--active .o-hero__content h1 {
+  animation: heroTextFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+}
+
+.o-hero__slide--active .o-hero__content p {
+  animation: heroTextFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.o-hero__slide--active .o-hero__newsletter {
+  animation: heroTextFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+@keyframes heroTextFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .carousel-arrow {
@@ -29,6 +76,11 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.carousel-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-arrow--left {
@@ -42,6 +94,8 @@
 .o-hero__content {
   max-width: 34.375rem;
   width: 100%;
+  position: relative;
+  z-index: 5;
 }
 
 .o-hero__content h1 {

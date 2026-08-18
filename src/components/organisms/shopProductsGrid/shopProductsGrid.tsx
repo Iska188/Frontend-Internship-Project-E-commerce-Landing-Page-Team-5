@@ -10,6 +10,7 @@ interface ProductItem {
   statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
   category: string;
   title: string;
+  description?: string;
   rating: number;
   reviewsCount: number;
   vendor: string;
@@ -19,15 +20,17 @@ interface ProductItem {
 
 interface ShopProductsGridProps {
   products: ProductItem[];
+  view: 'grid' | 'list';
 }
 
-export const ShopProductsGrid = ({ products }: ShopProductsGridProps) => {
+export const ShopProductsGrid = ({ products, view }: ShopProductsGridProps) => {
   return (
-    <div className="o-shop-products-grid">
+    <div className={`o-shop-products-grid o-shop-products-grid--${view}`}>
       {products.map((product) => (
         <ProductCard
           key={product.id}
           variant="popular"
+          layout={view === 'list' ? 'horizontal' : 'vertical'}
           {...product}
           price={`$${product.price.toFixed(2)}`}
           oldPrice={product.oldPrice ? `$${product.oldPrice.toFixed(2)}` : undefined}

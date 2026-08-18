@@ -169,6 +169,7 @@ export const TRANSLATIONS = {
     by: "By",
     add: "Add",
     addtoCart: "Add to Cart",
+    addCompare: 'Add Compare',
   },
   promoBanners: {
     banner1: "Everyday Fresh & Clean with Our Products",

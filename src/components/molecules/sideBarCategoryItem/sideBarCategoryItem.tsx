@@ -5,11 +5,13 @@ interface SidebarCategoryItemProps {
   icon: string;
   label: string;
   count: number;
+  isActive?: boolean;
+  onClick?: () => void;
 }
 
-export const SidebarCategoryItem = ({ icon, label, count }: SidebarCategoryItemProps) => {
+export const SidebarCategoryItem = ({ icon, label, count, isActive, onClick }: SidebarCategoryItemProps) => {
   return (
-    <li className="m-sidebar-category-item">
+    <li className={`m-sidebar-category-item ${isActive ? 'is-active' : ''}`} onClick={onClick}>
       <div className="m-sidebar-category-item__icon-wrap">
         <img src={icon} alt="" className="m-sidebar-category-item__icon" />
       </div>

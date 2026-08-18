@@ -13,12 +13,14 @@ interface ProductCardProps {
   statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
   category: string;
   title: string;
+  description?: string;
   rating: number;
   reviewsCount: number;
   vendor: string;
   price: string;
   oldPrice?: string;
   variant?: 'popular' | 'best-sells';
+  layout?: 'vertical' | 'horizontal';
   soldText?: string;
   soldPercentage?: number;
   onAdd?: () => void;
@@ -33,12 +35,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   statusBadgeType = 'new',
   category,
   title,
+  description,
   rating,
   reviewsCount,
   vendor,
   price,
   oldPrice,
   variant = 'popular',
+  layout = 'vertical',
   soldText,
   soldPercentage,
   onAdd,
@@ -84,8 +88,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     return stars;
   };
 
+  const productHref = id ? `#/product?id=${encodeURIComponent(String(id))}` : `#/product?id=${encodeURIComponent(title)}`;
+
   return (
-    <div className={`m-product-card m-product-card--${variant}`}>
+    <div className={`m-product-card m-product-card--${variant} m-product-card--${layout}`}>
       <div className="m-product-card__badges">
         {discountBadge && (
           <Badge
@@ -103,7 +109,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({
       </div>
 
       <div className="m-product-card__image-container">
-        <img src={imageSrc} alt={title} className="m-product-card__image" />
+        <a href={productHref} className="m-product-card__img-link">
+          <img src={imageSrc} alt={title} className="m-product-card__image" />
+        </a>
       </div>
 
       <div className="m-product-card__content">
@@ -111,9 +119,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {category}
         </Text>
 
-        <Text variant="prod-title" as="h4" className="m-product-card__title">
-          {title}
-        </Text>
+        <a href={productHref} className="m-product-card__title-link">
+          <Text variant="prod-title" as="h4" className="m-product-card__title">
+            {title}
+          </Text>
+        </a>
 
         <div className="m-product-card__rating">
           <div className="m-product-card__stars">
@@ -122,9 +132,17 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <span className="m-product-card__reviews">({reviewsCount})</span>
         </div>
 
-        <Text variant="hero-subtitle" as="span" className="m-product-card__vendor">
-          {TRANSLATIONS.button.by} <span className="m-product-card__vendor-name">{vendor}</span>
-        </Text>
+        {layout === 'horizontal' && description && (
+          <Text variant="hero-subtitle" as="p" className="m-product-card__description">
+            {description}
+          </Text>
+        )}
+
+        {layout === 'vertical' && (
+          <Text variant="hero-subtitle" as="span" className="m-product-card__vendor">
+            {TRANSLATIONS.button.by} <span className="m-product-card__vendor-name">{vendor}</span>
+          </Text>
+        )}
 
         {variant === 'best-sells' && soldText && soldPercentage !== undefined && (
           <div className="m-product-card__progress-container">
@@ -155,6 +173,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             <Button variant="add-long" onClick={handleAdd} className="m-product-card__cart-btn">
               {TRANSLATIONS.button.addtoCart}
             </Button>
+          )}
+
+          {layout === 'horizontal' && (
+            <button type="button" className="m-product-card__compare-link">
+              {TRANSLATIONS.button.addCompare ?? 'Add Compare'}
+            </button>
           )}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../../atoms/button/button'; 
 import { Text } from '../../atoms/text/text';
+import { useCart } from '../../../context/cartContext';
 import './DealCard.css';
 
 export interface DealCardProps {
@@ -52,6 +53,7 @@ export const DealCard = ({
   containerBgColor = "transparent",
   titleColor
 }: DealCardProps) => {
+  const { addToCart } = useCart();
   
   const liveCountdown = useCountdown(
     countdown.days,
@@ -60,13 +62,33 @@ export const DealCard = ({
     countdown.secs
   );
 
+  const productHref = `#/product?id=${encodeURIComponent(title)}`;
+
+  const parsePrice = (priceStr?: string) => {
+    if (!priceStr) return 0;
+    const num = Number.parseFloat(priceStr.replace(/[^0-9.]/g, ''));
+    return Number.isFinite(num) ? num : 0;
+  };
+
+  const handleAdd = () => {
+    addToCart({
+      id: title,
+      title,
+      price: parsePrice(currentPrice),
+      oldPrice: parsePrice(originalPrice),
+      image: imageSrc,
+    });
+  };
+
   return (
     <div 
       className="m-deal-card" 
       style={{ backgroundColor: containerBgColor }}
     >
       <div className="m-deal-card__media">
-        <img src={imageSrc} alt={title} className="m-deal-card__img" />
+        <a href={productHref}>
+          <img src={imageSrc} alt={title} className="m-deal-card__img" />
+        </a>
         
         <div className="m-deal-card__countdown">
           {Object.entries(liveCountdown).map(([unit, value]) => (
@@ -79,9 +101,11 @@ export const DealCard = ({
       </div>
 
       <div className="m-deal-card__content">
-        <Text as="h3" variant="prod-title" style={{ color: titleColor }}>
-          {title}
-        </Text>
+        <a href={productHref}>
+          <Text as="h3" variant="prod-title" style={{ color: titleColor }}>
+            {title}
+          </Text>
+        </a>
         
         <Text as="p" variant="category">
           By <span className="vendor-name">{vendor}</span>
@@ -93,7 +117,7 @@ export const DealCard = ({
             <Text as="span" variant="price-old">{originalPrice}</Text>
           </div>
           
-          <Button variant="add-short">
+          <Button variant="add-short" onClick={handleAdd}>
             Add
           </Button>
         </div>
