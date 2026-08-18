@@ -2,6 +2,8 @@ import React from 'react';
 import { Text, Button, Badge } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
 import { useCart } from '../../../context/cartContext';
+import { useWishlist } from '../../../context/wishlistContext';
+import { useCompare } from '../../../context/compareContext';
 import './productCard.css';
 
 interface ProductCardProps {
@@ -10,7 +12,7 @@ interface ProductCardProps {
   discountBadge?: string;
   discountBgColor?: string;
   statusBadge?: string;
-  statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
+  statusBadgeType?: 'discount' | 'hot' | 'new' | 'sale' | 'count';
   category: string;
   title: string;
   description?: string;
@@ -48,6 +50,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onAdd,
 }) => {
   const { addToCart } = useCart();
+  const { isInWishlist, toggleWishlist } = useWishlist();
+  const { isInCompare, toggleCompare } = useCompare();
+
+  const productId = id ?? title;
+  const isWishlisted = isInWishlist(productId);
+  const isCompared = isInCompare(productId);
 
   const parsePrice = (text?: string) => {
     if (!text) {
@@ -58,12 +66,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     return Number.isFinite(numeric) ? numeric : 0;
   };
 
+  const numericPrice = parsePrice(price);
+  const numericOldPrice = parsePrice(oldPrice);
+
   const handleAdd = () => {
     addToCart({
-      id: id ?? title,
+      id: productId,
       title,
-      price: parsePrice(price),
-      oldPrice: parsePrice(oldPrice),
+      price: numericPrice,
+      oldPrice: numericOldPrice,
       image: imageSrc,
     });
 
@@ -72,16 +83,51 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     }
   };
 
+  const handleToggleWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleWishlist({
+      id: productId,
+      title,
+      price: numericPrice,
+      oldPrice: numericOldPrice,
+      image: imageSrc,
+      rating,
+      reviewsCount,
+      category,
+      vendor,
+      inStock: true,
+    });
+  };
+
+  const handleToggleCompare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleCompare({
+      id: productId,
+      title,
+      price: numericPrice,
+      oldPrice: numericOldPrice,
+      image: imageSrc,
+      rating,
+      reviewsCount,
+      category,
+      vendor,
+      description,
+      inStock: true,
+    });
+  };
+
   const renderStars = () => {
     const stars = [];
     for (let i = 1; i <= 5; i += 1) {
-      const isFilled = i <= rating;
+      const isFilled = i <= Math.round(rating);
       stars.push(
         <span
           key={i}
           className={`m-product-card__star ${isFilled ? 'm-product-card__star--filled' : 'm-product-card__star--empty'}`}
         >
-          S
+          ★
         </span>
       );
     }
@@ -98,15 +144,38 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             label={discountBadge}
             type="discount"
             bgColor={discountBgColor}
+            className="m-product-card__badge--left"
           />
         )}
         {statusBadge && (
           <Badge
             label={statusBadge}
             type={statusBadgeType}
+            className="m-product-card__badge--right"
           />
         )}
       </div>
+
+      <button
+        type="button"
+        className={`m-product-card__wishlist-btn ${isWishlisted ? 'm-product-card__wishlist-btn--active' : ''}`}
+        onClick={handleToggleWishlist}
+        title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+        aria-label="Toggle wishlist"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width="16"
+          height="16"
+          fill={isWishlisted ? '#f74b81' : 'none'}
+          stroke={isWishlisted ? '#f74b81' : 'currentColor'}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+      </button>
 
       <div className="m-product-card__image-container">
         <a href={productHref} className="m-product-card__img-link">
@@ -129,7 +198,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <div className="m-product-card__stars">
             {renderStars()}
           </div>
-          <span className="m-product-card__reviews">({reviewsCount})</span>
+          <span className="m-product-card__reviews">({reviewsCount || rating || 4.0})</span>
         </div>
 
         {layout === 'horizontal' && description && (
@@ -176,8 +245,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           )}
 
           {layout === 'horizontal' && (
-            <button type="button" className="m-product-card__compare-link">
-              {TRANSLATIONS.button.addCompare ?? 'Add Compare'}
+            <button
+              type="button"
+              className={`m-product-card__compare-link ${isCompared ? 'm-product-card__compare-link--active' : ''}`}
+              onClick={handleToggleCompare}
+              title={isCompared ? 'Remove from compare' : 'Add to compare'}
+            >
+              <span className="m-product-card__compare-icon">⇄</span>
+              {isCompared ? 'Compared' : (TRANSLATIONS.button.addCompare ?? 'Add Compare')}
             </button>
           )}
         </div>

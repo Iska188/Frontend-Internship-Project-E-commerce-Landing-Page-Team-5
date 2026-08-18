@@ -2,7 +2,15 @@ import { useState, useEffect } from 'react';
 import { Button } from '../../atoms';
 import { SearchBar, HeaderAction, NavDropdown } from '../../molecules';
 import { CartActionContainer } from '../../organisms';
+import { useWishlist, useCompare } from '../../../context';
 import { TRANSLATIONS } from '../../../constants/translations';
+import logoImg from '../../../assets/logo.png';
+import compareIcon from '../../../assets/header/compare.svg';
+import wishlistIcon from '../../../assets/header/wishlist.svg';
+import accountIcon from '../../../assets/header/account.svg';
+import fireIcon from '../../../assets/header/fire.svg';
+import gridIcon from '../../../assets/header/grid.svg';
+import supportIcon from '../../../assets/header/support.svg';
 import './header.css';
 
 interface HeaderProps {
@@ -12,6 +20,9 @@ interface HeaderProps {
 
 export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { totalWishlistItems } = useWishlist();
+  const { totalCompareItems } = useCompare();
+  const t = TRANSLATIONS;
 
   const getNavFromRoute = () => {
     const hash = typeof window !== 'undefined' ? window.location.hash : '';
@@ -20,7 +31,7 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
     if (hash.startsWith('#/shop') || hash.startsWith('#/product')) return 'shop';
     if (hash.startsWith('#/blog')) return 'blog';
     if (hash.startsWith('#/vendors')) return 'vendors';
-    if (hash.startsWith('#/pages')) return 'pages';
+    if (hash.startsWith('#/pages') || hash.startsWith('#/wishlist') || hash.startsWith('#/compare')) return 'pages';
     if (hash === '#/' || hash === '' || hash === '#home') return 'home';
     return '';
   };
@@ -48,13 +59,14 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
 
   const blogOptions = [
     { label: 'Blog Category', path: '#/blog' },
-    { label: 'Single Post', path: '#/blog' }
+    { label: 'Single Post', path: '#/blog-post' }
   ];
 
   const pagesOptions = [
-    { label: 'About Us', path: '#/about' },
-    { label: 'Contact', path: '#/contact' },
-    { label: '404 Page', path: '#/' }
+    { label: t.footer.companyLinks.about, path: '#/about' },
+    { label: t.header.nav.contact, path: '#/contact' },
+    { label: t.header.wishlist, path: '#/wishlist' },
+    { label: t.header.actions.compare, path: '#/compare' }
   ];
 
   const vendorsOptions = [
@@ -70,11 +82,11 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
   ];
 
   const categoriiProduse = [
-    { label: TRANSLATIONS.header.categories.milk, path: '#/shop' },
-    { label: TRANSLATIONS.header.categories.clothing, path: '#/shop' },
-    { label: TRANSLATIONS.header.categories.pet, path: '#/shop' },
-    { label: TRANSLATIONS.header.categories.baking, path: '#/shop' },
-    { label: TRANSLATIONS.header.categories.fruit, path: '#/shop' }
+    { label: t.header.categories.milk, path: '#/shop' },
+    { label: t.header.categories.clothing, path: '#/shop' },
+    { label: t.header.categories.pet, path: '#/shop' },
+    { label: t.header.categories.baking, path: '#/shop' },
+    { label: t.header.categories.fruit, path: '#/shop' }
   ];
 
   const [selectedLanguage, setSelectedLanguage] = useState('English');
@@ -89,7 +101,7 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
   const currencyOptions = [
     { label: 'USD', onClick: () => setSelectedCurrency('USD') },
     { label: 'EUR', onClick: () => setSelectedCurrency('EUR') },
-    { label: 'RON', onClick: () => setSelectedCurrency('RON') }
+    { label: 'GBP', onClick: () => setSelectedCurrency('GBP') }
   ];
 
   return (
@@ -99,14 +111,14 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
           <div className="o-header__container">
             <div className="o-header__top-left">
               <a href="#/about" className={`o-header__top-link o-header__top-link--about ${activeNav === 'about' ? 'active' : ''}`}>
-                <span>{TRANSLATIONS.header.nav.about}</span>
-              </a> | <span>{TRANSLATIONS.header.myAccount}</span> | <span>{TRANSLATIONS.header.wishlist}</span> | <span>{TRANSLATIONS.header.orderTracking}</span>
+                <span>{t.header.nav.about}</span>
+              </a> | <span>{t.header.myAccount}</span> | <a href="#/wishlist" className="o-header__top-link"><span>{t.header.wishlist}</span></a> | <span>{t.header.orderTracking}</span>
             </div>
             <div className="o-header__top-center">
-              <span className="text-green">{TRANSLATIONS.header.secureDelivery}</span>
+              <span className="text-green">{t.header.secureDelivery}</span>
             </div>
             <div className="o-header__top-right">
-              <span className="o-header__help-text">{TRANSLATIONS.header.needHelp} <strong className="text-green">+1800900122</strong></span> |
+              <span className="o-header__help-text">{t.header.needHelp} <strong className="text-green">+1800900122</strong></span> |
               <NavDropdown variant="header-top" label={selectedLanguage} options={languageOptions} /> |
               <NavDropdown variant="header-top" label={selectedCurrency} options={currencyOptions} />
             </div>
@@ -129,7 +141,7 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
           )}
 
           <a className="o-header__logo" href="#/" aria-label="Go to home page">
-            <img src="src/assets/logo.png" alt="Nest Logo" className="o-header__logo-img" />
+            <img src={logoImg} alt="Nest Logo" className="o-header__logo-img" />
           </a>
 
           <div className="o-header__search">
@@ -138,20 +150,35 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
 
           <div className="o-header__actions">
             <div className="o-header__desktop-vendor">
-              <Button variant="outline">{TRANSLATIONS.header.becomeVendor}</Button>
+              <Button variant="outline">{t.header.becomeVendor}</Button>
             </div>
 
             <div className="o-header__icons">
               <div className="desktop-only-action">
-                <HeaderAction icon={<img src="src/assets/header/compare.svg" alt="Compare" className="svg-icon" />} label={TRANSLATIONS.header.actions.compare} count={0} />
+                <HeaderAction
+                  icon={<img src={compareIcon} alt="Compare" className="svg-icon" />}
+                  label={t.header.actions.compare}
+                  count={totalCompareItems}
+                  href="#/compare"
+                />
               </div>
 
-              <HeaderAction icon={<img src="src/assets/header/wishlist.svg" alt="Wishlist" className="svg-icon" />} label={TRANSLATIONS.header.actions.wishlist} count={2} />
+              <HeaderAction
+                icon={<img src={wishlistIcon} alt="Wishlist" className="svg-icon" />}
+                label={t.header.actions.wishlist}
+                count={totalWishlistItems}
+                href="#/wishlist"
+              />
 
               <CartActionContainer cartPage={cartPage} />
 
               <div className="desktop-only-action">
-                <HeaderAction icon={<img src="src/assets/header/account.svg" alt="Account" className="svg-icon-no-badge" />} label={TRANSLATIONS.header.actions.account} count={-1} />
+                <HeaderAction
+                  icon={<img src={accountIcon} alt="Account" className="svg-icon-no-badge" />}
+                  label={t.header.actions.account}
+                  count={-1}
+                  href="#/cart"
+                />
               </div>
             </div>
           </div>
@@ -161,73 +188,185 @@ export const Header = ({ cartPage = false, currentPage }: HeaderProps) => {
       {!cartPage && (
         <div className={`o-header__mobile-menu ${isMobileMenuOpen ? 'is-open' : ''}`}>
           <div className="o-header__mobile-menu-content">
+            <div className="o-header__mobile-search">
+              <SearchBar />
+            </div>
+
             <nav className="o-header__mobile-nav">
-              <span className="nav-item">
-                <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
-              </span>
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={activeNav === 'home'} />
-              <a href="#/about" className={`nav-item nav-item--about ${activeNav === 'about' ? 'active' : ''}`}>
-                {TRANSLATIONS.header.nav.about}
+              <a
+                href="#/shop"
+                className="nav-item"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <img src={fireIcon} alt="Hot" className="svg-icon-small" /> {t.header.nav.hotDeals}
               </a>
-              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} isActive={activeNav === 'shop'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} isActive={activeNav === 'vendors'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={megaMenuOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} isActive={activeNav === 'blog'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} isActive={activeNav === 'pages'} />
-              <a href="#/contact" className={`nav-item nav-item--contact ${activeNav === 'contact' ? 'active' : ''}`}>
-                {TRANSLATIONS.header.nav.contact}
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.home}
+                  options={homeOptions}
+                  isActive={activeNav === 'home'}
+                />
+              </div>
+
+              <a
+                href="#/about"
+                className={`nav-item ${activeNav === 'about' ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t.header.nav.about}
+              </a>
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.shop}
+                  options={shopOptions}
+                  isActive={activeNav === 'shop'}
+                />
+              </div>
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.vendors}
+                  options={vendorsOptions}
+                  isActive={activeNav === 'vendors'}
+                />
+              </div>
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.megaMenu}
+                  options={megaMenuOptions}
+                />
+              </div>
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.blog}
+                  options={blogOptions}
+                  isActive={activeNav === 'blog'}
+                />
+              </div>
+
+              <div className="o-header__mobile-accordion">
+                <NavDropdown
+                  label={t.header.nav.pages}
+                  options={pagesOptions}
+                  isActive={activeNav === 'pages'}
+                />
+              </div>
+
+              <a
+                href="#/contact"
+                className={`nav-item ${activeNav === 'contact' ? 'active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {t.header.nav.contact}
               </a>
             </nav>
+
+            <div className="o-header__mobile-footer">
+              <div className="o-header__mobile-actions-row">
+                <a href="#/compare" className="o-header__mobile-action-item" onClick={() => setIsMobileMenuOpen(false)}>
+                  <img src={compareIcon} alt="Compare" className="svg-icon-small" />
+                  <span>{t.header.actions.compare} ({totalCompareItems})</span>
+                </a>
+                <a href="#/wishlist" className="o-header__mobile-action-item" onClick={() => setIsMobileMenuOpen(false)}>
+                  <img src={wishlistIcon} alt="Wishlist" className="svg-icon-small" />
+                  <span>{t.header.actions.wishlist} ({totalWishlistItems})</span>
+                </a>
+              </div>
+              <div className="o-header__mobile-support">
+                <img src={supportIcon} alt="Phone" className="o-header__support-img" />
+                <div className="support-text">
+                  <strong>1900 - 888</strong>
+                  <span>24/7 Support Center</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
       {!cartPage && (
         <div className="o-header__bottom">
-          <div className="o-header__container">
+          <div className="o-header__container o-header__bottom-container">
             <div className="o-header__categories">
               <NavDropdown
                 variant="categories"
-                isActive={true}
                 label={
-                  <span className="categories-btn-content">
-                    <img src="src/assets/header/grid.svg" alt="Categories" className="svg-icon-small" />
-                    {TRANSLATIONS.header.browseCategories}
-                  </span>
+                  <>
+                    <img src={gridIcon} alt="Categories" className="svg-icon-small" />
+                    {t.header.browseCategories}
+                  </>
                 }
                 options={categoriiProduse}
               />
             </div>
 
             <nav className="o-header__nav">
-              <span className="nav-item">
-                <img src="src/assets/header/fire.svg" alt="Hot" className="svg-icon-small" /> {TRANSLATIONS.header.nav.hotDeals}
-              </span>
-
-              <NavDropdown label={TRANSLATIONS.header.nav.home} options={homeOptions} isActive={activeNav === 'home'} />
-
-              <a href="#/about" className={`nav-item ${activeNav === 'about' ? 'active' : ''}`}>
-                {TRANSLATIONS.header.nav.about}
+              <a
+                href="#/shop"
+                className="nav-item"
+              >
+                <img src={fireIcon} alt="Hot" className="svg-icon-small" /> {t.header.nav.hotDeals}
               </a>
 
-              <NavDropdown label={TRANSLATIONS.header.nav.shop} options={shopOptions} isActive={activeNav === 'shop'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.vendors} options={vendorsOptions} isActive={activeNav === 'vendors'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.megaMenu} options={megaMenuOptions} />
-              <NavDropdown label={TRANSLATIONS.header.nav.blog} options={blogOptions} isActive={activeNav === 'blog'} />
-              <NavDropdown label={TRANSLATIONS.header.nav.pages} options={pagesOptions} isActive={activeNav === 'pages'} />
+              <NavDropdown
+                label={t.header.nav.home}
+                options={homeOptions}
+                isActive={activeNav === 'home'}
+              />
 
-              <a href="#/contact" className={`nav-item nav-item--contact ${activeNav === 'contact' ? 'active' : ''}`}>
-                {TRANSLATIONS.header.nav.contact}
+              <a
+                href="#/about"
+                className={`nav-item ${activeNav === 'about' ? 'active' : ''}`}
+              >
+                {t.header.nav.about}
+              </a>
+
+              <NavDropdown
+                label={t.header.nav.shop}
+                options={shopOptions}
+                isActive={activeNav === 'shop'}
+              />
+
+              <NavDropdown
+                label={t.header.nav.vendors}
+                options={vendorsOptions}
+                isActive={activeNav === 'vendors'}
+              />
+
+              <NavDropdown
+                label={t.header.nav.megaMenu}
+                options={megaMenuOptions}
+              />
+
+              <NavDropdown
+                label={t.header.nav.blog}
+                options={blogOptions}
+                isActive={activeNav === 'blog'}
+              />
+
+              <NavDropdown
+                label={t.header.nav.pages}
+                options={pagesOptions}
+                isActive={activeNav === 'pages'}
+              />
+
+              <a
+                href="#/contact"
+                className={`nav-item ${activeNav === 'contact' ? 'active' : ''}`}
+              >
+                {t.header.nav.contact}
               </a>
             </nav>
 
             <div className="o-header__support">
-              <div className="support-icon">
-                <img src="src/assets/header/support.svg" alt="Support" className="svg-icon-large" />
-              </div>
+              <img src={supportIcon} alt="Phone" className="o-header__support-img" />
               <div className="support-text">
-                <strong>1900888123</strong>
-                <span>{TRANSLATIONS.footer.supportCenter}</span>
+                <strong>1900 - 888</strong>
+                <span>24/7 Support Center</span>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { useCart } from '../../../context/cartContext';
 import { HeaderAction } from '../../molecules';
 import { TRANSLATIONS } from '../../../constants/translations';
+import cartIcon from '../../../assets/header/cart.svg';
 import './cartAction.css';
 
 interface CartActionContainerProps {
@@ -14,7 +15,7 @@ export function CartActionContainer({ cartPage = false }: CartActionContainerPro
     <div className={`header-cart-wrapper${cartPage ? ' header-cart-wrapper--cart-page' : ''}`}>
       <a href="#/cart" className="header-cart-link" style={{ textDecoration: 'none', color: 'inherit' }}>
         <HeaderAction
-          icon={<img src="src/assets/header/cart.svg" alt="Cart" className="svg-icon" />}
+          icon={<img src={cartIcon} alt="Cart" className="svg-icon" />}
           label={TRANSLATIONS.header.actions.cart}
           count={totalItems}
         />

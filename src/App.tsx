@@ -1,6 +1,21 @@
 import { useEffect, useState } from 'react';
-import { CartPage, HomePage, AboutPage, ContactPage, BlogPage, ShopPage, ProductPage } from './components/pages';
-import { CartProvider } from './context/cartContext';
+import {
+  CartPage,
+  HomePage,
+  AboutPage,
+  ContactPage,
+  BlogPage,
+  ShopPage,
+  ProductPage,
+  SingleBlogPage,
+  WishlistPage,
+  ComparePage,
+} from './components/pages';
+import {
+  CartProvider,
+  WishlistProvider,
+  CompareProvider,
+} from './context';
 
 function App() {
   const getActiveRoute = () => {
@@ -8,8 +23,26 @@ function App() {
     if (hash.startsWith('#/product')) {
       return '#/product';
     }
-    const validRoutes = ['#/cart', '#/about', '#/contact', '#/blog', '#/shop'];
-    
+    if (hash.startsWith('#/blog-post') || hash.startsWith('#/single-blog')) {
+      return '#/blog-post';
+    }
+    if (hash.startsWith('#/wishlist')) {
+      return '#/wishlist';
+    }
+    if (hash.startsWith('#/compare')) {
+      return '#/compare';
+    }
+    const validRoutes = [
+      '#/cart',
+      '#/about',
+      '#/contact',
+      '#/blog',
+      '#/shop',
+      '#/wishlist',
+      '#/compare',
+      '#/blog-post',
+    ];
+
     return validRoutes.includes(hash) ? hash : '#/';
   };
 
@@ -30,13 +63,20 @@ function App() {
 
   return (
     <CartProvider>
-      {currentRoute === '#/cart' && <CartPage />}
-      {currentRoute === '#/about' && <AboutPage />}
-      {currentRoute === '#/contact' && <ContactPage />}
-      {currentRoute === '#/blog' && <BlogPage />}
-      {currentRoute === '#/shop' && <ShopPage />}
-      {currentRoute === '#/product' && <ProductPage />}
-      {(currentRoute === '#/' || currentRoute === '') && <HomePage />}
+      <WishlistProvider>
+        <CompareProvider>
+          {currentRoute === '#/cart' && <CartPage />}
+          {currentRoute === '#/about' && <AboutPage />}
+          {currentRoute === '#/contact' && <ContactPage />}
+          {currentRoute === '#/blog' && <BlogPage />}
+          {currentRoute === '#/blog-post' && <SingleBlogPage />}
+          {currentRoute === '#/wishlist' && <WishlistPage />}
+          {currentRoute === '#/compare' && <ComparePage />}
+          {currentRoute === '#/shop' && <ShopPage />}
+          {currentRoute === '#/product' && <ProductPage />}
+          {(currentRoute === '#/' || currentRoute === '') && <HomePage />}
+        </CompareProvider>
+      </WishlistProvider>
     </CartProvider>
   );
 }

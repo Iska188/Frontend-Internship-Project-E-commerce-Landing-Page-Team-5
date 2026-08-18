@@ -1,15 +1,15 @@
 import React from 'react';
 import './badge.css';
 
-interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   label: string | number;
-  type: 'discount' | 'hot' | 'new' | 'count' | 'sale-off';
+  type?: 'discount' | 'hot' | 'new' | 'sale' | 'count' | 'sale-off';
   bgColor?: string;
 }
 
 export const Badge: React.FC<BadgeProps> = ({ 
   label, 
-  type, 
+  type = 'new', 
   bgColor,
   className,
   style,

@@ -1,0 +1,34 @@
+[
+  {
+    "code": "NEST15",
+    "type": "percentage",
+    "discount": 15,
+    "expiryDate": "2026-12-31",
+    "minOrder": 20,
+    "description": "15% discount for orders over $20.00"
+  },
+  {
+    "code": "SUMMER20",
+    "type": "percentage",
+    "discount": 20,
+    "expiryDate": "2026-09-30",
+    "minOrder": 30,
+    "description": "20% off summer special for orders over $30.00"
+  },
+  {
+    "code": "WELCOME10",
+    "type": "fixed",
+    "discount": 10,
+    "expiryDate": "2026-12-31",
+    "minOrder": 25,
+    "description": "$10.00 flat discount for new customers"
+  },
+  {
+    "code": "FREESHIP",
+    "type": "fixed",
+    "discount": 5,
+    "expiryDate": "2026-12-31",
+    "minOrder": 15,
+    "description": "Free standard shipping discount ($5.00 value)"
+  }
+]

@@ -1,18 +1,17 @@
-import { Button } from '../../atoms';
 import { TRANSLATIONS } from '../../../constants/translations';
 import './newsletterForm.css';
 
 export const NewsletterForm = () => {
   return (
-    <div className="m-newsletter-form">
+    <form className="m-newsletter-form" onSubmit={(e) => e.preventDefault()}>
       <input 
         type="email" 
         placeholder={TRANSLATIONS.newsletter.emailPlaceholder} 
         className="m-newsletter-form__input" 
       />
-      <Button variant="primary" className="m-newsletter-form__btn">
+      <button type="submit" className="m-newsletter-form__btn">
         {TRANSLATIONS.newsletter.subscribeBtn}
-      </Button>
-    </div>
+      </button>
+    </form>
   );
 };

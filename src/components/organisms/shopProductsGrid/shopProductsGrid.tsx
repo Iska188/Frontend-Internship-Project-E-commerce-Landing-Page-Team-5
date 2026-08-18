@@ -7,7 +7,7 @@ interface ProductItem {
   discountBadge?: string;
   discountBgColor?: string;
   statusBadge?: string;
-  statusBadgeType?: 'discount' | 'hot' | 'new' | 'count';
+  statusBadgeType?: 'discount' | 'hot' | 'new' | 'sale' | 'count';
   category: string;
   title: string;
   description?: string;

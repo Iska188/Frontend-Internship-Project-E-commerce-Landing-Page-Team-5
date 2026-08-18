@@ -7,11 +7,18 @@ import './shopPage.css';
 export const ShopPage = () => {
   const [priceMin, setPriceMin] = useState(0);
   const [priceMax, setPriceMax] = useState(400);
-  const [appliedFilters, setAppliedFilters] = useState({ priceMin: 0, priceMax: 400 });
+  const [appliedFilters, setAppliedFilters] = useState({
+    priceMin: 0,
+    priceMax: 400,
+    colors: [] as string[],
+    conditions: [] as string[],
+  });
 
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
   const [selectedConditions, setSelectedConditions] = useState<string[]>([]);
   const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [bannerTags, setBannerTags] = useState(['Cabbage', 'Broccoli', 'Artichoke', 'Celery', 'Spinach']);
+  const [activeTag, setActiveTag] = useState<string | undefined>(undefined);
   const [view, setView] = useState<'grid' | 'list'>('grid');
   const [showCount, setShowCount] = useState(20);
   const [sortBy, setSortBy] = useState<SortOption>('featured');
@@ -21,7 +28,11 @@ export const ShopPage = () => {
     const filtered = SHOP_PRODUCTS_MOCK.filter((product) => {
       const matchesPrice = product.price >= appliedFilters.priceMin && product.price <= appliedFilters.priceMax;
       const matchesCategory = activeCategory === 'All' || product.category === activeCategory;
-      return matchesPrice && matchesCategory;
+      const matchesColor = appliedFilters.colors.length === 0 || (product.color && appliedFilters.colors.includes(product.color));
+      const matchesCondition = appliedFilters.conditions.length === 0 || (product.condition && appliedFilters.conditions.includes(product.condition));
+      const matchesTag = !activeTag || product.title.toLowerCase().includes(activeTag.toLowerCase()) || (product.description && product.description.toLowerCase().includes(activeTag.toLowerCase()));
+
+      return matchesPrice && matchesCategory && matchesColor && matchesCondition && matchesTag;
     });
 
     const sorted = [...filtered];
@@ -35,7 +46,7 @@ export const ShopPage = () => {
     }
 
     return sorted;
-  }, [appliedFilters, activeCategory, sortBy]);
+  }, [appliedFilters, activeCategory, activeTag, sortBy]);
 
   const totalPages = Math.max(Math.ceil(filteredProducts.length / showCount), 1);
 
@@ -45,7 +56,12 @@ export const ShopPage = () => {
   }, [filteredProducts, showCount, currentPage]);
 
   const handleApplyFilter = () => {
-    setAppliedFilters({ priceMin, priceMax });
+    setAppliedFilters({
+      priceMin,
+      priceMax,
+      colors: selectedColors,
+      conditions: selectedConditions,
+    });
     setCurrentPage(1);
   };
 
@@ -64,18 +80,58 @@ export const ShopPage = () => {
     setCurrentPage(1);
   };
 
+  const handleTagClick = (tag: string) => {
+    setActiveTag((prev) => (prev === tag ? undefined : tag));
+    setCurrentPage(1);
+  };
+
+  const handleTagRemove = (tag: string) => {
+    setBannerTags((prev) => prev.filter((t) => t !== tag));
+    if (activeTag === tag) {
+      setActiveTag(undefined);
+    }
+  };
+
+  const bannerTitle = activeCategory === 'All' ? 'Snack' : activeCategory;
+
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
   return (
     <>
       <Header />
-      <BlogBanner />
+      <BlogBanner
+        title={bannerTitle}
+        breadcrumbs={[
+          { label: 'Home', href: '#/' },
+          { label: 'Shop', href: '#/shop' },
+          { label: bannerTitle },
+        ]}
+        tags={bannerTags}
+        activeTag={activeTag}
+        onTagClick={handleTagClick}
+        onTagRemove={handleTagRemove}
+      />
 
       <main className="p-shop-page">
         <div className="p-shop-page__container">
-          <div className="p-shop-page__sidebar">
+          <button
+            type="button"
+            className="p-shop-page__mobile-filter-toggle"
+            onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
+            aria-expanded={isMobileFilterOpen}
+          >
+            <span>⚙ Filters & Categories</span>
+            <span>{isMobileFilterOpen ? '▲ Hide' : '▼ Show'}</span>
+          </button>
+
+          <div className={`p-shop-page__sidebar ${isMobileFilterOpen ? 'p-shop-page__sidebar--open' : ''}`}>
             <ShopSidebar
               categories={SHOP_CATEGORIES_MOCK}
               activeCategory={activeCategory}
-              onCategoryChange={handleCategoryChange}
+              onCategoryChange={(cat) => {
+                handleCategoryChange(cat);
+                setIsMobileFilterOpen(false);
+              }}
               priceMin={0}
               priceMax={400}
               currentPriceMin={priceMin}
@@ -90,7 +146,10 @@ export const ShopPage = () => {
               conditionOptions={SHOP_CONDITIONS_MOCK}
               selectedConditions={selectedConditions}
               onConditionChange={setSelectedConditions}
-              onApplyFilter={handleApplyFilter}
+              onApplyFilter={() => {
+                handleApplyFilter();
+                setIsMobileFilterOpen(false);
+              }}
               newProducts={SHOP_NEW_PRODUCTS_MOCK}
             />
           </div>

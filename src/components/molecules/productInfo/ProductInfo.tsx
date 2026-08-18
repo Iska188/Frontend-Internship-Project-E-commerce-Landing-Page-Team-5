@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Badge, Button, QuantityInput } from '../../atoms';
 import { useCart } from '../../../context/cartContext';
+import { useWishlist } from '../../../context/wishlistContext';
+import { useCompare } from '../../../context/compareContext';
 import cartIcon from '../../../assets/header/cart.svg';
 import wishlistIcon from '../../../assets/header/wishlist.svg';
 import compareIcon from '../../../assets/header/compare.svg';
@@ -49,11 +51,14 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
   image,
 }) => {
   const { addToCart } = useCart();
+  const { isInWishlist, toggleWishlist } = useWishlist();
+  const { isInCompare, toggleCompare } = useCompare();
   const [selectedSize, setSelectedSize] = useState(defaultSize || (sizes && sizes[0]) || '');
   const [quantity, setQuantity] = useState(1);
-  const [isWishlisted, setIsWishlisted] = useState(false);
-  const [isCompared, setIsCompared] = useState(false);
   const [addedToast, setAddedToast] = useState(false);
+
+  const isWishlisted = isInWishlist(id);
+  const isCompared = isInCompare(id);
 
   useEffect(() => {
     setSelectedSize(defaultSize || (sizes && sizes[0]) || '');
@@ -188,9 +193,21 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
         <button
           type="button"
           className={`m-product-info__action-icon-btn ${isWishlisted ? 'm-product-info__action-icon-btn--active' : ''}`}
-          onClick={() => setIsWishlisted(!isWishlisted)}
-          aria-label="Add to wishlist"
-          title="Add to wishlist"
+          onClick={() =>
+            toggleWishlist({
+              id,
+              title,
+              price: activePricing.price,
+              oldPrice: activePricing.oldPrice,
+              image,
+              rating,
+              reviewsCount,
+              category: specs.type || 'Groceries',
+              inStock: specs.stock ? !specs.stock.toLowerCase().includes('out') : true,
+            })
+          }
+          aria-label={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
+          title={isWishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >
           <img src={wishlistIcon} alt="Wishlist" className="m-product-info__icon-img" />
         </button>
@@ -198,9 +215,25 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({
         <button
           type="button"
           className={`m-product-info__action-icon-btn ${isCompared ? 'm-product-info__action-icon-btn--active' : ''}`}
-          onClick={() => setIsCompared(!isCompared)}
-          aria-label="Compare"
-          title="Compare"
+          onClick={() =>
+            toggleCompare({
+              id,
+              title,
+              price: activePricing.price,
+              oldPrice: activePricing.oldPrice,
+              image,
+              rating,
+              reviewsCount,
+              category: specs.type || 'Groceries',
+              vendor: 'NestFood',
+              description,
+              weight: selectedSize || '500g',
+              inStock: specs.stock ? !specs.stock.toLowerCase().includes('out') : true,
+              shelfLife: specs.life || '12 Months',
+            })
+          }
+          aria-label={isCompared ? 'Remove from compare' : 'Compare'}
+          title={isCompared ? 'Remove from compare' : 'Compare'}
         >
           <img src={compareIcon} alt="Compare" className="m-product-info__icon-img" />
         </button>

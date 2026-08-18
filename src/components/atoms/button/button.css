@@ -23,6 +23,10 @@
   color: var(--color-white);
 }
 
+.a-btn--add-short:hover .a-btn__icon img {
+  filter: brightness(0) invert(1);
+}
+
 .a-btn--add-long {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -33,12 +37,23 @@
   gap: 0.5rem;
 }
 
+.a-btn--add-long .a-btn__icon img {
+  filter: brightness(0) invert(1);
+}
+
 .a-btn--add-long:hover {
   background-color: var(--color-primary-hover);
 }
 
 .a-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: var(--font-size-base);
+}
+
+.a-btn__icon img {
+  display: block;
 }
 
 .a-btn--primary {

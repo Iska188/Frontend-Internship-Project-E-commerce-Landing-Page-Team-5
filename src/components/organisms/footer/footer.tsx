@@ -16,13 +16,13 @@ export const Footer: React.FC = () => {
   ];
 
   const accountLinks = [
-    { label: TRANSLATIONS.footer.accountLinks.signIn, href: '/login' },
+    { label: TRANSLATIONS.footer.accountLinks.signIn, href: '#/cart' },
     { label: TRANSLATIONS.footer.accountLinks.viewCart, href: '#/cart' },
-    { label: TRANSLATIONS.footer.accountLinks.myWishlist, href: '/wishlist' },
-    { label: TRANSLATIONS.footer.accountLinks.trackOrder, href: '/track' },
-    { label: TRANSLATIONS.footer.accountLinks.helpTicket, href: '/help' },
-    { label: TRANSLATIONS.footer.accountLinks.shippingDetails, href: '/shipping' },
-    { label: TRANSLATIONS.footer.accountLinks.compareProducts, href: '/compare' },
+    { label: TRANSLATIONS.footer.accountLinks.myWishlist, href: '#/wishlist' },
+    { label: TRANSLATIONS.footer.accountLinks.trackOrder, href: '#/' },
+    { label: TRANSLATIONS.footer.accountLinks.helpTicket, href: '#/contact' },
+    { label: TRANSLATIONS.footer.accountLinks.shippingDetails, href: '#/about' },
+    { label: TRANSLATIONS.footer.accountLinks.compareProducts, href: '#/compare' },
   ];
 
   const corporateLinks = [
